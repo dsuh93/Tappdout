@@ -9,6 +9,7 @@ import configureStore from './store/store.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
+  const store = configureStore();
   
   
   
@@ -33,5 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // const store = configureStore();
-  ReactDOM.render(<h1>React is working</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 })

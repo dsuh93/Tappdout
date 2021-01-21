@@ -1,0 +1,53 @@
+.navbar {
+  position: fixed;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: gold;
+
+  .navbar-lft {
+    display: flex;
+  }
+
+  .navbar-title {
+    padding: 15px;
+    font-weight: bold;
+  }
+
+  .navbar-links {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-link {
+    padding: 10px;
+  }
+
+  .navbar-rt {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+  }
+
+
+}
+
+.search-bar {
+  display: flex;
+
+  .searchbar-label {
+    padding: 8px;
+  }
+}
+
+.navbar-hidden {
+  visibility: hidden;  
+}
