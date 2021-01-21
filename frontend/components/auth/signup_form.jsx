@@ -27,9 +27,27 @@ class SignupForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([])
+  }
+
   render() {
+    const errors = this.props.errors.map( error => {
+      return (
+        <li key={error}>{error}</li>
+      )
+    })
+
+    const errorsClassname = this.props.errors.length > 0 ? "auth-errors-reveal" : "auth-errors-hidden";
+
+
+
+
     return (
       <div className="signup-form-div">
+        <ul className={errorsClassname}>
+          {errors}
+        </ul>
         <h1>Sign Up</h1>
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <label className="signup-form-label">Username: 

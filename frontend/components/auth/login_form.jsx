@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -32,9 +33,24 @@ class LoginForm extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    this.props.receiveErrors([])
+  }
+
   render() {
+    const errors = this.props.errors.map( error => {
+      return (
+        <li key={error}>{error}</li>
+      )
+    })
+
+    const errorsClassname = this.props.errors.length > 0 ? "auth-errors-reveal" : "auth-errors-hidden";
+
     return (
       <div className="login-form-div">
+        <ul className={errorsClassname}>
+          {errors}
+        </ul>
         <h1>Login</h1>
         <form className="login-form" onSubmit={this.handleSubmit}>
           <label className="login-form-label">Username:
@@ -56,6 +72,10 @@ class LoginForm extends React.Component {
         </form>
         <br/>
         <button onClick={this.loginDemoUser}>Demo User</button>
+        <hr/>
+        <p className="login-form-signup-p">New around here?
+          <Link className="login-form-signup-link" to='/signup'>Sign up!</Link>
+        </p>
       </div>
     )
   }

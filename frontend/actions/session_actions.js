@@ -13,18 +13,18 @@ const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER
 });
 
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
 
 export const signup = (user) => dispatch => SessionAPIUtil.signup(user)
   .then(currentUser => dispatch(receiveCurrentUser(currentUser)),
-    errors => dispatch(receiveErrors(errors)));
+    errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const login = (user) => dispatch => SessionAPIUtil.login(user)
   .then(currentUser => dispatch(receiveCurrentUser(currentUser)),
-    errors => dispatch(receiveErrors(errors)));
+    errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const logout = () => dispatch => SessionAPIUtil.logout()
   .then(() => dispatch(logoutCurrentUser()));
