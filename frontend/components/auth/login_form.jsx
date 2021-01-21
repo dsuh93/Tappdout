@@ -9,12 +9,20 @@ class LoginForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
+      .then(() => this.props.history.push('/home'));
+  }
+
+  loginDemoUser(e) {
+    e.preventDefault();
+    const demoUser = {username: "guest", password: "password"};
+    this.props.login(demoUser)
       .then(() => this.props.history.push('/home'));
   }
 
@@ -46,6 +54,8 @@ class LoginForm extends React.Component {
           </label>
           <button>Login</button>
         </form>
+        <br/>
+        <button onClick={this.loginDemoUser}>Demo User</button>
       </div>
     )
   }

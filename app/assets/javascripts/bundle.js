@@ -252,6 +252,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.loginDemoUser = _this.loginDemoUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -267,12 +268,26 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "update",
-    value: function update(key) {
+    key: "loginDemoUser",
+    value: function loginDemoUser(e) {
       var _this3 = this;
 
+      e.preventDefault();
+      var demoUser = {
+        username: "guest",
+        password: "password"
+      };
+      this.props.login(demoUser).then(function () {
+        return _this3.props.history.push('/home');
+      });
+    }
+  }, {
+    key: "update",
+    value: function update(key) {
+      var _this4 = this;
+
       return function (e) {
-        _this3.setState(_defineProperty({}, key, e.target.value));
+        _this4.setState(_defineProperty({}, key, e.target.value));
       };
     }
   }, {
@@ -297,7 +312,9 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         type: "password",
         value: this.state.password,
         onChange: this.update("password")
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Login")));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, "Login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        onClick: this.loginDemoUser
+      }, "Demo User"));
     }
   }]);
 
