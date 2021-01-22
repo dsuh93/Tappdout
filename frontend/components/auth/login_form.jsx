@@ -47,38 +47,57 @@ class LoginForm extends React.Component {
     const errorsClassname = this.props.errors.length > 0 ? "auth-errors-reveal" : "auth-errors-hidden";
 
     return (
-      <div className="login-form-div">
-        <ul className={errorsClassname}>
-          {errors}
-        </ul>
-        <h1>Login</h1>
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <label className="login-form-label">Username:
-            <input className="login-form-input"
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-            />
-          </label>
+      <div className="login-page">
+        <div className="login-page-img-div">
+          <img className="login-page-bg-img" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="beer-background"/>
+        </div>
+        <div className="login-form-div">
+          <ul className={errorsClassname}>
+            {errors}
+          </ul>
+          <div className="login-title">
+            <h1 className="login-h1">TAPPDOUT</h1>
+            <p className="login-p">DRINK SOCIALLY</p>
+          </div>
+          <button className="demo-btn" onClick={this.loginDemoUser}>Demo User</button>
+          <p className="or">OR</p>
+          <form className="login-form" onSubmit={this.handleSubmit}>
+            <div className="input-container">
+              <img src="https://cutt.ly/xjHz2gM"/>
+              <hr/>
+              <input className="login-form-input"
+                placeholder="Username"
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+              />
+            </div>
+            <br/>
+            <div className="input-container">
+              <img src="https://cutt.ly/xjHz2gM"/>
+              <hr/>
+              <input className="login-form-input"
+                placeholder="Password"
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            </div>
+            <br/>
+            <button className="btn">Sign In</button>
+          </form>
           <br/>
-          <label className="login-form-label">Password:
-            <input className="login-form-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-            />
-          </label>
-          <button>Login</button>
-        </form>
-        <br/>
-        <button onClick={this.loginDemoUser}>Demo User</button>
-        <hr/>
-        <p className="login-form-signup-p">New around here?
-          <Link className="login-form-signup-link" to='/signup'>Sign up!</Link>
-        </p>
+          <hr className="login-hr"/>
+          <p className="login-form-signup-p">New around here?   
+            <Link className="login-form-signup-link" to='/signup'>Sign up!</Link>
+          </p>
+        </div>
       </div>
     )
   }
 }
 
 export default LoginForm;
+
+
+// <div>Icons made by <a href="https://www.flaticon.com/free-icon/beer_761767?term=beer&related_id=761767" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

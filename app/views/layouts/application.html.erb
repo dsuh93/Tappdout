@@ -6,10 +6,17 @@
     <%= csp_meta_tag %>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <%# <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <script type="text/javascript">
+      window.beerSplashLogo = "<%= image_url('logos/beer_splash_logo.png') %>";
+    </script>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -17,3 +24,4 @@
     <%= yield %>
   </body>
 </html>
+
