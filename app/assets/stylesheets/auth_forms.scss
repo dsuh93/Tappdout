@@ -1,3 +1,13 @@
+.auth-errors-reveal {
+  text-align: center;
+  color: white;
+  background-color: #e25858;
+  font-size: 12px;
+  width: 260px;
+  margin: 10px 0px;
+  padding: 20px;
+}
+
 .signup-form-div {
   .signup-form {
   border-radius: 5px;
@@ -39,7 +49,7 @@
 
   .login-title {
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
     .login-h1 {
       padding: 5px;
       font-size: 40px;
@@ -106,7 +116,7 @@
       display: flex;
       justify-content: center;
       border: lightgray 2px solid;
-      img {
+      i {
         position: relative;
         top: 2px;
         left: 4px;

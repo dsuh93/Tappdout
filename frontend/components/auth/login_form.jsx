@@ -52,18 +52,18 @@ class LoginForm extends React.Component {
           <img className="login-page-bg-img" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="beer-background"/>
         </div>
         <div className="login-form-div">
-          <ul className={errorsClassname}>
-            {errors}
-          </ul>
           <div className="login-title">
             <h1 className="login-h1">TAPPDOUT</h1>
             <p className="login-p">DRINK SOCIALLY</p>
           </div>
+          <ul className={errorsClassname}>
+            {errors}
+          </ul>
           <button className="demo-btn" onClick={this.loginDemoUser}>Demo User</button>
           <p className="or">OR</p>
           <form className="login-form" onSubmit={this.handleSubmit}>
             <div className="input-container">
-              <img src="https://cutt.ly/xjHz2gM"/>
+              <i className="fas fa-beer"></i>
               <hr/>
               <input className="login-form-input"
                 placeholder="Username"
@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
             </div>
             <br/>
             <div className="input-container">
-              <img src="https://cutt.ly/xjHz2gM"/>
+              <i className="fas fa-beer"></i>
               <hr/>
               <input className="login-form-input"
                 placeholder="Password"

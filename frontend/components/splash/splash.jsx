@@ -62,28 +62,33 @@ class Splash extends React.Component {
         </div>
 
         <div className="splash-row div-3">
-          <img src="https://untappd.akamaized.net/assets/custom/homepage/images/phone-map.png"/>
-          <div>
-            <h1>Explore nearby popular bars, breweries, and beers.</h1>
-            <hr/>
-            <p>Not sure where to grab a pint? Tappdout shows you popular bars and venues nearby and what's on tap.</p>
+          <img className="map-bg" src={window.mapBg}/>
+          <img className="phone-map" src="https://untappd.akamaized.net/assets/custom/homepage/images/phone-map.png"/>
+          <div className="div-3-text">
+            <h1 className="div-3-h1">Explore nearby popular bars, breweries, and beers.</h1>
+            <div className="div-3-hr"></div>
+            <h3 className="div-3-h3">Not sure where to grab a pint? Tappdout shows you popular bars and venues nearby and what's on tap.</h3>
           </div>
         </div>
 
         <div className="splash-row div-4">
-          <div></div>
-          <div>
-            <div>
+          <div className="div-4-1">
+            <h1 className="div-4-h1">Other Great Features</h1>
+            <div className="div-4-hr"></div>
+          </div>
+
+          <div className="div-4-2">
+            <div className="div-4-col">
               <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-recommendations.svg"/>
               <h3>RECOMMENDATIONS</h3>
               <p>Discover new beers locally we think you'll like.</p>
             </div>
-            <div>
+            <div className="div-4-col">
               <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-menu.svg"/>
               <h3>UPDATED MENUS</h3>
               <p>Follow Verified Venues to get live tap list updates.</p>
             </div>
-            <div>
+            <div className="div-4-col">
               <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-events.svg"/>
               <h3>LOCAL EVENTS</h3>
               <p>Stay up-to-date with venue and brewery events alerts.</p>
@@ -91,7 +96,7 @@ class Splash extends React.Component {
             
           </div>
         </div>
-        <footer>
+        <div className="splash-row splash-footer">
           <div className="footer-p">
             <p>Store</p>
             <p>Breweries</p>
@@ -102,15 +107,17 @@ class Splash extends React.Component {
             <p>Privacy</p>
             <p>Cookie Policy</p>
             <p>CCPA Notice</p>
-            <p>Do Not Sell My Personal Information</p>
-            <p className="footer-cr">© Tappdout, Inc. 2021</p>
+            <p className="footer-p-last">Do Not Sell My Personal Information</p>
+            <div className="footer-cr-div">
+              <p className="footer-cr">© Tappdout, Inc. 2021</p>
+            </div>
           </div>
-          <div>
+          <div className="footer-logos">
             <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-twitter.svg"/>
             <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-facebook.svg"/>
             <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-instagram.svg"/>
           </div>
-        </footer>
+        </div>
       </div>
     )
   }
