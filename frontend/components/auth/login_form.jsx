@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class LoginForm extends React.Component {
           <p className="or">OR</p>
           <form className="login-form" onSubmit={this.handleSubmit}>
             <div className="input-container">
-              <i className="fas fa-beer"></i>
+              <img className="icon" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/beer-mug_1f37a.png"/>
               <hr/>
               <input className="login-form-input"
                 placeholder="Username"
@@ -74,7 +75,7 @@ class LoginForm extends React.Component {
             </div>
             <br/>
             <div className="input-container">
-              <i className="fas fa-beer"></i>
+              <img className="icon" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/259/beer-mug_1f37a.png"/>
               <hr/>
               <input className="login-form-input"
                 placeholder="Password"
