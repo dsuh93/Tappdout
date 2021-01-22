@@ -8,24 +8,14 @@
   padding: 20px;
 }
 
-.signup-form-div {
-  .signup-form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  }
-}
-
-.login-page {
+.signup-page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  // min-width: 1024px;
-  // width: 120%;
   height: auto;
-  
-  .login-page-img-div {
+
+  .auth-page-img-div {
     min-height: 100%;
     min-width: 1024px;
     width: 120%;
@@ -38,7 +28,7 @@
     z-index: 1;
   }
 
-  .login-page-bg-img {
+  .auth-page-bg-img {
     min-height: 100%;
     min-width: 1024px;
     width: 120%;
@@ -47,16 +37,168 @@
     opacity: 0.40;
   }
 
-  .login-title {
+  .signup-form-div {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 420px;
+    height: fit-content;
+    background-color: white;
+    padding: 20px;
+    z-index: 2;
+  }
+
+  .auth-title {
     position: relative;
     bottom: 10px;
-    .login-h1 {
+    .auth-h1 {
       padding: 5px;
       font-size: 40px;
       font-weight: 900;
     }
 
-    .login-p {
+    .auth-p {
+      text-align: center;
+      color: gray;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      z-index: 2;
+    }
+  }
+
+  .signup-form {
+    width: 420px;
+    height: fit-content;
+    position: relative;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    .signup-form-aside {
+      background-color: rgb(253, 245, 150);
+      padding: 10px;
+      .aside-p{
+        text-align: center;
+        color: gray;
+        font-size: 10px;
+        font-weight: bold;
+      }
+    }
+
+    .signup-p {
+      font-size: 10px;
+      margin: 10px 20px;
+    }
+
+    .signup-input-container {
+      width: 180px;
+      margin: 10px 5px;
+      padding: 0px 5px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      border: lightgray 2px solid;
+      .icon {
+        position: relative;
+        top: 2px;
+        left: 4px;
+        width: 17px;
+        height: 17px;
+      }
+      hr {
+        border: lightgray 0.5px solid;
+        position: relative;
+        left: 10px;
+        top: 2px;
+        height: 17px;
+        width: 0.5px;
+        margin: 0px;
+      }
+    }
+
+    .signup-form-input {
+      width: 150px;
+      padding: 4px 0px;
+      padding-left: 15px;
+      border-style: none;
+      outline: none;
+      // border: lightgray 2px solid;
+    }
+
+    .pw-input {
+      margin: 30px 5px;
+    }
+
+    .signup-tos {
+      .signup-tos-p {
+        font-size: 10px;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+    }
+
+    .btn {
+      padding: 10px 90px;
+      color: white;
+      font-size: 15;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      background-color: #f9c806;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .btn:hover {
+      background-color: rgb(250, 190, 37);
+      cursor: pointer;
+    }
+  }
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: auto;
+  
+  .auth-page-img-div {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 120%;
+    height:max-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .auth-page-bg-img {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 120%;
+    height: auto;
+    z-index: 0;
+    opacity: 0.40;
+  }
+
+  .auth-title {
+    position: relative;
+    bottom: 10px;
+    .auth-h1 {
+      padding: 5px;
+      font-size: 40px;
+      font-weight: 900;
+    }
+
+    .auth-p {
       text-align: center;
       color: gray;
       font-size: 10px;

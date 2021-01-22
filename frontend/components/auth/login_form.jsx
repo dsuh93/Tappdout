@@ -49,13 +49,13 @@ class LoginForm extends React.Component {
 
     return (
       <div className="login-page">
-        <div className="login-page-img-div">
-          <img className="login-page-bg-img" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="beer-background"/>
+        <div className="auth-page-img-div">
+          <img className="auth-page-bg-img" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="beer-background"/>
         </div>
         <div className="login-form-div">
-          <div className="login-title">
-            <h1 className="login-h1">TAPPDOUT</h1>
-            <p className="login-p">DRINK SOCIALLY</p>
+          <div className="auth-title">
+            <h1 className="auth-h1">TAPPDOUT</h1>
+            <p className="auth-p">DRINK SOCIALLY</p>
           </div>
           <ul className={errorsClassname}>
             {errors}
