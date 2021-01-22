@@ -17,22 +17,19 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    delete user['repeat'];
-    this.props.signup(user)
-      .then(() => this.props.history.push('/home'));
-    // if(this.state.password === this.state.repeat){
-    //   const user = Object.assign({}, this.state);
-    //   delete user["repeat"]
-    //   this.props.signup(user)
-    //     .then(() => this.props.history.push('/home'));
-    // } else {
-    //   this.error = () => {
-    //     return (
-    //       <p>Passwords don't match, please try again.</p>
-    //     )
-    //   }
-    // }
+    // const user = Object.assign({}, this.state);
+    // delete user['repeat'];
+    // this.props.signup(user)
+    //   .then(() => this.props.history.push('/home'));
+    if(this.state.password === this.state.repeat){
+      const user = Object.assign({}, this.state);
+      delete user["repeat"]
+      this.props.signup(user)
+        .then(() => this.props.history.push('/home'));
+    } else {
+      this.props.receiveErrors(["Passwords don't match, please try again."]);
+      this.setState({password: ""});
+    }
   }
 
   update(key) {
