@@ -10,4 +10,10 @@ class Brewery < ApplicationRecord
       "Home Brewery"
     ]
   }
+
+  has_many :beers,
+    foreign_key: :brewery_id,
+    class_name: :Beer
+
+  
 end

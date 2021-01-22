@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.getState = store.getState;
 
+  //testing for external brewery db
+  window.breweryDBGet = SessionAPIUtil.breweryDBGet;
+
   // const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
