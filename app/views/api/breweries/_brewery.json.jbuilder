@@ -1,0 +1,1 @@
+json.extract! brewery, :brewery_name, :brewery_type, :location
