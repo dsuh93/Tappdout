@@ -17,10 +17,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
-    // delete user['repeat'];
-    // this.props.signup(user)
-    //   .then(() => this.props.history.push('/home'));
+    
     if(this.state.password === this.state.repeat){
       const user = Object.assign({}, this.state);
       delete user["repeat"]
@@ -50,7 +47,6 @@ class SignupForm extends React.Component {
     })
 
     const errorsClassname = this.props.errors.length > 0 ? "auth-errors-reveal" : "auth-errors-hidden";
-
 
 
 

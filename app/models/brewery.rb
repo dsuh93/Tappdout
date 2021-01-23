@@ -15,5 +15,11 @@ class Brewery < ApplicationRecord
     foreign_key: :brewery_id,
     class_name: :Beer
 
-  
+  # def get_beers(breweries)
+  #   breweries.each do |brewery|
+  #     Brewery.select("beers.id")
+  #       .joins(:beers)
+  #       .where("beers.brewery_id")
+  #   end
+  # end
 end
