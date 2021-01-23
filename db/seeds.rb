@@ -11,7 +11,7 @@
 # data_hash = JSON.parse(file)
 # p data_hash
 
-require 'faker'
+
 
 User.destroy_all
 Brewery.destroy_all
