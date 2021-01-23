@@ -17,9 +17,6 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar">
-        <label className="searchbar-label" htmlFor="search-bar">
-          Search
-        </label>
         <input
           className="search-bar-input"
           defaultValue="search for beers and breweries"

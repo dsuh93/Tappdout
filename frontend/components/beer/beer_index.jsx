@@ -23,7 +23,7 @@ class BeerIndex extends React.Component {
     return (
       <div className="beer-index-container">
         <ul className="beer-index">
-          {beerIndexItem}
+          {/* {beerIndexItem} */}
         </ul>
       </div>
     )

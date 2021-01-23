@@ -1,51 +1,79 @@
 .navbar {
   position: fixed;
-  display: block;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
+  height: 42px;
   background-color: gold;
 
-  .navbar-lft {
-    display: flex;
-  }
-
-  .navbar-title {
-    padding: 15px;
-    font-weight: bold;
-  }
-
-  .navbar-links {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    left: 20px;
+  .navbar-contents {
     display: flex;
     justify-content: space-between;
-  }
-
-  .navbar-link {
-    padding: 10px;
-  }
-
-  .navbar-rt {
-    position: relative;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    left: 30px;
+    height: 42px;
+    width: auto;
+    max-width: 1040px;
+    color: white;
+    text-decoration: none;
+    .navbar-lft {
+      display: flex;
+      width: 500px;
+    }
+  
+    .navbar-title-container {
+      padding: 15px;
+      text-align: center;
+      .navbar-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+      }
+      .navbar-title-p {
+        margin-top: 3px;
+        font-size: 6px;
+        letter-spacing: 0.1em;
+      }
+    }
+  
+    .navbar-links {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      left: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .navbar-link {
+      width: fit-content;
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+    }
+  
+    .navbar-rt {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .navbar-logout-btn {
+        height: 30px;
+        width: 30px;
+        border-radius: 16px;
+        font-size: 7px;
+        margin-right: 15px;
+      }
+    }
+  
+  
   }
-
-
 }
+
 
 .search-bar {
   display: flex;
 
-  .searchbar-label {
-    padding: 8px;
-  }
+  
 }
 
 .navbar-hidden {

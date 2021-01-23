@@ -1,4 +1,29 @@
-.beer_index_container {
-  position: relative;
-  top: 50px;
+.beer-index-container {
+  background-color: pink;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 42px;
+  z-index: 10;
+  .beer-index {
+    background-color: plum;
+    position:absolute;
+    height: 500px;
+    width: 500px;
+
+    .beer-item-container {
+      background-color: powderblue;
+      .beer-item {
+        background-color: rebeccapurple;
+        .beer-item-top {
+          background-color: red;
+        }
+      }
+    }
+  }
+  
 }
