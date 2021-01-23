@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'faker'
+# require 'json'
+
+# file = File.read('breweries.json')
+# data_hash = JSON.parse(file)
 
 
 User.destroy_all
@@ -46,6 +50,8 @@ brewery5 = Brewery.create!(
   location: "Danville, California"
 )
 
+
+
 # beer = Beer.create!(
 #   beer_name: Faker::Beer.name,
 #   brewery_id: rand(10),
@@ -54,3 +60,4 @@ brewery5 = Brewery.create!(
 #   style: Faker::Beer.style,
 #   description: Faker::Beer.brand
 # )
+
