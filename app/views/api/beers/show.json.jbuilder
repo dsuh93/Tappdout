@@ -1,1 +1,3 @@
-json.extract! beer, :beer_name, :brewery_id, :abv, :ibu, :style, :description
+
+json.partial! 'api/beers/beer', beer: @beer
+json.brewery_name @beer.brewery.brewery_name
