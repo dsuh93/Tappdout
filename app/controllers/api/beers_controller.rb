@@ -5,7 +5,7 @@ class Api::BeersController < ApplicationController
   end
   
   def show
-    @beer = Beer.find_by(id: params[:id])
+    @beer = Beer.includes(:brewery).find_by(id: params[:id])
     if @beer 
       render :show
     else

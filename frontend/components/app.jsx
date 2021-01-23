@@ -4,8 +4,11 @@ import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
 import LoginFormContainer from './auth/login_form_container';
 import SignupFormContainer from './auth/signup_form_container';
+import BeerIndexContainer from './beer/beer_index_container';
+import BreweryIndexContainer from './brewery/brewery_index_container';
 import HomeContainer from './home/home_container';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+
 
 
 const App = () => (
@@ -18,6 +21,8 @@ const App = () => (
       <AuthRoute path='/signup' component={SignupFormContainer}/>
       <ProtectedRoute path='/home' component={HomeContainer}/>
       <AuthRoute exact path='/' component={Splash}/>
+      <ProtectedRoute path='/beers' component={BeerIndexContainer}/>
+      <ProtectedRoute path='/breweries' component={BreweryIndexContainer}/>
     </Switch>
   </div>
 );

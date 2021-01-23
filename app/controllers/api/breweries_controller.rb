@@ -5,11 +5,11 @@ class Api::BreweriesController < ApplicationController
   end
 
   def show
-    @brewery = Brewery.find_by(id: params[:id])
+    @brewery = Brewery.includes(:beers).find_by(id: params[:id])
     if @brewery
       render :show
     else
-      render json: ["Sorry, brewery doesn't exist"], status: 401
+      render json: ["Sorry, brewery doesn't exist"], status: 422
     end
   end
 end
