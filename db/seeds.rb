@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# require 'faker'
 # require 'json'
 
 # file = File.read('breweries.json')
 # data_hash = JSON.parse(file)
-
+# p data_hash
+require 'faker'
 
 User.destroy_all
 Brewery.destroy_all
-# Beer.destroy_all
+Beer.destroy_all
 
 demo_user = User.create!(
   username: "guest",
@@ -50,6 +50,56 @@ brewery5 = Brewery.create!(
   location: "Danville, California"
 )
 
+10.times do | index |
+  Beer.create!(
+    beer_name: Faker::Beer.unique.name,
+    brewery_id: brewery1.id,
+    abv: Faker::Beer.alcohol,
+    ibu: Faker::Beer.ibu,
+    style: Faker::Beer.style,
+    description: "this is a beer"
+  )
+end
+10.times do | index |
+  Beer.create!(
+    beer_name: Faker::Beer.unique.name,
+    brewery_id: brewery2.id,
+    abv: Faker::Beer.alcohol,
+    ibu: Faker::Beer.ibu,
+    style: Faker::Beer.style,
+    description: "this is a beer"
+  )
+end
+10.times do | index |
+  Beer.create!(
+    beer_name: Faker::Beer.unique.name,
+    brewery_id: brewery3.id,
+    abv: Faker::Beer.alcohol,
+    ibu: Faker::Beer.ibu,
+    style: Faker::Beer.style,
+    description: "this is a beer"
+  )
+end
+10.times do | index |
+  Beer.create!(
+    beer_name: Faker::Beer.unique.name,
+    brewery_id: brewery4.id,
+    abv: Faker::Beer.alcohol,
+    ibu: Faker::Beer.ibu,
+    style: Faker::Beer.style,
+    description: "this is a beer"
+  )
+end
+10.times do | index |
+  Beer.create!(
+    beer_name: Faker::Beer.unique.name,
+    brewery_id: brewery5.id,
+    abv: Faker::Beer.alcohol,
+    ibu: Faker::Beer.ibu,
+    style: Faker::Beer.style,
+    description: "this is a beer"
+  )
+end
 
 
 # beer = Beer.create!(

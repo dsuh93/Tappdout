@@ -4,6 +4,7 @@ import Root from './components/root';
 
 //test imports
 import * as SessionAPIUtil from './util/session_api_util';
+import * as BreweriesAPIUtil from './util/brewery_api_util';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
 
