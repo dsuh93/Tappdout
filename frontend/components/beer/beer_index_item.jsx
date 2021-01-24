@@ -27,7 +27,7 @@ class BeerIndexItem extends React.Component {
             <p>{beer.style}</p>
             <p>{beer.description}</p>
           </div>
-          <button>checkin-button</button>
+          <button className="beer-item-btn">checkin-button</button>
         </div>
         <div className="beer-item-bottom">
           <div id="abv">{beer.abv}% ABV</div>
