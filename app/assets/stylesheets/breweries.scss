@@ -1,4 +1,4 @@
-.beer-index-container {
+.brewery-index-container, .brewery-show-container {
   background-color: rgb(248, 248, 230);
   // width: 100%;
   height: fit-content;
@@ -9,7 +9,7 @@
   position: relative;
   top: 42px;
   z-index: 0;
-  .beer-index-title {
+  .brewery-index-title {
     font-size: 18px;
     margin-top: 20px;
     padding: 20px;
@@ -18,7 +18,7 @@
     font-weight: bold;
   }
 
-  .beer-index-tags {
+  .brewery-index-tags {
     border-top: 1px solid rgb(231, 231, 231);
     // padding: 10px 20px;
     width: 540px;
@@ -34,32 +34,32 @@
       height: 15px;
       width: 50%;
     }
-    .beers-tag {
+    .breweries-tag {
       background-color: white;
-      box-shadow: 5px 0px 5px -5px rgba(0, 0, 0, 0.09);
-      border-right: 1px solid rgb(231, 231, 231);
       border-bottom: 1px solid white;
     }
-    .breweries-tag {
+    .beers-tag {
       background-color: rgb(240, 240, 240);
       border-bottom: 1px solid rgb(231, 231, 231);
+      border-right: 1px solid rgb(231, 231, 231);
+
     }
-    .breweries-tag:hover {
+    .beers-tag:hover {
       background-color:rgb(250, 250, 250);
     }
   }
 
-  .beer-index-p-container {
+  .brewery-index-p-container {
     background-color: white;
     width: 510px;
     padding: 15px;
-    .beer-index-p {
+    .brewery-index-p {
       font-size: 13px;
       font-weight: 700;
     }
   }
 
-  .beer-index {
+  .brewery-index {
     background-color: white;
     position:relative;
     padding: 20px;
@@ -72,81 +72,83 @@
           0px 5px 5px -5px rgba(0, 0, 0, 0.04),
           -5px 0px 5px -5px rgba(0, 0, 0, 0.04);
 
-    .beer-item-container {
+    .brewery-item-container {
       height:fit-content;
-
-      .beer-item {
-        margin-bottom: 10px;
+      
+      .brewery-item {
+        display: flex;
+        margin: 15px 0;
         height: fit-content;
         width: 100%;
-        .beer-item-top {
+        border-bottom: 1px solid rgb(231, 231, 231);
+        .brewery-item-left {
           display: flex;
           padding-bottom: 10px;
-          .beer-item-img {
-            padding: 0 15px 0 0;
+          width: 350px;
+          padding-right: 50px;
+          .brewery-item-img {
+            padding: 0 5px 0 0;
             margin-bottom: 10px; 
-            height: 80px;
-            width: 80px;
+            height: 60px;
+            width: 60px;
           }
-          .beer-item-details {
+          .brewery-item-details {
             display: flex;
             flex-direction: column;
             padding-bottom: 10px;
             padding-right: 15px;
             height: fit-content;
-            width: 310px;
-            #beer-item-name {
+            width: fit-content;
+            #brewery-item-name {
               color: rgb(216, 140, 0);
               text-decoration: none;
               font-size: 17px;
               padding-bottom: 5px;
             }
-            #beer-item-brewery {
+            #brewery-item-brewery {
               color: rgb(216, 140, 0);
               text-decoration: none;
               font-size: 13px;
               padding-bottom: 5px;
             }
-            #beer-item-style {
+            #brewery-item-location {
               color: gray;
               padding: 5px 0;
               font-size: 13px;
             }
-            #beer-item-description {
+            #brewery-item-type {
               color: gray;
               padding: 5px 0;
               font-size: 12px;
             }
           }
-          .beer-item-btn {
-            font-size: 10px;
-            width: 50px;
-            height: 50px;
-            margin: 15px;
-          }
         }
-        .beer-item-bottom {
-          border-top: 1px solid rgb(231, 231, 231);
-          border-bottom: 1px solid rgb(231, 231, 231);;
+        .brewery-item-right {
+          padding-bottom: 15px;
           display: flex;
+          flex-wrap: wrap;
+          width: 300px;
           align-items: center;
           font-size: 15px;
-          div {
+          
+          .brewery-item-right-top {
+            display: flex;
+            border-left: 1px solid rgb(231, 231, 231);
+            div {
+              color: gray;
+              font-size: 12px;
+              padding: 15px;
+            }
+          }
+          #brewery-rating-bar {
+            width: 100%;
+            border-top: 1px solid rgb(231, 231, 231);
+            border-left: 1px solid rgb(231, 231, 231);
             color: gray;
             font-size: 12px;
             padding: 15px;
           }
-          #abv {
-            border-right: 1px solid rgb(231, 231, 231);
-          }
-          #ibu {
-            border-right: 1px solid rgb(231, 231, 231);
-          }
-          #beer-rating-bar {
-            width: 20%;
-            border-right: 1px solid rgb(231, 231, 231);
-          }
-          #beer-total-ratings {
+          #brewery-total-beers {
             border-right: 1px solid rgb(231, 231, 231);
           }
 

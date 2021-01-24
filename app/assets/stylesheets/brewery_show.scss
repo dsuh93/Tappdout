@@ -1,0 +1,30 @@
+.brewery-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  margin-top: 20px;
+  padding: 20px;
+  width: 500px;
+  background-color: rgb(250, 250, 250);
+  font-weight: bold;
+  .brew-info-row-1 {
+    display: flex;
+    #bw-row-1-img {
+      padding: 0 5px 0 0;
+      margin-bottom: 10px; 
+      height: 60px;
+      width: 60px;
+    }
+    #bw-row-1-details {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+      padding-right: 15px;
+      height: fit-content;
+      width: fit-content;
+    }
+    #bw-row-1-stats {
+      
+    }
+  }
+}

@@ -266,6 +266,7 @@
       display: flex;
       justify-content: center;
       border: lightgray 2px solid;
+      border-radius: 3px;
       .icon {
         position: relative;
         top: 2px;
@@ -290,6 +291,7 @@
       padding-left: 15px;
       border-style: none;
       outline: none;
+      border-radius: 3px;
       // border: lightgray 2px solid;
     }
 

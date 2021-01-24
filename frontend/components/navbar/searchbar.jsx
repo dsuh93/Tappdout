@@ -19,11 +19,12 @@ class SearchBar extends React.Component {
       <div className="search-bar">
         <input
           className="search-bar-input"
-          defaultValue="search for beers and breweries"
+          placeholder="Find a brewery or bar..."
           type="text"
           ref={this.state.keyword}
           onChange={this.update("keyword")}
         />
+        {/* {probably will need to put a searchIndexContainer here to check against the state} */}
       </div>
     )
   }
