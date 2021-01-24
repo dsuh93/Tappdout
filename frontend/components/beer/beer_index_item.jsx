@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class BeerIndexItem extends React.Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class BeerIndexItem extends React.Component {
     return (
       <div className="beer-item">
         <div className="beer-item-top">
-          <div className="beer-item-img">image</div>
+          <img className="beer-item-img" src={window.beerPic} alt=""/>
           <div className="beer-item-details">
-            <h3>{beer.beer_name}</h3>
-            <p>{beer.brewery_name}</p>
-            <p>{beer.style}</p>
-            <p>{beer.description}</p>
+            <Link id="beer-item-name" to={`/beers/${beer.id}`}>{beer.beer_name}</Link>
+            <Link id="beer-item-brewery" to={`/breweries/${beer.brewery.id}`}>{beer.brewery.brewery_name}</Link>
+            <p id="beer-item-style">{beer.style}</p>
+            <p id="beer-item-description">{beer.description}</p>
           </div>
           <button className="beer-item-btn">checkin-button</button>
         </div>

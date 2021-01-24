@@ -27,8 +27,8 @@ class BeerIndex extends React.Component {
           <div className="beers-tag tag">Beers</div>
           <div className="breweries-tag tag">Breweries</div>
         </div>
-        <div className="beer-index-p">
-          <p>The list shows the top beers, based on our weighted average formula, which effectively rates all beers against each-other. A beer must have 150 ratings or more to qualify for this list. For more information on our rating system, please view our ratings explainer.</p>
+        <div className="beer-index-p-container">
+          <p className="beer-index-p">The list shows the top beers, based on our weighted average formula, which effectively rates all beers against each-other. A beer must have 150 ratings or more to qualify for this list. For more information on our rating system, please view our ratings explainer.</p>
         </div>
         <ul className="beer-index">
           {beerIndexItem}
