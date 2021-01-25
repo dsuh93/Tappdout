@@ -22,7 +22,7 @@ class BreweryIndex extends React.Component {
 
     return (
       <div className="brewery-index-container">
-        <div className="brewery-index-title">Top Rated Beers</div>
+        <div className="brewery-index-title">Top Rated Breweries</div>
         <div className="brewery-index-tags">
           <Link to='/beers' className="beers-tag tag">Beers</Link>
           <Link to='/breweries' className="breweries-tag tag">Breweries</Link>

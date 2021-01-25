@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     const display = this.props.currentUser ? (
       <div className="navbar-logout">
         {/* <p>Hello, {this.props.currentUser.username}</p> */}
-        <button className="navbar-logout-btn" onClick={() => this.props.logout()}>Log Out</button>
+        <a className="navbar-logout-btn" onClick={() => this.props.logout()}>Log Out</a>
       </div>
     ) : ("")
 

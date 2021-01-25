@@ -8,7 +8,7 @@ export const fetchBreweries = () => (
 export const fetchBrewery = (breweryId) => (
   $.ajax({
     method: "GET",
-    url: `/api/breweries${breweryId}`
+    url: `/api/breweries/${breweryId}`
   })
 )
 

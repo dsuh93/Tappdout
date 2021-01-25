@@ -25,7 +25,7 @@ const App = () => (
       <AuthRoute exact path='/' component={Splash}/>
       <ProtectedRoute exact path='/beers' component={BeerIndexContainer}/>
       <ProtectedRoute exact path='/breweries' component={BreweryIndexContainer}/>
-      <Route exact path='/breweries/:breweryId' component={BreweryShowContainer}/>
+      <Route path='/breweries/:breweryId' component={BreweryShowContainer}/>
     </Switch>
     <footer>
       <Footer/>

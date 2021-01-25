@@ -1,30 +1,76 @@
-.brewery-info {
+.loading {
   display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  margin-top: 20px;
-  padding: 20px;
-  width: 500px;
-  background-color: rgb(250, 250, 250);
-  font-weight: bold;
-  .brew-info-row-1 {
-    display: flex;
-    #bw-row-1-img {
-      padding: 0 5px 0 0;
-      margin-bottom: 10px; 
-      height: 60px;
-      width: 60px;
-    }
-    #bw-row-1-details {
+  justify-content: center;
+  margin-top: 42px;
+
+}
+
+.brewery-show-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin-top: 42px;
+  // width: fit-content;
+  .brewery-show {
+    .brewery-info {
       display: flex;
       flex-direction: column;
-      padding-bottom: 10px;
-      padding-right: 15px;
-      height: fit-content;
-      width: fit-content;
+      margin-top: 20px;
+      padding: 20px;
+      width: 500px;
+      background-color: rgb(250, 250, 250);
+      font-weight: bold;
+      border: 1px solid black;
+      .brew-info-row-1 {
+        display: flex;
+        #bw-row-1-img {
+          padding: 0 5px 0 0;
+          margin-bottom: 10px; 
+          height: 60px;
+          width: 60px;
+        }
+        #bw-row-1-details {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 10px;
+          padding-right: 15px;
+          height: fit-content;
+          width: fit-content;
+          font-size: 18px;
+    
+        }
+        #bw-row-1-stats {
+          display: flex;
+          flex-wrap: wrap;
+          width: 200px;
+        }
+      }
+      .brew-info-row-2 {
+        #star {
+          width: 15px;
+          height: 15px;
+        }
+      }
+      .brew-info-row-3 {
+        display: flex;
+        .bw-ext-links {
+          #fb, #insta, #website {
+            width: 25px;
+          }
+        }
+      }
     }
-    #bw-row-1-stats {
-      
+  }
+  
+  .add-beer-btn-container {
+    margin-left: 50px;
+    width: fit-content;
+    #add-beer-btn {
+      text-decoration: none;
+      color: rgb(216, 140, 0);
     }
   }
 }
+
+
