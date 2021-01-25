@@ -3,25 +3,32 @@ import { Link } from 'react-router-dom';
 
 class BeerShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBeer(this.props.beerId)
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.deleteBeer(this.props.beerId)
+      .then( () => this.props.history.push('/beers'))
   }
 
   render() {
     const beer = this.props.beer;
+    const beerId = this.props.beerId;
     if(!this.props.beer) {
-      debugger
+
       return (
         <div>
           Fetching Beer...
         </div>
       )
     } else {
-      debugger
       return (
         <div className="brewery-show-container">
           <div className="brewery-show">
@@ -59,7 +66,9 @@ class BeerShow extends React.Component {
             </div>
           </div>
           <div className="add-beer-btn-container">
-            <Link id="add-beer-btn" to={`/beers/:beerId/edit`}>Edit this beer!</Link>
+            <Link id="add-beer-btn" to={`/beers/${beerId}/edit`}>Edit this beer!</Link>
+            <br/>
+            <Link id="add-beer-btn" onClick={this.handleClick} to={`/beers`}>Delete this beer!</Link>
           </div>
         </div>
       )

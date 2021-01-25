@@ -62,7 +62,7 @@ class Splash extends React.Component {
         </div>
 
         <div className="splash-row div-3">
-          <img className="map-bg" src={window.mapBg}/>
+          {/* <img className="map-bg" src={window.mapBg}/> */}
           <img className="phone-map" src="https://untappd.akamaized.net/assets/custom/homepage/images/phone-map.png"/>
           <div className="div-3-text">
             <h1 className="div-3-h1">Explore nearby popular bars, breweries, and beers.</h1>
