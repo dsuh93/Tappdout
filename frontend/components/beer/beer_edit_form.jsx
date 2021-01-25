@@ -1,28 +1,28 @@
 import React from 'react';
 
-class BeerForm extends React.Component {
+class BeerEditForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      beer_name: "",
-      brewery_id: this.props.match.params.breweryId,
-      abv: "",
-      ibu: "",
-      style: "",
-      description: "" 
-    }
+    debugger
+    this.state = this.props.beer;
+    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchBrewery(this.props.match.params.breweryId)
+    debugger
+    this.props.fetchBeer(this.props.beerId)
+    if (!this.state) {
+      debugger
+      this.setState(this.props.beer);
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const beer = Object.assign({}, this.state)
-    this.props.createBeer(beer)
-      .then(() => this.props.history.push(`/breweries/${this.props.match.params.breweryId}`))
+    const beer = Object.assign({}, this.state);
+    this.props.updateBeer(beer)
+      .then(() => this.props.history.push(`/beers/${this.props.match.params.beerId}`))
   }
 
   update(key) {
@@ -36,57 +36,48 @@ class BeerForm extends React.Component {
     }
   }
 
+
+
   render() {
-    const brewery = this.props.brewery;
-    if (!this.props.brewery) {
+    const beer = this.state;
+    if(!beer) {
+      debugger
       return (
         <div className="loading">
-          Loading...
+          Fetching Form...
         </div>
       )
     } else {
+      debugger
       return (
         <div className="beer-form-container">
           <div className="beer-form-instructions">
-            <h1>Add New Beer</h1>
-            <p>Use this form to add a new beer.</p>
-            <p id="ul-title">Beer Creation Guidelines</p>
-            <ul>
-              <li>Don't include the brewery in the beer name.</li>
-              <li>Only add the vintage year if the year is part of the label artwork. "Bottled On" and "Best Before" dates are not valid for this.</li>
-              <li>Please make your beer name proper case.</li>
-              <li>Do not create a beer that are blends of 2 or more beers. This goes for any beers that are blended at a Bar/Brewery after kegging.</li>
-              <li>Give your homebrew an original name, don't use another name for beer that is commerical to avoid confusion.</li>
-              <li>For homebrews, please create your own brewery name, do not use another Homebrewery that has already been created that isn't your brewery.</li>
-              <li>Homebrew clones are not allowed. Always give your beer a unique name - do not use the name of the kit or the recipe.</li>
-              <li>Please do not add non-supported drinks (Wine, Water, etc) to Untappd. You can find out what drinks are supported here.</li>
-              <li>Have more questions about more our Beer Naming Standards? Please read this guide.</li>
-              <li>Please note that by not following these guidelines may results in revoking of your Beer Creation privileges.</li>
-            </ul>
+            <h1>Propose an Edit</h1>
+            <p>Did you notice something incorrect with the details of this beer? Help us out by proposing an edit. Once submitted, our team will review and make the change if necessary.</p>
           </div>
           <form  onSubmit={this.handleSubmit} className="beer-form">
             <label>BEER NAME</label>
               <input type="text"
-                value={this.state.beer_name}
+                value={beer.beer_name}
                 onChange={this.update("beer_name")}
               />
             <label>BREWERY NAME</label>
             <input type="text"
-                value={this.props.brewery.brewery_name}
+                value={beer.brewery_name}
                 disabled
               />
             <div className="beer-form-3">
               <div>
                 <label>ABV</label>
                   <input type="number"
-                    value={this.state.abv}
+                    value={beer.abv}
                     onChange={this.update("abv")}
                   />
               </div>
               <div>
                 <label>IBU</label>
                 <input type="number"
-                    value={this.state.ibu}
+                    value={beer.ibu}
                     onChange={this.update("ibu")}
                   />
               </div>
@@ -138,10 +129,10 @@ class BeerForm extends React.Component {
             </div>
             <label>DESCRIPTION</label>
               <textarea cols="30" rows="5"
-                value={this.state.description}
+                value={beer.description}
                 onChange={this.update("description")}
               ></textarea>
-            <button className="beer-form-btn">Add New Beer</button>
+            <button className="beer-form-btn">Edit Beer</button>
           </form>
         </div>
       )
@@ -149,4 +140,5 @@ class BeerForm extends React.Component {
   }
 }
 
-export default BeerForm;
+export default BeerEditForm;
+

@@ -6,14 +6,11 @@ import {
 
 const BeersReducer = ( state = {}, action = {}) => {
   Object.freeze(state);
-  debugger
   switch (action.type) {
     case RECEIVE_ALL_BEERS:
       return action.beers;
     case RECEIVE_BEER:
-      return Object.assign(
-        {},
-        { [action.beer.id]: action.beer }
+      return Object.assign({}, state, { [action.beer.id]: action.beer }
       )
     case REMOVE_BEER:
       const newState = Object.assign({}, state);

@@ -20,13 +20,13 @@ const removeBeer = beerId => ({
 export const fetchBeers = () => dispatch => BeerAPIUtil.fetchBeers()
   .then( beers => dispatch(receiveAllBeers(beers)));
 
-export const fetchBeer = (beer) => dispatch => BeerAPIUtil.fetchBeer(beer)
+export const fetchBeer = (beerId) => dispatch => BeerAPIUtil.fetchBeer(beerId)
   .then( beer => dispatch(receiveBeer(beer)));
 
 export const createBeer = (beer) => dispatch => BeerAPIUtil.createBeer(beer)
   .then( beer => dispatch(receiveBeer(beer)));
 
-export const updateBeers = (beer) => dispatch => BeerAPIUtil.updateBeer(beer)
+export const updateBeer = (beer) => dispatch => BeerAPIUtil.updateBeer(beer)
   .then( beer => dispatch(receiveBeer(beer)));
 
 export const deleteBeer = (beerId) => dispatch => BeerAPIUtil.deleteBeer(beerId)
