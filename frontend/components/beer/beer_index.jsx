@@ -12,6 +12,12 @@ class BeerIndex extends React.Component {
   }
 
   render() {
+    if (!this.props.beers) {
+      return (
+        <img className="loading" src={window.loader}/>
+      )
+    }
+
     const beerIndexItem = this.props.beers.map( beer => {
       return (
         <li key={beer.beer_name} className="beer-item-container">
@@ -19,7 +25,7 @@ class BeerIndex extends React.Component {
         </li>
       )
     })
-
+    debugger
     return (
       <div className="beer-index-container">
         <div className="beer-index-title">Top Rated Beers</div>

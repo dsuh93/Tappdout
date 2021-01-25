@@ -37,7 +37,7 @@ class BeerEditForm extends React.Component {
     if(!beer && !this.props.beer) {
       return (
         <div className="loading">
-          Fetching Form...
+          <img src={window.loader}/>
         </div>
       )
     } else {
