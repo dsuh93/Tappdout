@@ -6,6 +6,7 @@ import LoginFormContainer from './auth/login_form_container';
 import SignupFormContainer from './auth/signup_form_container';
 import HomeContainer from './home/home_container';
 import BeerIndexContainer from './beer/beer_index_container';
+import BeerShowContainer from './beer/beer_show_container';
 import BreweryIndexContainer from './brewery/brewery_index_container';
 import BreweryShowContainer from './brewery/brewery_show_container';
 import BeerFormContainer from './beer/beer_form_container';
@@ -24,6 +25,7 @@ const App = () => (
       <AuthRoute path='/login' component={LoginFormContainer}/>
       <AuthRoute path='/signup' component={SignupFormContainer}/>
       <ProtectedRoute path='/home' component={HomeContainer}/>
+      <ProtectedRoute exact path='/beers/:beerId' component={BeerShowContainer}/>
       <ProtectedRoute exact path='/beers' component={BeerIndexContainer}/>
       <ProtectedRoute exact path='/breweries' component={BreweryIndexContainer}/>
       <ProtectedRoute exact path='/breweries/:breweryId' component={BreweryShowContainer}/>

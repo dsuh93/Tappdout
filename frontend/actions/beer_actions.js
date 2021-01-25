@@ -9,11 +9,11 @@ const receiveAllBeers = beers => ({
   beers
 });
 const receiveBeer = beer => ({
-  type: RECEIVE_ALL_BEERS,
+  type: RECEIVE_BEER,
   beer
 });
 const removeBeer = beerId => ({
-  type: RECEIVE_ALL_BEERS,
+  type: REMOVE_BEER,
   beerId
 });
 
