@@ -1,5 +1,4 @@
 import * as BeerAPIUtil from '../util/beer_api_util';
-import { RECEIVE_BREWERY } from './brewery_actions';
 
 export const RECEIVE_ALL_BEERS = "RECEIVE_ALL_BEERS";
 export const RECEIVE_BEER = "RECEIVE_BEER";
