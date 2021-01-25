@@ -1,5 +1,8 @@
 .home-main-div {
-  background-color: red;
-  // position: relative;
-  top: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+  border: 1px solid black;
 }

@@ -1,0 +1,24 @@
+.beer-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin-top: 42px;
+  border: 1px solid black;
+  .beer-form-instructions, .beer-form {
+    background-color: white;
+    padding: 20px;
+  }
+  .beer-form-instructions {
+    
+    margin-top: 15px;
+    width: 400px;
+  }
+  .beer-form {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}

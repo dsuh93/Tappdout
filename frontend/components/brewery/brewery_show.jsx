@@ -13,6 +13,8 @@ class BreweryShow extends React.Component {
   }
 
   render() {
+    //need to add a conditional to render one component over another, checkins vs beers
+    //in order to render beers list, use brewery.beers
     const brewery = this.props.brewery;
     
     if (!this.props.brewery) {
@@ -30,22 +32,22 @@ class BreweryShow extends React.Component {
               <div className="brew-info-row-1">
                 <img id="bw-row-1-img"src={window.breweryPic}/>
                 <div id="bw-row-1-details">
-                  <h3>{brewery.brewery_name}</h3>
-                  <p>{brewery.location ? brewery.location : ""}</p>
-                  <p>{brewery.brewery_type ? brewery.brewery_type : ""}</p>
+                  <h3 id="bw-name">{brewery.brewery_name}</h3>
+                  <p id="bw-location">{brewery.location}</p>
+                  <p id="bw-type">{brewery.brewery_type}</p>
                 </div>
                 <div id="bw-row-1-stats">
-                  <div><p>Total</p><p>number</p></div>
-                  <div><p>Unique</p><p>number</p></div>
-                  <div><p>Monthly</p><p>number</p></div>
-                  <div><p>You</p>pnumber</div>
+                  <div id="total"><p>TOTAL</p><p>#</p></div>
+                  <div id="unique"><p>UNIQUE</p><p>#</p></div>
+                  <div id="monthly"><p>MONTHLY</p><p>#</p></div>
+                  <div id="you"><p>YOU</p>#</div>
                 </div>
               </div>
               <div className="brew-info-row-2">
-                <div id="bw-row-2-ratings-bar"></div>
-                <p id="bw-row-2-total-ratings"></p>
-                <p id="bw-row-2-total-beers"></p>
-                <img id="star" src={window.star}/>
+                <div id="bw-row-2-ratings-bar">ratings bar</div>
+                <div><p id="bw-row-2-total-ratings">Number Ratings</p></div>
+                <div><a id="bw-row-2-total-beers">{brewery.beers.length} Beers</a></div>
+                <div><img id="star" src={window.star}/></div>
               </div>
               <div className="brew-info-row-3">
                 <p className="bw-info-description">Brewery Description</p>
@@ -56,13 +58,13 @@ class BreweryShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div>images go here</div>
+            <div className="brew-show-imgs">images go here</div>
             <div className="brewery-checkins">
               <BreweryCheckins/>
             </div>
           </div>
           <div className="add-beer-btn-container">
-            <Link id="add-beer-btn" to="/beer/new">Add a New Beer!</Link>
+            <Link id="add-beer-btn" to={`/breweries/${brewery.id}/new_beer`}>Add a New Beer!</Link>
           </div>
         </div>
       )
