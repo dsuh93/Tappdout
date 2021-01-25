@@ -1,4 +1,8 @@
 .splash-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   .splash-row-1 {
     position: relative;
 
@@ -20,7 +24,8 @@
         font-size: 12px;
         font-weight: 600;
         text-decoration: none;
-        color: white
+        color: white;
+        transition: 0.5s;
       }
 
       .auth-bar-link:hover {
