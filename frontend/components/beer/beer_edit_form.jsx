@@ -3,19 +3,13 @@ import React from 'react';
 class BeerEditForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = this.props.beer;
-    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBeer(this.props.beerId)
-    if (!this.state) {
-      debugger
-      this.setState(this.props.beer);
-    }
+      .then( () => this.setState(this.props.beer))
   }
 
   handleSubmit(e) {
@@ -40,15 +34,13 @@ class BeerEditForm extends React.Component {
 
   render() {
     const beer = this.state;
-    if(!beer) {
-      debugger
+    if(!beer && !this.props.beer) {
       return (
         <div className="loading">
           Fetching Form...
         </div>
       )
     } else {
-      debugger
       return (
         <div className="beer-form-container">
           <div className="beer-form-instructions">
@@ -58,26 +50,26 @@ class BeerEditForm extends React.Component {
           <form  onSubmit={this.handleSubmit} className="beer-form">
             <label>BEER NAME</label>
               <input type="text"
-                value={beer.beer_name}
+                value={beer ? beer.beer_name : this.props.beer.beer_name}
                 onChange={this.update("beer_name")}
               />
             <label>BREWERY NAME</label>
             <input type="text"
-                value={beer.brewery_name}
+                value={beer ? beer.brewery_name : this.props.beer.brewery_name}
                 disabled
               />
             <div className="beer-form-3">
               <div>
                 <label>ABV</label>
                   <input type="number"
-                    value={beer.abv}
+                    value={beer ? beer.abv : this.props.beer.abv}
                     onChange={this.update("abv")}
                   />
               </div>
               <div>
                 <label>IBU</label>
                 <input type="number"
-                    value={beer.ibu}
+                    value={beer ? beer.ibu : this.props.beer.ibu}
                     onChange={this.update("ibu")}
                   />
               </div>
@@ -129,7 +121,7 @@ class BeerEditForm extends React.Component {
             </div>
             <label>DESCRIPTION</label>
               <textarea cols="30" rows="5"
-                value={beer.description}
+                value={beer ? beer.description : this.props.beer.description}
                 onChange={this.update("description")}
               ></textarea>
             <button className="beer-form-btn">Edit Beer</button>
