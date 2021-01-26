@@ -1,0 +1,182 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+  padding: 500px 0;
+
+}
+
+.beer-show-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+  // width: fit-content;
+  .beer-show {
+    
+    .beer-info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 15px;
+      width: 500px;
+      background-color: rgb(250, 250, 250);
+      font-weight: bold;
+      font-weight: 400;
+      color: gray;
+      box-shadow: 0 1px 5px 0.5px rgb(231, 231, 231),
+        0 0 0 0 rgb(231, 231, 231);
+      .beer-info-row-1 {
+        display: flex;
+        #br-row-1-img {
+          padding: 0 5px 0 0;
+          margin-bottom: 10px; 
+          height: 60px;
+          width: 60px;
+        }
+        #br-row-1-details {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 10px;
+          padding-right: 15px;
+          height: fit-content;
+          width: 250px;
+          font-size: 18px;
+          h3, p {
+            font-weight: 400;
+            padding: 3px 0;
+          }
+          h3 {
+            font-size: 22px;
+            color: black;
+          }
+          #br-bw-name {
+            font-size: 15px;
+            text-decoration: none;
+            color: rgb(216, 140, 0);
+          }
+          #br-type {
+            font-size: 10px;
+          }
+        }
+        #br-row-1-stats {
+          display: flex;
+          flex-wrap: wrap;
+          width: 150px;
+          font-size: small;
+          margin-left: 30px;
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            padding: 3px 10px 10px 3px;
+          }
+          #monthly, #you {
+            border-top: 1px solid rgb(231, 231, 231);
+          }
+          #unique, #you {
+            border-left: 1px solid rgb(231, 231, 231);
+          }
+        }
+      }
+      .beer-info-row-2 {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px;
+        border-top: 1px solid rgb(231, 231, 231);
+        border-bottom: 1px solid rgb(231, 231, 231);
+        font-size: 15px;
+        div {
+          padding: 5px 15px;
+        }
+        div {
+          border-right: 1px solid rgb(231, 231, 231);
+        }
+        #br-row-2-num-ratings {
+          border-right: none;
+        }
+      }
+      .beer-info-row-3 {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        .bw-ext-links {
+          
+          .beer-show-checkin-btn {
+
+            #checkin-tag {
+
+            }
+            #checkin-tag-tri {
+
+            }
+            #checkin-tag-txt {
+
+            }
+          }
+        }
+      }
+    }
+
+    .beer-show-imgs {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .beer-checkins {
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 1px 5px 0.5px rgb(231, 231, 231),
+        0 0 0 0 rgb(231, 231, 231);
+      // .br-show-chk-h1 {
+      //   padding-bottom: 10px;
+      //   border-bottom: 1px solid rgb(231, 231, 231);
+      // }
+      // .br-chk-items {
+      //   padding: 10px 0;
+      // }
+    }
+  }
+  
+  .edit-beer-btn-container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    width: fit-content;
+    height: 100px;
+    #edit-beer-btn {
+      width: 100%;
+      transition: 0.5s;
+      padding: 10px;
+      text-decoration: none;
+      color: rgb(216, 140, 0);
+    }
+    #edit-beer-btn:hover {
+      transition: 0.5s;
+      background-color: gold;
+      color: white;
+      border-radius: 4px;
+    }
+    #delete-beer-btn {
+      width: 100%;
+      transition: 0.5s;
+      padding: 10px;
+      text-decoration: none;
+      color: rgb(216, 140, 0);
+    }
+    #delete-beer-btn:hover {
+      transition: 0.5s;
+      background-color: gold;
+      color: white;
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import BeerCheckins from './beer_checkins';
 import { Link } from 'react-router-dom';
 
 class BeerShow extends React.Component {
@@ -29,45 +30,52 @@ class BeerShow extends React.Component {
       )
     } else {
       return (
-        <div className="brewery-show-container">
-          <div className="brewery-show">
-            <div className="brewery-info">
-              <div className="brew-info-row-1">
-                <img id="bw-row-1-img"src={window.beerPic}/>
-                <div id="bw-row-1-details">
-                  <h3 id="bw-name">{beer.beer_name}</h3>
-                  <p id="bw-location">{beer.brewery_name}</p>
-                  <p id="bw-type">{beer.style}</p>
+        <div className="beer-show-container">
+          <div className="beer-show">
+            <div className="beer-info">
+              <div className="beer-info-row-1">
+                <img id="br-row-1-img"src={window.beerPic}/>
+                <div id="br-row-1-details">
+                  <h3 id="br-name">{beer.beer_name}</h3>
+                  <Link to={`/breweries/${beer.brewery.id}`} id="br-bw-name">{beer.brewery.brewery_name}</Link>
+                  <p id="br-type">{beer.style}</p>
                 </div>
-                <div id="bw-row-1-stats">
+                <div id="br-row-1-stats">
                   <div id="total"><p>TOTAL</p><p>#</p></div>
                   <div id="unique"><p>UNIQUE</p><p>#</p></div>
                   <div id="monthly"><p>MONTHLY</p><p>#</p></div>
                   <div id="you"><p>YOU</p>#</div>
                 </div>
               </div>
-              <div className="brew-info-row-2">
-                <div id="bw-row-2-ratings-bar">{beer.abv}% ABV</div>
-                <div><p id="bw-row-2-total-ratings">{beer.ibu ? `${beer.ibu} IBU` : `No IBU`}</p></div>
-                <div><a id="bw-row-2-total-beers">Ratings Bar</a></div>
-                <div><p>num Ratings</p></div>
+              <div className="beer-info-row-2">
+                <div id="br-row-2-ratings-bar">{beer.abv}% ABV</div>
+                <div><p id="br-row-2-total-ratings">{beer.ibu ? `${beer.ibu} IBU` : `No IBU`}</p></div>
+                <div><p id="br-row-2-total-beers">Ratings Bar</p></div>
+                <div id="br-row-2-num-ratings"><p>num Ratings</p></div>
               </div>
-              <div className="brew-info-row-3">
-                <p className="bw-info-description">{beer.description}</p>
-                <div className="bw-ext-links">
-                  checkin-button goes here
+              <div className="beer-info-row-3">
+                <p className="br-info-description">{beer.description}</p>
+                <div className="br-ext-links">
+                  <button className="beer-show-checkin-btn">
+                    <div id="checkin-tag" className="checkin-tag hidden">
+                      <div id="checkin-tag-tri"></div>
+                      <div id="checkin-tag-txt">Check-in this Beer</div>
+                    </div>
+                  </button>
+                  <div className="checkmark">
+                    <div className="checkmark-stem"></div>
+                    <div className="checkmark-kick"></div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="brew-show-imgs">images go here</div>
-            <div className="brewery-checkins">
-              show checkins here
-            </div>
+            <div className="beer-show-imgs">images go here</div>
+            <BeerCheckins/>
           </div>
-          <div className="add-beer-btn-container">
-            <Link id="add-beer-btn" to={`/beers/${beerId}/edit`}>Edit this beer!</Link>
+          <div className="edit-beer-btn-container">
+            <Link id="edit-beer-btn" to={`/beers/${beerId}/edit`}>Edit this beer!</Link>
             <br/>
-            <Link id="add-beer-btn" onClick={this.handleClick} to={`/beers`}>Delete this beer!</Link>
+            <Link id="delete-beer-btn" onClick={this.handleClick} to={`/beers`}>Delete this beer!</Link>
           </div>
         </div>
       )
