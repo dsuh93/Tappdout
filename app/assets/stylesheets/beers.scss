@@ -82,6 +82,7 @@
         height: fit-content;
         width: 100%;
         .beer-item-top {
+          position: relative;
           display: flex;
           padding-bottom: 10px;
           .beer-item-img {
@@ -98,12 +99,14 @@
             height: fit-content;
             width: 310px;
             #beer-item-name {
+              width:fit-content;
               color: rgb(216, 140, 0);
               text-decoration: none;
               font-size: 17px;
               padding-bottom: 5px;
             }
             #beer-item-brewery {
+              width: fit-content;
               color: rgb(216, 140, 0);
               text-decoration: none;
               font-size: 13px;
@@ -120,11 +123,51 @@
               font-size: 12px;
             }
           }
-          .beer-item-btn {
-            font-size: 10px;
+          .beer-item-checkin-btn {
+            border: none;
+            background-color: gold;
             width: 50px;
             height: 50px;
             margin: 15px;
+          }
+          .beer-item-checkin-btn:hover {
+            cursor: pointer;
+            background-color: rgb(255, 196, 0);
+          }
+          .checkmark {
+            background: none !important;
+            pointer-events: none;
+            position: absolute;
+            top: 25px;
+            right: 31px;
+            // border: 1px solid black;
+            display: inline-block;
+            width: 15px;
+            height: 24px;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            .checkmark-stem {
+              // background: none !important;
+              pointer-events: none;
+              position: absolute;
+              width: 7px;
+              height: 24px;
+              background-color: white;
+              right: 0;
+              
+            }
+            .checkmark-kick {
+              // background: none !important;
+              pointer-events: none;
+              border-right: 0.5px solid white;
+              position: absolute;
+              width: 7px;
+              height: 8px;
+              background-color: white;
+              right: 7px;
+              top: 16px;
+            }
           }
         }
         .beer-item-bottom {
