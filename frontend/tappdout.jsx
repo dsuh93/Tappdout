@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 
 //test imports
-import * as SessionAPIUtil from './util/session_api_util';
-import * as BreweriesAPIUtil from './util/brewery_api_util';
+// import * as SessionAPIUtil from './util/session_api_util';
+// import * as BreweriesAPIUtil from './util/brewery_api_util';
+import * as BeersAPIUtil from './util/beer_api_util';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
 
@@ -29,6 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   //for testing, don't forget to delete these later
+  //testing beer_api_util ajax fxs
+  window.fetchBeers = BeersAPIUtil.fetchBeers;
+  window.fetchBeer = BeersAPIUtil.fetchBeer;
+  window.createBeer = BeersAPIUtil.createBeer;
+  window.updateBeer = BeersAPIUtil.updateBeer;
+  window.deleteBeer = BeersAPIUtil.deleteBeer;
+
+
   //testing session_api_util ajax fxs
   // window.login = SessionAPIUtil.login;
   // window.signup = SessionAPIUtil.signup;
@@ -43,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
 
   //testing for external brewery db
-  window.breweryDBGet = SessionAPIUtil.breweryDBGet;
+  // window.breweryDBGet = SessionAPIUtil.breweryDBGet;
 
   // const store = configureStore();
   const root = document.getElementById('root');

@@ -22,7 +22,6 @@ class BeerShow extends React.Component {
     const beer = this.props.beer;
     const beerId = this.props.beerId;
     if(!this.props.beer) {
-
       return (
         <div>
           Fetching Beer...
