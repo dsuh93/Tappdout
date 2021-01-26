@@ -55,7 +55,7 @@ class BeerEditForm extends React.Component {
               />
             <label>BREWERY NAME</label>
             <input type="text"
-                value={beer ? beer.brewery_name : this.props.beer.brewery_name}
+                value={beer ? beer.brewery.brewery_name : this.props.beer.brewery_name}
                 disabled
               />
             <div className="beer-form-3">
@@ -77,16 +77,19 @@ class BeerEditForm extends React.Component {
                 <label>STYLE</label>
                   <select id="beer-form-style"
                     type="text"
+                    value={beer ? beer.style : this.props.beer.style}
                     onChange={this.update("style")}>
-                      <option value>Select a Style</option>
+                      <option value={beer ? beer.style : this.props.beer.style}>{beer ? beer.style : this.props.beer.style}</option>
                       <option value="American Wild Ale">American Wild Ale</option>
                       <option value="Belgian Blonde">Belgian Blonde</option>
                       <option value="Black and Tan">Black and Tan</option>
+                      <option value="Blonde Ale">Blonde Ale</option>
                       <option value="Brown Ale">Brown Ale</option>
                       <option value="Cider">Cider</option>
                       <option value="Dark Ale">Dark Ale</option>
                       <option value="Farmhouse Ale">Farmhouse Ale</option>
                       <option value="Fruit Beer">Fruit Beer</option>
+                      <option value="German Ale">German Ale</option>
                       <option value="Ginger Beer">Ginger Beer</option>
                       <option value="Happoshu">Happoshu</option>
                       <option value="Hard Seltzer">Hard Seltzer</option>
