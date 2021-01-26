@@ -99,11 +99,13 @@ class BeerForm extends React.Component {
                       <option value="American Wild Ale">American Wild Ale</option>
                       <option value="Belgian Blonde">Belgian Blonde</option>
                       <option value="Black and Tan">Black and Tan</option>
+                      <option value="Blonde Ale">Blonde Ale</option>
                       <option value="Brown Ale">Brown Ale</option>
                       <option value="Cider">Cider</option>
                       <option value="Dark Ale">Dark Ale</option>
                       <option value="Farmhouse Ale">Farmhouse Ale</option>
                       <option value="Fruit Beer">Fruit Beer</option>
+                      <option value="German Ale">German Ale</option>
                       <option value="Ginger Beer">Ginger Beer</option>
                       <option value="Happoshu">Happoshu</option>
                       <option value="Hard Seltzer">Hard Seltzer</option>
@@ -134,6 +136,7 @@ class BeerForm extends React.Component {
                       <option value="Wheat Beer">Wheat Beer</option>
                       <option value="Winter Ale">Winter Ale</option>
                   </select>
+                  <div className="select-arrow-down"></div>
               </div>
             </div>
             <label>DESCRIPTION</label>
