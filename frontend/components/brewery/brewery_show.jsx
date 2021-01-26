@@ -8,7 +8,6 @@ class BreweryShow extends React.Component {
   }
 
   componentDidMount() {
-    
     this.props.fetchBrewery(this.props.breweryId)
   }
 
@@ -18,7 +17,6 @@ class BreweryShow extends React.Component {
     const brewery = this.props.brewery;
     
     if (!this.props.brewery) {
-      
       return (
         <div className="loading">
           <h1>Fetching Brewery...</h1>

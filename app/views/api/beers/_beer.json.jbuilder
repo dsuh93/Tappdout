@@ -6,4 +6,5 @@ json.extract! beer,
   :ibu,
   :style,
   :description,
-  :created_at
+  :created_at,
+  :brewery
