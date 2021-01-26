@@ -16,6 +16,7 @@
 User.destroy_all
 Brewery.destroy_all
 Beer.destroy_all
+Checkin.destroy_all
 
 demo_user = User.create!(
   username: "guest",
@@ -24,6 +25,35 @@ demo_user = User.create!(
   last_name: "User",
   email: "guest@email.com"
 )
+
+user1 = User.create!(
+  username: "Strongest Avenger",
+  password: "strongestavenger",
+  first_name: "Thor",
+  last_name: "Odinson",
+  email: "godofthunder@gmail.com"
+)
+user2 = User.create!(
+  username: "Duke Silver",
+  password: "peopleareidiots",
+  first_name: "Ron",
+  last_name: "Swanson",
+  email: "holdmybeer@gmail.com"
+)
+
+checkin1 = Checkin.create!(
+  rating: 5.0,
+  description: "I'm stoppping this just like I stopped the last apocalypse.",
+  user_id: user1.id,
+  beer_id: beer1.id
+)
+checkin2 = Checkin.create!(
+  rating: 1.75,
+  description: "Used to know a Joe, hated him too",
+  user_id: user2.id,
+  beer_id: beer2.id
+)
+
 
 brewery1 = Brewery.create!(
   brewery_name: "10 Barrel Brewing Co.",
@@ -52,7 +82,7 @@ brewery5 = Brewery.create!(
 )
 
 # brewery1
-Beer.create!(
+beer1 = Beer.create!(
   beer_name: "Apocalypse IPA",
   brewery_id: brewery1.id,
   abv: 6.8,
@@ -60,7 +90,7 @@ Beer.create!(
   style: "IPA - American",
   description: "Balanced Hop Forward Flavor"
 )
-Beer.create!(
+beer2 = Beer.create!(
   beer_name: "Joe IPA",
   brewery_id: brewery1.id,
   abv: 6.9,
@@ -68,7 +98,7 @@ Beer.create!(
   style: "IPA - American",
   description: "Bright Citrusy Flavor"
 )
-Beer.create!(
+beer3 = Beer.create!(
   beer_name: "Profuse IPA",
   brewery_id: brewery1.id,
   abv: 6.5,
@@ -76,7 +106,7 @@ Beer.create!(
   style: "IPA - American",
   description: "Juicy Hop Flavor"
 )
-Beer.create!(
+beer4 = Beer.create!(
   beer_name: "Nature Calls",
   brewery_id: brewery1.id,
   abv: 6.5,
@@ -84,7 +114,7 @@ Beer.create!(
   style: "IPA - American",
   description: "Smooth profile of mango, tangerine, and grapefruit"
 )
-Beer.create!(
+beer5 = Beer.create!(
   beer_name: "Pub Beer",
   brewery_id: brewery1.id,
   abv: 5,
@@ -94,35 +124,35 @@ Beer.create!(
 )
 
 # brewery2
-Beer.create!(
+beer6 = Beer.create!(
   beer_name: "101 North Heroine IPA",
   brewery_id: brewery2.id,
   abv: 7.2,
   style: "IPA - American",
   description: "Immodest hop additions throughout the brewing process characterize this distinctive, amber colored NorCal fashioned India Pale Ale."
 )
-Beer.create!(
+beer7 = Beer.create!(
   beer_name: "101 Lookout Stout",
   brewery_id: brewery2.id,
   abv: 6,
   style: "Stout",
   description: "Pitch black beer with a tan head, a bit syrupy with a burnt bitter chocolate flavor and lots of roasted grain."
 )
-Beer.create!(
+beer8 = Beer.create!(
   beer_name: "101 Pecker Pole Pale Ale",
   brewery_id: brewery2.id,
   abv: 5.6,
   style: "Pale Ale",
   description: "Classic Ale that is pleasantly hoppy, very easy to drink and our most popular!"
 )
-Beer.create!(
+beer9 = Beer.create!(
   beer_name: "Heroine India Pale Ale",
   brewery_id: brewery2.id,
   abv: 7.2,
   style: "IPA - American",
   description: "Immodest hop additions throughout the brewing process characterize this distinctive, amber colored NorCal fashioned India Pale Ale."
 )
-Beer.create!(
+beer10 = Beer.create!(
   beer_name: "Hook Tender Honey Brown Ale",
   brewery_id: brewery2.id,
   abv: 5.5,
@@ -131,7 +161,7 @@ Beer.create!(
 )
 
 # brewery3
-Beer.create!(
+beer11 = Beer.create!(
   beer_name: "Boss Pour IPA",
   brewery_id: brewery3.id,
   abv: 7.0,
@@ -139,7 +169,7 @@ Beer.create!(
   style: "IPA - American",
   description: "A soft bitterness from the Nugget and Cascade hops make this is a classic IPA."
 )
-Beer.create!(
+beer12 = Beer.create!(
   beer_name: "Hazy Dreams",
   brewery_id: brewery3.id,
   abv: 6.9,
@@ -147,7 +177,7 @@ Beer.create!(
   style: "IPA - American",
   description: "The aggressively hop forward nose, provided by Nugget and Mosaic, is followed by waves of citrus and tropical fruits from Cascade and Citra."
 )
-Beer.create!(
+beer13 = Beer.create!(
   beer_name: "Secret Safari",
   brewery_id: brewery3.id,
   abv: 5.0,
@@ -155,7 +185,7 @@ Beer.create!(
   style: "IPA - American",
   description: "Citrus and tropical fruits dominate, but dont leave the slight bready malt flavor behind, while its crispness keeps you wanting another sip."
 )
-Beer.create!(
+beer14 = Beer.create!(
   beer_name: "Tiki Life for Me",
   brewery_id: brewery3.id,
   abv: 5.8,
@@ -163,7 +193,7 @@ Beer.create!(
   style: "Wheat Beer",
   description: " Inspired by classic tiki cocktails we used some classic components like pineapple, coconut and almond. "
 )
-Beer.create!(
+beer15 = Beer.create!(
   beer_name: "Mocha Stout",
   brewery_id: brewery3.id,
   abv: 7.0,
@@ -173,35 +203,35 @@ Beer.create!(
 )
 
 # brewery4
-Beer.create!(
+beer16 = Beer.create!(
   beer_name: "Shipwrecked On Sour Island",
   brewery_id: brewery4.id,
   abv: 4.3,
   style: "Sour",
   description: "Island inspired kettle sour with Pineapple & Coconut."
 )
-Beer.create!(
+beer17 = Beer.create!(
   beer_name: "Pineapple Buck Up",
   brewery_id: brewery4.id,
   abv: 4.7,
   style: "German Ale",
   description: "German-style ale matured on real pineapple puree."
 )
-Beer.create!(
+beer18 = Beer.create!(
   beer_name: "Oatie Oats",
   brewery_id: brewery4.id,
   abv: 5.7,
   style: "IPA - American",
   description: "American IPA brewed with oats. Hopped intensely with Amarillo, Citra and Mosaic."
 )
-Beer.create!(
+beer19 = Beer.create!(
   beer_name: "BuckUp",
   brewery_id: brewery4.id,
   abv: 4.7,
   style: "German Ale",
   description: "Delicate malt character, herbal hops, effervescent & quenching."
 )
-Beer.create!(
+beer20 = Beer.create!(
   beer_name: "THANK YOU!",
   brewery_id: brewery4.id,
   abv: 6.6,
@@ -210,35 +240,35 @@ Beer.create!(
 )
 
 # brewery5
-Beer.create!(
+beer21 = Beer.create!(
   beer_name: "Danville IPA",
   brewery_id: brewery5.id,
   abv: 6.2,
   style: "IPA - American",
   description: "Resinous pine and grapefruit from Northwest hops, crisp and clean."
 )
-Beer.create!(
+beer22 = Beer.create!(
   beer_name: "925 Blonde",
   brewery_id: brewery5.id,
   abv: 5.5,
   style: "Blonde Ale",
   description: "Delicate flavors of melon, and strawberry aroma, soft bitterness."
 )
-Beer.create!(
+beer23 = Beer.create!(
   beer_name: "Chux Double IPA",
   brewery_id: brewery5.id,
   abv: 8,
   style: "IPA - American",
   description: "Citrusy-tropical hop aromas, soft malt sweetness."
 )
-Beer.create!(
+beer24 = Beer.create!(
   beer_name: "Hop Magee IPA",
   brewery_id: brewery5.id,
   abv: 7.4,
   style: "IPA - American",
   description: "North East style IPA, juicy, soft, hazy."
 )
-Beer.create!(
+beer25 = Beer.create!(
   beer_name: "Station 31",
   brewery_id: brewery5.id,
   abv: 5,
