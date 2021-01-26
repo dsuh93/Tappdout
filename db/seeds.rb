@@ -41,20 +41,6 @@ user2 = User.create!(
   email: "holdmybeer@gmail.com"
 )
 
-checkin1 = Checkin.create!(
-  rating: 5.0,
-  description: "I'm stoppping this just like I stopped the last apocalypse.",
-  user_id: user1.id,
-  beer_id: beer1.id
-)
-checkin2 = Checkin.create!(
-  rating: 1.75,
-  description: "Used to know a Joe, hated him too",
-  user_id: user2.id,
-  beer_id: beer2.id
-)
-
-
 brewery1 = Brewery.create!(
   brewery_name: "10 Barrel Brewing Co.",
   brewery_type: "Macro Brewery",
@@ -121,6 +107,21 @@ beer5 = Beer.create!(
   ibu: 18,
   style: "IPA - American",
   description: "Pear Character"
+)
+
+
+# checkins for beers 1 and 2 and brewery 1
+checkin1 = Checkin.create!(
+  rating: 5.0,
+  description: "I'm stoppping this just like I stopped the last apocalypse.",
+  user_id: user1.id,
+  beer_id: beer1.id
+)
+checkin2 = Checkin.create!(
+  rating: 1.75,
+  description: "Used to know a Joe, hated him too",
+  user_id: user2.id,
+  beer_id: beer2.id
 )
 
 # brewery2
