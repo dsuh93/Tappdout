@@ -7,7 +7,7 @@ class BreweryCheckins extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="brewery-checkins">
         <div className="bw-show-chk-h1"><h1>Global Recent Activity</h1></div>
         <div className="bw-chk-items">
           Checkin-Item

@@ -57,9 +57,7 @@ class BreweryShow extends React.Component {
               </div>
             </div>
             <div className="brew-show-imgs">images go here</div>
-            <div className="brewery-checkins">
-              <BreweryCheckins/>
-            </div>
+            <BreweryCheckins/>
           </div>
           <div className="add-beer-btn-container">
             <Link id="add-beer-btn" to={`/breweries/${brewery.id}/new_beer`}>Add a New Beer!</Link>
