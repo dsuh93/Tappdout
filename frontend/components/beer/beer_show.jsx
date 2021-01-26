@@ -55,17 +55,15 @@ class BeerShow extends React.Component {
               </div>
               <div className="beer-info-row-3">
                 <p className="br-info-description">{beer.description}</p>
-                <div className="br-ext-links">
-                  <button className="beer-show-checkin-btn">
-                    <div id="checkin-tag" className="checkin-tag hidden">
-                      <div id="checkin-tag-tri"></div>
-                      <div id="checkin-tag-txt">Check-in this Beer</div>
-                    </div>
-                  </button>
-                  <div className="checkmark">
-                    <div className="checkmark-stem"></div>
-                    <div className="checkmark-kick"></div>
+                <button className="beer-item-checkin-btn">
+                  <div id="checkin-tag" className="checkin-tag hidden">
+                    <div id="checkin-tag-tri"></div>
+                    <div id="checkin-tag-txt">Check-in this Beer</div>
                   </div>
+                </button>
+                <div className="checkmark">
+                  <div className="checkmark-stem"></div>
+                  <div className="checkmark-kick"></div>
                 </div>
               </div>
             </div>
