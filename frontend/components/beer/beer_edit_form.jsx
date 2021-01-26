@@ -79,7 +79,7 @@ class BeerEditForm extends React.Component {
                     type="text"
                     value={beer ? beer.style : this.props.beer.style}
                     onChange={this.update("style")}>
-                      <option value={beer ? beer.style : this.props.beer.style}>{beer ? beer.style : this.props.beer.style}</option>
+                      <option value>Select a Style</option>
                       <option value="American Wild Ale">American Wild Ale</option>
                       <option value="Belgian Blonde">Belgian Blonde</option>
                       <option value="Black and Tan">Black and Tan</option>
@@ -120,6 +120,7 @@ class BeerEditForm extends React.Component {
                       <option value="Wheat Beer">Wheat Beer</option>
                       <option value="Winter Ale">Winter Ale</option>
                   </select>
+                  <div className="select-arrow-down"></div>
               </div>
             </div>
             <label>DESCRIPTION</label>
