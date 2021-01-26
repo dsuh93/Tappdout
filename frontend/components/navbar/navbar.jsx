@@ -32,8 +32,8 @@ class NavBar extends React.Component {
             <div className="navbar-links">
               <Link className="navbar-link" to='/home'>The Pub</Link>
               <Link className="navbar-link" to='/beers'>Top Rated</Link>
-              <Link className="navbar-link" to='/home'>Supporter</Link> {/*Deadlinks for now, just take back to home page*/}
-              <Link className="navbar-link" to='/home'>Help</Link> {/*Deadlinks for now, just take back to home page*/}
+              <a href="https://www.linkedin.com/in/david-i-suh" className="navbar-link" to='/home'>LinkedIn</a> {/*Deadlinks for now, just take back to home page*/}
+              <a href="https://github.com/dsuh93" className="navbar-link" to='/home'>Github</a> {/*Deadlinks for now, just take back to home page*/}
             </div>
           </div>
           <div className="navbar-rt">

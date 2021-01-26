@@ -32,7 +32,8 @@
     min-height: 100%;
     min-width: 1024px;
     width: 120%;
-    height: auto;
+    height: 100vh;
+    object-fit: cover;
     z-index: 0;
     opacity: 0.40;
   }
@@ -42,7 +43,7 @@
     flex-direction: column;
     
     align-items: center;
-    width: 420px;
+    width: 550px;
     height: fit-content;
     background-color: white;
     padding: 20px;
@@ -54,8 +55,8 @@
     bottom: 10px;
     .auth-h1 {
       font-family: 'Josefin Sans', sans-serif;
-      padding: 5px;
-      font-size: 40px;
+      padding: 15px 15px 5px 15px;
+      font-size: 55px;
       font-weight: 900;
     }
 
@@ -63,7 +64,7 @@
       font-family: 'Josefin Sans', sans-serif;
       text-align: center;
       color: gray;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.2em;
       z-index: 2;
@@ -71,7 +72,7 @@
   }
 
   .signup-form {
-    width: 420px;
+    width: 100%;
     height: fit-content;
     position: relative;
     top: 10px;
@@ -79,7 +80,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
 
     .signup-form-aside {
       background-color: rgb(253, 245, 150);
@@ -87,58 +88,76 @@
       .aside-p{
         text-align: center;
         color: gray;
-        font-size: 10px;
+        font-size: 13px;
         font-weight: bold;
+        a {
+          text-decoration: none;
+          color:rgb(250, 190, 37)
+        }
       }
     }
 
     .signup-p {
-      font-size: 10px;
-      margin: 10px 20px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 12px;
+      margin: 20px 20px;
     }
 
     .signup-input-container {
-      width: 180px;
-      margin: 10px 5px;
+      width: 230px;
+      height: 30px;
+      margin: 10px 15px;
       padding: 0px 5px;
       position: relative;
       display: flex;
       justify-content: center;
-      border: lightgray 2px solid;
+      border: lightgray 1px solid;
+      border-radius: 4px;
       .icon {
-        position: relative;
-        top: 2px;
-        left: 4px;
+        position: absolute;
+        top: 6px;
+        left: 5px;
         width: 17px;
         height: 17px;
       }
       hr {
         border: lightgray 0.5px solid;
-        position: relative;
-        left: 10px;
+        color: lightgray;
+        position: absolute;
+        left: 34px;
         top: 2px;
-        height: 17px;
+        height: 24px;
         width: 0.5px;
         margin: 0px;
       }
     }
 
     .signup-form-input {
-      width: 150px;
-      padding: 4px 0px;
-      padding-left: 15px;
+      font-size: 15px;
+      position: absolute;
+      left: 45px;
+      top: 0;
+      width: 190px;
+      height: 24px;
+      padding: 2px 0 0 0;
+      // padding-left: 15px;
       border-style: none;
       outline: none;
       // border: lightgray 2px solid;
     }
 
     .pw-input {
-      margin: 30px 5px;
+      margin: 30px 15px;
     }
 
     .signup-tos {
+      display: flex;
+      justify-content: center;
       .signup-tos-p {
-        font-size: 10px;
+        width: 70%;
+        font-size: 11px;
         text-align: center;
         padding-bottom: 20px;
       }
@@ -188,9 +207,10 @@
     // left: 0px;
     // bottom: 0px;
     // right: 0px;
-    min-height: 100%;
-    min-width: 1024px;
-    width: 120%;
+    min-height: 100vh;
+    min-width: 100%;
+    object-fit: cover;
+    width: 100%;
     height: auto;
     z-index: 0;
     opacity: 0.40;
@@ -202,14 +222,14 @@
     .auth-h1 {
       font-family: 'Josefin Sans', sans-serif;
       padding: 5px;
-      font-size: 40px;
+      font-size: 55px;
       font-weight: 900;
     }
 
     .auth-p {
       text-align: center;
       color: gray;
-      font-size: 10px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.2em;
       z-index: 2;
@@ -217,6 +237,7 @@
   }
 
   .demo-btn {
+    width: 85%;
     padding: 10px 66px;
     color: white;
     font-size: 20px;
@@ -231,13 +252,17 @@
   }
 
   .or {
+    display: flex;
+    align-items:center;
+    height: 17px;
+    width: 20px;
+    text-align: center;
     position: relative;
-    top: 10px;
     color: lightgray;
-    font-size: 10px;
-    padding: 5px 4px;
+    font-size: 14px;
+    padding: 5px;
     border: lightgray 3px solid;
-    border-radius: 18px;
+    border-radius: 50%;
   }
 
   .login-form-div {
@@ -245,8 +270,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 280px;
-    height: 400px;
+    width: 343px;
+    height: 525px;
     background-color: white;
     padding: 20px;
     z-index: 2;
@@ -255,6 +280,7 @@
   .login-form {
     position: relative;
     top: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,33 +288,37 @@
     padding: 10px;
 
     .input-container {
+      width: 85%;
+      height: 30px;
       position: relative;
       display: flex;
       justify-content: center;
-      border: lightgray 2px solid;
+      border: lightgray 1px solid;
       border-radius: 3px;
       .icon {
-        position: relative;
-        top: 2px;
+        position: absolute;
+        top: 5px;
         left: 4px;
         width: 17px;
         height: 17px;
       }
       hr {
         border: lightgray 0.5px solid;
-        position: relative;
-        left: 10px;
+        position: absolute;
+        left: 30px;
         top: 2px;
-        height: 17px;
+        height: 23px;
         width: 0.5px;
         margin: 0px;
       }
     }
 
     .login-form-input {
-      width: 190px;
-      padding: 4px 4px;
-      padding-left: 15px;
+      position: absolute;
+      left: 40px;
+      padding: 3px 0 0 5px;
+      width: 230px;
+      height: 24px;
       border-style: none;
       outline: none;
       border-radius: 3px;
@@ -296,6 +326,7 @@
     }
 
     .btn {
+      width: 85%;
       padding: 10px 90px;
       color: white;
       font-size: 15;
@@ -314,12 +345,12 @@
 
   .login-hr {
     border: lightgray 0.5px solid;
-    width: 250px;
+    width: 85%;
     z-index: 2;
   }
 
   .login-form-signup-p {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     color: gray;
   }

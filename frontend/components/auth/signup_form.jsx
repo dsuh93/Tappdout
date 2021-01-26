@@ -25,7 +25,7 @@ class SignupForm extends React.Component {
         .then(() => this.props.history.push('/home'));
     } else {
       this.props.receiveErrors(["Passwords don't match, please try again."]);
-      this.setState({password: ""});
+      this.setState({password: "", repeat: ""});
     }
   }
 
@@ -65,7 +65,7 @@ class SignupForm extends React.Component {
           </ul>
           <form className="signup-form" onSubmit={this.handleSubmit}>
               <div className="signup-form-aside">
-                <p className="aside-p">Are you a brewery that's trying to get added to Untappd, claim and manage your brewery page, or access your brewery account? Check this out first: Getting on Untappd: Brewery Guide</p>
+                <p className="aside-p">Welcome to Tappdout! A project clone of the website Untappd, which you can visit <a href="https://untappd.com/">here</a>!</p>
               </div>
               <p className="signup-p">All fields below are required unless specified.</p>
               <div className="signup-input-container">
@@ -131,13 +131,13 @@ class SignupForm extends React.Component {
                 <input className="signup-form-input"
                   placeholder="Repeat Password"
                   type="password"
-                  value={this.repeat}
+                  value={this.state.repeat}
                   onChange={this.update("repeat")}
                 />
               </div>
             <br/>
               <div className="signup-tos">
-                <p className="signup-tos-p">You must be of legal drinking age in your country to join Untappd. By clicking Create Account, you agree to our Terms of Use and our Privacy Policy</p>
+                <p className="signup-tos-p">You don't have to be of legal drinking age to join Tappdout. However, you must be of legal drinking age to drink.</p>
               </div>
             <br/>
             <button className="btn">Create Account</button>
