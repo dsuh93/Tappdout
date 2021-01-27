@@ -5,7 +5,9 @@ import Root from './components/root';
 //test imports
 // import * as SessionAPIUtil from './util/session_api_util';
 // import * as BreweriesAPIUtil from './util/brewery_api_util';
-import * as BeersAPIUtil from './util/beer_api_util';
+// import * as BeersAPIUtil from './util/beer_api_util';
+// import * as CheckinAPIUtil from './util/checkin_api_util';
+import * as CheckinActions from './actions/checkin_actions';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
 
@@ -24,18 +26,22 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
-
-  
-  
   
   //for testing, don't forget to delete these later
+  //testing Checkin actions 
+  // window.fetchCheckins = CheckinActions.fetchCheckins;
+  // window.fetchCheckin = CheckinActions.fetchCheckin;
+  // window.createCheckin = CheckinActions.createCheckin;
+  // window.deleteCheckin = CheckinActions.deleteCheckin;
+  
+  //testing checkin_api_util ajax fxs
+  
   //testing beer_api_util ajax fxs
-  window.fetchBeers = BeersAPIUtil.fetchBeers;
-  window.fetchBeer = BeersAPIUtil.fetchBeer;
-  window.createBeer = BeersAPIUtil.createBeer;
-  window.updateBeer = BeersAPIUtil.updateBeer;
-  window.deleteBeer = BeersAPIUtil.deleteBeer;
+  // window.fetchBeers = BeersAPIUtil.fetchBeers;
+  // window.fetchBeer = BeersAPIUtil.fetchBeer;
+  // window.createBeer = BeersAPIUtil.createBeer;
+  // window.updateBeer = BeersAPIUtil.updateBeer;
+  // window.deleteBeer = BeersAPIUtil.deleteBeer;
 
 
   //testing session_api_util ajax fxs

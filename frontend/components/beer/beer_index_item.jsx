@@ -14,7 +14,7 @@ class BeerIndexItem extends React.Component {
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
     const newDateFormat = [dateFormat[1], dateFormat[2], yearFormat].join('/');
-    return (      
+    return (
       <div className="beer-item">
         <div className="beer-item-top">
           <img className="beer-item-img" src={window.beerPic} alt=""/>

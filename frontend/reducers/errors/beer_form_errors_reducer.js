@@ -5,7 +5,7 @@ const beerFormErrors = ( state = [], action ) => {
   switch (action.type) {
     case RECEIVE_BEER_ERRORS:
       return action.errors;
-    case RECEIVE_BEER_ERRORS:
+    case RECEIVE_BEER:
       return [];
     default:
       return state;

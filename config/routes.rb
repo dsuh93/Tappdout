@@ -11,6 +11,10 @@
 #                           PATCH  /api/beers/:id(.:format)                                                                 api/beers#update {:format=>:json}
 #                           PUT    /api/beers/:id(.:format)                                                                 api/beers#update {:format=>:json}
 #                           DELETE /api/beers/:id(.:format)                                                                 api/beers#destroy {:format=>:json}
+#              api_checkins GET    /api/checkins(.:format)                                                                  api/checkins#index {:format=>:json}
+#                           POST   /api/checkins(.:format)                                                                  api/checkins#create {:format=>:json}
+#               api_checkin GET    /api/checkins/:id(.:format)                                                              api/checkins#show {:format=>:json}
+#                           DELETE /api/checkins/:id(.:format)                                                              api/checkins#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
