@@ -92,7 +92,10 @@
         font-weight: bold;
         a {
           text-decoration: none;
-          color:rgb(250, 190, 37)
+          color:rgb(255, 183, 0)
+        }
+        a:hover {
+          color:rgb(255, 201, 66)
         }
       }
     }
@@ -359,6 +362,9 @@
     color: darkorange;
     text-decoration: none;
     padding-left: 8px;
+  }
+  .login-form-signup-link:hover {
+    color: rgb(255, 167, 2);
   }
 }
 
