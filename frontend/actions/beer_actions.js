@@ -18,7 +18,7 @@ const removeBeer = beerId => ({
   beerId
 });
 
-const receiveBeerErrors = errors => ({
+export const receiveBeerErrors = errors => ({
   type: RECEIVE_BEER_ERRORS,
   errors
 })
