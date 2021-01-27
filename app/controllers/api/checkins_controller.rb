@@ -22,7 +22,7 @@ class Api::CheckinsController < ApplicationController
   def delete
     @checkin = Checkin.find_by(id: params[:id])
     if @checkin && @checkin.destroy
-      render json: { message: "check-in was deleted"}
+      render json: { message: "check-in was deleted" }
     end
   end
 
