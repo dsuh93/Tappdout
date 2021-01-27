@@ -11,6 +11,7 @@ import BeerEditFormContainer from './beer/beer_edit_form_container';
 import BreweryIndexContainer from './brewery/brewery_index_container';
 import BreweryShowContainer from './brewery/brewery_show_container';
 import BeerFormContainer from './beer/beer_form_container';
+import CheckinShowContainer from './checkin/checkin_show_container';
 import Footer from './footer/footer';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -31,7 +32,8 @@ const App = () => (
       <ProtectedRoute exact path='/beers/:beerId/edit' component={BeerEditFormContainer}/>
       <ProtectedRoute exact path='/breweries' component={BreweryIndexContainer}/>
       <ProtectedRoute exact path='/breweries/:breweryId' component={BreweryShowContainer}/>
-      <ProtectedRoute path='/breweries/:breweryId/new_beer' component={BeerFormContainer}/>
+      <ProtectedRoute exact path='/breweries/:breweryId/new_beer' component={BeerFormContainer}/>
+      <ProtectedRoute exact path='/checkins/:checkinId' component={CheckinShowContainer}/>
     </Switch>
     <footer>
       <Footer/>

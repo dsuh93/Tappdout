@@ -7,8 +7,6 @@
     json.beer do
       json.partial! '/api/beers/beer', beer: checkin.beer
     end
-    json.brewery do
-      checkin.beer.brewery
-    end
+    json.brewery checkin.beer.brewery.brewery_name
   end
 end

@@ -1,8 +1,60 @@
 .home-main-div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 42px;
+  margin-top: 60px;
+  height: fit-content;
+  width: fit-content;
   border: 1px solid black;
+  .checkin-index-container {
+    border: 1px solid brown;
+    height: fit-content;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .checkin-index {
+      padding: 20px;
+      border: 1px solid purple;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      width: 60%;
+      .checkin-index-title {
+        font-size: 25px;
+
+      }
+      .checkin-index-ul {
+        border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        .checkin-index-item-container {
+          border: 1px solid red;
+          width: 100%;
+          height: fit-content;
+          .checkin-index-item {
+            border: 1px solid green;
+            display: flex;
+            flex-direction: column;
+            .checkin-item-row-1 {
+              border: 1px solid pink;
+              img {
+                width: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .home-rt-side {
+    align-self: start;
+    border: 1px solid black;
+    margin-left: 80px;
+    height: fit-content;
+    width: 300px;
+  }
 }
