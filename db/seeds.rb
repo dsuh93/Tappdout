@@ -113,7 +113,7 @@ beer5 = Beer.create!(
 # checkins for beers 1 and 2 and brewery 1
 checkin1 = Checkin.create!(
   rating: 5.0,
-  description: "I'm stoppping this just like I stopped the last apocalypse.",
+  description: "I'm ending this just like I ended the last apocalypse.",
   user_id: user1.id,
   beer_id: beer1.id
 )

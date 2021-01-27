@@ -19,9 +19,4 @@ class Brewery < ApplicationRecord
     through: :beers,
     source: :checkins
 
-  def self.get_beers(brewery)
-      Brewery.select("beers.id")
-        .joins(:beers)
-        .where("beers.brewery_id = ?", brewery.id)
-  end
 end

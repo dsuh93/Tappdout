@@ -8,7 +8,5 @@ class Beer < ApplicationRecord
 
   has_many :checkins,
     foreign_key: :beer_id,
-    class_name: :Beer 
-
-
+    class_name: :Checkin
 end

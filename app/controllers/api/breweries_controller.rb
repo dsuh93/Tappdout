@@ -1,11 +1,11 @@
 class Api::BreweriesController < ApplicationController
   def index
-    @breweries = Brewery.all.includes(:beers)
+    @breweries = Brewery.all
     render :index 
   end
 
   def show
-    @brewery = Brewery.includes(:beers).find_by(id: params[:id])
+    @brewery = Brewery.includes(:beer_checkins).find_by(id: params[:id])
     if @brewery
       render :show
     else
