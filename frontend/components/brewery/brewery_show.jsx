@@ -14,8 +14,6 @@ class BreweryShow extends React.Component {
   render() {
     //need to add a conditional to render one component over another, checkins vs beers
     //in order to render beers list, use brewery.beers
-    const brewery = this.props.brewery;
-    
     if (!this.props.brewery) {
       return (
         <div className="loading">
@@ -23,7 +21,8 @@ class BreweryShow extends React.Component {
         </div>
       )
     } else {
-      const beers = Object.keys(brewery.beers).length
+      const brewery = this.props.brewery;
+      const numBeers = Object.keys(this.props.brewery.beers).length
       return (
         <div className="brewery-show-container">
           <div className="brewery-show">
@@ -45,8 +44,8 @@ class BreweryShow extends React.Component {
               <div className="brew-info-row-2">
                 <div id="bw-row-2-ratings-bar">ratings bar</div>
                 <div><p id="bw-row-2-total-ratings">Number Ratings</p></div>
-                <div><a id="bw-row-2-total-beers">{beers} Beers</a></div>
-                <div id="star-div"><img id="star" src={window.star}/></div>
+                <div><a id="bw-row-2-total-beers">{numBeers} Beers</a></div>
+                <div><img id="star" src={window.star}/></div>
               </div>
               <div className="brew-info-row-3">
                 <p className="bw-info-description">{brewery.description}</p>
