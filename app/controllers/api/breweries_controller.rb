@@ -5,7 +5,7 @@ class Api::BreweriesController < ApplicationController
   end
 
   def show
-    @brewery = Brewery.includes(:beer_checkins).find_by(id: params[:id])
+    @brewery = Brewery.find_by(id: params[:id])
     if @brewery
       render :show
     else
