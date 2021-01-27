@@ -4,8 +4,9 @@ import { createBeer } from '../../actions/beer_actions';
 import { fetchBrewery } from '../../actions/brewery_actions';
 import BeerForm from './beer_form';
 
-const msp = (state , ownProps) => ({
-  brewery: state.entities.breweries[ownProps.match.params.breweryId]
+const msp = ({errors, entities} , ownProps) => ({
+  brewery: entities.breweries[ownProps.match.params.breweryId],
+  errors: errors.beerForm
 })
 
 const mdp = dispatch => ({

@@ -144,8 +144,17 @@
     margin-left: 50px;
     width: fit-content;
     #add-beer-btn {
+      padding: 15px;
+      border-radius: 4px;
+      background-color: white;
       text-decoration: none;
       color: rgb(216, 140, 0);
+      transition: 0.5s;
+    }
+    #add-beer-btn:hover {
+      color: white;
+      background-color: gold;
+      transition: 0.5s;
     }
   }
 }
