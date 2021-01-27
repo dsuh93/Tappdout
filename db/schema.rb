@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_215604) do
+ActiveRecord::Schema.define(version: 2021_01_27_041020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 2021_01_26_215604) do
     t.string "location", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "web_url"
+    t.string "fb_url"
+    t.string "insta_url"
     t.index ["brewery_name"], name: "index_breweries_on_brewery_name", unique: true
     t.index ["brewery_type"], name: "index_breweries_on_brewery_type"
   end

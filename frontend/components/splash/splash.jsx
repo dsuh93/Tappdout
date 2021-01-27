@@ -98,24 +98,16 @@ class Splash extends React.Component {
         </div>
         <div className="splash-row splash-footer">
           <div className="footer-p">
-            <p>Store</p>
-            <p>Breweries</p>
-            <p>Blog</p>
-            <p>Support</p>
-            <p>Careers</p>
-            <p>Terms</p>
-            <p>Privacy</p>
-            <p>Cookie Policy</p>
-            <p>CCPA Notice</p>
-            <p className="footer-p-last">Do Not Sell My Personal Information</p>
+            <p>"I drink to make other people more interesting."</p>
+            <p id="last-p">-Ernest Hemmingway</p>
             <div className="footer-cr-div">
               <p className="footer-cr">© Tappdout, Inc. 2021</p>
             </div>
           </div>
           <div className="footer-logos">
-            <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-twitter.svg"/>
-            <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-facebook.svg"/>
-            <img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-instagram.svg"/>
+            <a href="https://github.com/dsuh93"><img src={window.github}/></a>
+            <a href="https://www.facebook.com/suhinbeom"><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-facebook.svg"/></a>
+            <a href="https://www.instagram.com/daybydaves/"><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-instagram.svg"/></a>
           </div>
         </div>
       </div>

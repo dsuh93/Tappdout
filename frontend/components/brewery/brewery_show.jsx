@@ -23,6 +23,7 @@ class BreweryShow extends React.Component {
         </div>
       )
     } else {
+      const beers = Object.keys(brewery.beers).length
       return (
         <div className="brewery-show-container">
           <div className="brewery-show">
@@ -44,15 +45,15 @@ class BreweryShow extends React.Component {
               <div className="brew-info-row-2">
                 <div id="bw-row-2-ratings-bar">ratings bar</div>
                 <div><p id="bw-row-2-total-ratings">Number Ratings</p></div>
-                <div><a id="bw-row-2-total-beers">{brewery.beers.length} Beers</a></div>
-                <div><img id="star" src={window.star}/></div>
+                <div><a id="bw-row-2-total-beers">{beers} Beers</a></div>
+                <div id="star-div"><img id="star" src={window.star}/></div>
               </div>
               <div className="brew-info-row-3">
-                <p className="bw-info-description">Brewery Description</p>
+                <p className="bw-info-description">{brewery.description}</p>
                 <div className="bw-ext-links">
-                  <a href="#"><img id="fb" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Facebook_logo_36x36.svg" alt=""/></a>
-                  <a href="#"><img id="insta" src="https://i.pinimg.com/originals/31/54/fb/3154fbcd6f2f69a232fe6b8631153a8e.jpg" alt=""/></a>
-                  <a href="#"><img id="website" src={window.link} alt=""/></a>
+                  <a href={brewery.fb_url}><img id="fb" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Facebook_logo_36x36.svg" alt=""/></a>
+                  <a href={brewery.insta_url}><img id="insta" src="https://i.pinimg.com/originals/31/54/fb/3154fbcd6f2f69a232fe6b8631153a8e.jpg" alt=""/></a>
+                  <a href={brewery.web_url}><img id="website" src={window.link} alt=""/></a>
                 </div>
               </div>
             </div>

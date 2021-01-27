@@ -62,13 +62,13 @@
           display: flex;
           flex-wrap: wrap;
           width: 150px;
-          font-size: small;
+          font-size: 10px;
           margin-left: 30px;
           div {
             display: flex;
             flex-direction: column;
             width: 50px;
-            padding: 10px;
+            padding: 3px 10px 10px 3px;
           }
           #monthly, #you {
             border-top: 1px solid rgb(231, 231, 231);
@@ -76,20 +76,28 @@
           #unique, #you {
             border-left: 1px solid rgb(231, 231, 231);
           }
+          #total, #monthly {
+            padding-right: 14px;
+          }
         }
       }
       .brew-info-row-2 {
         display: flex;
-        justify-content: space-around;
-        padding: 5px;
+        justify-content: center;
         border-top: 1px solid rgb(231, 231, 231);
         border-bottom: 1px solid rgb(231, 231, 231);
         font-size: 15px;
         div {
-          padding: 5px 15px;
-        }
-        div, p, a {
+          width: 25%;
+          display: flex;
+          justify-content: center;
+          padding: 12px 15px;
           border-right: 1px solid rgb(231, 231, 231);
+        }
+        #star-div {
+          border: none;
+          width: 10%;
+          margin-left: 10px;
         }
         a {
           text-decoration: none;
@@ -141,11 +149,28 @@
   }
   
   .add-beer-btn-container {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-left: 50px;
     width: fit-content;
+    height: fit-content;
     #add-beer-btn {
+      text-align: center;
+      width: fit-content;
+      transition: 0.5s;
+      padding: 10px;
       text-decoration: none;
       color: rgb(216, 140, 0);
+    }
+    #add-beer-btn:hover {
+      transition: 0.5s;
+      background-color: gold;
+      color: white;
+      border-radius: 4px;
     }
   }
 }

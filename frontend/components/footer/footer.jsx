@@ -7,8 +7,8 @@ const Footer = () => (
     </div>
     <div className="footer">
       <a href="https://github.com/dsuh93"><img src={window.github}/></a>
-      <a href=""><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-facebook.svg"/></a>
-      <a href=""><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-instagram.svg"/></a>
+      <a href="https://www.facebook.com/suhinbeom"><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-facebook.svg"/></a>
+      <a href="https://www.instagram.com/daybydaves/"><img src="https://untappd.akamaized.net/assets/custom/homepage/images/icon-instagram.svg"/></a>
     </div>
   </footer>
 )

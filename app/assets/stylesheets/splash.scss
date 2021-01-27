@@ -295,11 +295,14 @@
       height: 130px;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       p {
         position: relative;
         bottom: 15px;
-        width: 30px;
+        margin-left: 15px;
+      }
+      #last-p {
+        font-style: italic;
       }
 
       .footer-p-last {
@@ -307,6 +310,7 @@
       }
       .footer-cr-div {
         position: relative;
+        left: 200px;
         width: 0;
       }
       .footer-cr {
@@ -325,6 +329,10 @@
       width: 15%;
       display: flex;
       justify-content: space-around;
+      a > img {
+        width: 34px;
+        padding: 12px 14px;
+      }
     }
   }
 }

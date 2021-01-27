@@ -44,27 +44,47 @@ user2 = User.create!(
 brewery1 = Brewery.create!(
   brewery_name: "10 Barrel Brewing Co.",
   brewery_type: "Macro Brewery",
-  location: "San Diego, California"
+  location: "San Diego, California",
+  description: "Started production brewery in Bend, Oregon in 2006. Opened distribution and brewpub in the following two years. After opening a new production brewery in 2011, 10 Barrel Brewing Company was able to open officially in 2013 in Boise, Idaho. Started a partnership with Anheuser-Busch to become a member of the High End and their family of craft brands.",
+  web_url: "https://10barrel.com/",
+  fb_url: "https://www.facebook.com/10BarrelBrewingDenver/",
+  insta_url: "https://www.instagram.com/10barrelbrewing/"
 )
 brewery2 = Brewery.create!(
   brewery_name: "101 North Brewing Company",
   brewery_type: "Micro Brewery",
-  location: "Petaluma, California"
+  location: "Petaluma, California",
+  description: "101 North Brewing Company, A Petaluna based craft brewery has built a signficant following among craft beer enthusiasts through their exceptional brews, unique packaging and innovative marketing techniques. The brewery was founded in September 2012 by a group of former Bear Republic employees, including brewmaster Joel Johnson.",
+  web_url: "https://www.brewerydb.com/brewery/IPhAuu",
+  fb_url: "https://www.facebook.com/101northbrewingco/",
+  insta_url: "https://www.instagram.com/101northbrewing/?hl=en"
 )
 brewery3 = Brewery.create!(
   brewery_name: "Abnormal Beer Company",
   brewery_type: "Nano Brewery",
-  location: "San Diego, California"
+  location: "San Diego, California",
+  description: "As San Diego's first and only Brewery/Winery/Restaurant, we pride ourselves on putting everything we have into the things we do and push the boundaries of creative products to share with our guests. Our beers are focused on drinkability, merging inspirational flavors from our restaurant and winery to create one of a kind products. Our tasting room is attached to our restaurant, The Cork and Craft. We're normally open every day except for Monday, including lunch during the work week, and brunch on Sundays. Come in for the beer, stay for the food, and discover your Abnormal side.",
+  web_url: "https://abnormalbeer.co/",
+  fb_url: "https://www.facebook.com/AbnormalBeerCo/",
+  insta_url: "https://www.instagram.com/abnormalbeerco/?hl=en"
 )
 brewery4 = Brewery.create!(
   brewery_name: "Brewery Twenty Five",
   brewery_type: "Home Brewery",
-  location: "Hollister, California"
+  location: "Hollister, California",
+  description: "Brewery Twenty Five is a 7bbl(200gal) brewery based in San Benito County. Our TapRoom is in Downtown San Juan Bautista Open Friday & Saturday! Thanks for following us as we begin our new endeavor. Brewery Twenty Five will focus on handcrafted beers that will utilize locally-sourced ingredients whenever possible.",
+  web_url: "https://shop.brewerytwentyfive.com/",
+  fb_url: "https://www.facebook.com/brewerytwentyfive/",
+  insta_url: "https://www.instagram.com/brewerytwentyfive/?hl=en"
 )
 brewery5 = Brewery.create!(
   brewery_name: "Danville Brewing Company",
   brewery_type: "Brew Pub",
-  location: "Danville, California"
+  location: "Danville, California",
+  description: "The Maita family has been in the beer business since shortly after prohibition; distributing and working with some of the best breweries in the world. When a great spot became available in historic downtown Danville we thought, perfect location for a brewery! So the process began. In order to make this place extra spectacular, the Maitas partnered with general and managing partner of local favorites Bridges and the Vine, Randy Negi. We knew this alliance would ensure we compliment great craft beer with incredible food. Put our passions together, and a fun spot called Danville Brewing Co. is born. Our head brewer, Matt Sager is a UC Davis Master Brewers program graduate and has been an award winning brewer for 20 years. Matt has engineered some worthy brews and he's always eager to talk shop, so when you see him on site or any of us around, feel free to say hi. We look forward to welcoming all of our friends, family, and new friends to be made to the locally owned and operated DBC. Cheers!!",
+  web_url: "http://www.danvillebrewing.com/about.html",
+  fb_url: "https://www.facebook.com/DanvilleBrewingCo/",
+  insta_url: "https://www.instagram.com/danvillebrewingco/"
 )
 
 # brewery1
