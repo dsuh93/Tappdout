@@ -7,7 +7,7 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props);
-
+    debugger
     this.deleteCheckin = this.deleteCheckin.bind(this);
   }
 
@@ -21,7 +21,7 @@ class CheckinIndexItem extends React.Component {
     const {checkin, userId} = this.props;
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
-    const showDelete = checkin.user_id === userId ? "show-delete" : "hide-delete"
+    const showDelete = checkin.user.id === userId ? "show-delete" : "hide-delete"
     const dateFormat = checkin.created_at.split("T")[0].split("-");
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
@@ -41,8 +41,10 @@ class CheckinIndexItem extends React.Component {
           <div className="checkin-item-tri"></div>
           <div className="checkin-body">
             <p>{checkin.description}</p>
-            <Rating rating={checkin.rating}/>
-            <p>{checkin.beer.style}</p>
+            <div className="checkin-body-bottom">
+              <Rating rating={checkin.rating}/>
+              <p>{checkin.beer.style}</p>
+            </div>
           </div>
           <div className={showImage}>
             <img src={photoURL} id="checkin-img"/>

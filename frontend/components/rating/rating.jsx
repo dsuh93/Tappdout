@@ -28,7 +28,6 @@ class Rating extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div id="rating-view">
         {this.displayRating()}

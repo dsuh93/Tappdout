@@ -18,6 +18,7 @@ class CheckinIndex extends React.Component {
             key={checkin.id + checkin.rating}
             checkin={checkin}
             checkinId={checkin.id}
+            userId={this.props.userId}
             deleteCheckin={this.props.deleteCheckin}  
           />
         </li>

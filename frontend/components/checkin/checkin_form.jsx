@@ -12,11 +12,9 @@ class CheckinForm extends React.Component {
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    debugger
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const formData = new FormData();
     formData.append('checkin[rating]', this.state.rating);
@@ -32,7 +30,6 @@ class CheckinForm extends React.Component {
   }
 
   handleFile(e) {
-    debugger
     e.preventDefault();
     this.setState({ photoFile: e.currentTarget.files[0]})
     this.showPhoto();
