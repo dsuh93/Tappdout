@@ -9,10 +9,10 @@ class CheckinIndexItem extends React.Component {
   }
 
   render() {
-    const {checkin, checkinId, deleteCheckin} = this.props;
+    const {checkin, userId, checkinId, deleteCheckin} = this.props;
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
-
+    const showDelete = checkin.user_id === userId ? "show-delete" : "hide-delete"
     const dateFormat = checkin.created_at.split("T")[0].split("-");
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
@@ -44,7 +44,7 @@ class CheckinIndexItem extends React.Component {
           <button id="toast-btn">Toast</button>
           <p>{newDateFormat}</p>
           <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
-          <Link to={`/checkins`} onClick={() => deleteCheckin(checkinId)}>Delete Check-in</Link>
+          <Link className={showDelete} to={`/checkins`} onClick={() => deleteCheckin(checkinId)}>Delete Check-in</Link>
         </div>
         <div className="checkin-item-row-4">
           <p>number of toasts go here</p>

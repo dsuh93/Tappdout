@@ -7,13 +7,14 @@ class Home extends React.Component {
   }
 
   render() {
-    const {checkins, user, fetchCheckins, fetchCheckin} = this.props;
+    const {checkins, userId, fetchCheckins, fetchCheckin} = this.props;
     return (
       <div className="home-main-div">
         <CheckinIndex
           checkins={checkins}
           fetchCheckins={fetchCheckins}
           fetchCheckin={fetchCheckin}
+          userId={userId}
         />
         <div className="home-rt-side">
           <div className="user-container">
