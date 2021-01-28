@@ -22,7 +22,7 @@ class CheckinIndexItem extends React.Component {
           <div className="checkin-item-tri"></div>
           <div className="checkin-body">
             <p>{checkin.description}</p>
-            <p>{checkin.rating}</p>
+            <p>{checkin.rating} Rating img</p>
             <p>{checkin.beer.style}</p>
           </div>
         </div>

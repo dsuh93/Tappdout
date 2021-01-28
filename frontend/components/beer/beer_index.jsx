@@ -15,7 +15,12 @@ class BeerIndex extends React.Component {
     const beerIndexItem = this.props.beers.map( beer => {
       return (
         <li key={beer.beer_name} className="beer-item-container">
-          <BeerIndexItem key={beer.id} beer={beer} beerId={beer.id} />
+          <BeerIndexItem
+            key={beer.id}
+            beer={beer}
+            beerId={beer.id}
+            openModal={this.props.openModal}  
+          />
         </li>
       )
     })

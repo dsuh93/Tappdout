@@ -55,7 +55,7 @@ class BeerShow extends React.Component {
               </div>
               <div className="beer-info-row-3">
                 <p className="br-info-description">{beer.description}</p>
-                <button className="beer-item-checkin-btn">
+                <button onClick={() => this.props.openModal('checkin')} className="beer-item-checkin-btn">
                   <div id="checkin-tag" className="checkin-tag hidden">
                     <div id="checkin-tag-tri"></div>
                     <div id="checkin-tag-txt">Check-in this Beer</div>

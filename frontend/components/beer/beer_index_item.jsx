@@ -24,7 +24,7 @@ class BeerIndexItem extends React.Component {
             <p id="beer-item-style">{beer.style}</p>
             <p id="beer-item-description">{beer.description}</p>
           </div>
-          <button className="beer-item-checkin-btn">
+          <button onClick={() => this.props.openModal('checkin')} className="beer-item-checkin-btn">
             <div id="checkin-tag" className="checkin-tag hidden">
               <div id="checkin-tag-tri"></div>
               <div id="checkin-tag-txt">Check-in this Beer</div>

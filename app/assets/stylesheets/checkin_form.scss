@@ -1,0 +1,90 @@
+.checkin-form-container {
+  width: 500px;
+  height: fit-content;
+  
+
+  .checkin-form-head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background-color: black;
+    border: 1px solid green;
+    h3 {
+      font-size: 15px;
+      color: white;
+    }
+    button {
+      font-size: 20px;
+      height: fit-content;
+      width: fit-content;
+      color: white;
+      background-color: black;
+      border: none;
+      // background-color: gray;
+    }
+
+  }
+  .checkin-form {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    .checkin-form-textarea {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 10px;
+      border: 1px solid lightgray;
+      border-radius: 3px;
+    }
+    .add-photo-btn {
+      margin-top: 10px;
+      height: 80px;
+      width: 80px;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      background-color: gold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .add-photo-btn:hover {
+      background-color:rgb(250, 190, 37);
+    }
+    .checkin-form-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+      .ratings-bar-container {
+        height: 100px;
+        width: 380px;
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        // .ratings-bar {
+  
+        // }
+        // .ratings-value {
+  
+        // }
+      }
+      .checkin-submit-btn {
+        // margin-top: 100px;
+        width: 100px;
+        height: 40px;
+        color: white;
+        background-color: gold;
+        border: none;
+        border-radius: 3px;
+      }
+      .checkin-submit-btn:hover {
+        background-color: rgb(241, 183, 36);
+      }
+    }
+
+  } 
+}

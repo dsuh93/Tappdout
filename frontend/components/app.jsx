@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import Modal from './modal/modal';
 import NavBarContainer from './navbar/navbar_container';
 import Splash from './splash/splash';
 import LoginFormContainer from './auth/login_form_container';
@@ -19,6 +20,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
   <div>
+    <Modal/>
     <header>
       <NavBarContainer/>
     </header>
