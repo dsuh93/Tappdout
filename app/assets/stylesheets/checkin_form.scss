@@ -45,16 +45,11 @@
     }
     input[type="file"] {
       display: none;
-      // margin-top: 10px;
-      // color: white;
-      // border: none;
-      // border-radius: 3px;
-      // background-color: gold;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
     }
-    .custom-file-upload {
+    #upload {
+      width: 80px;
+    }
+    .photo-upload {
       margin-top: 10px;
       color: white;
       border: none;
@@ -64,12 +59,9 @@
       justify-content: center;
       align-items: center;
       height: fit-content;
-      // border: 1px solid #ccc;
-      // display: inline-block;
-      // padding:6px 6px;
-      cursor: pointer;
     }
-    .custom-file-upload:hover {
+    .photo-upload:hover {
+      cursor: pointer;
       background-color:rgb(250, 190, 37);
     }
     .checkin-form-bottom {
@@ -92,7 +84,6 @@
         // }
       }
       .checkin-submit-btn {
-        // margin-top: 100px;
         position: relative;
         width: 100px;
         height: 40px;
