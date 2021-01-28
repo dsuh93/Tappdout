@@ -6,14 +6,18 @@
   .checkin-form-head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: fit-content;
     padding: 10px;
     background-color: black;
-    border: 1px solid green;
+    // border: 1px solid green;
     h3 {
-      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
       color: white;
+      margin-left: 5px;
     }
     button {
       font-size: 20px;
@@ -22,6 +26,7 @@
       color: white;
       background-color: black;
       border: none;
+      margin-left: 5px;
       // background-color: gray;
     }
 
@@ -38,10 +43,19 @@
       border: 1px solid lightgray;
       border-radius: 3px;
     }
-    .add-photo-btn {
+    input[type="file"] {
+      display: none;
+      // margin-top: 10px;
+      // color: white;
+      // border: none;
+      // border-radius: 3px;
+      // background-color: gold;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+    }
+    .custom-file-upload {
       margin-top: 10px;
-      height: 80px;
-      width: 80px;
       color: white;
       border: none;
       border-radius: 3px;
@@ -49,8 +63,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      height: fit-content;
+      // border: 1px solid #ccc;
+      // display: inline-block;
+      // padding:6px 6px;
+      cursor: pointer;
     }
-    .add-photo-btn:hover {
+    .custom-file-upload:hover {
       background-color:rgb(250, 190, 37);
     }
     .checkin-form-bottom {
@@ -60,7 +79,7 @@
       width: 100%;
       .ratings-bar-container {
         height: 100px;
-        width: 380px;
+        width: 340px;
         margin: 10px;
         display: flex;
         justify-content: space-between;
@@ -74,6 +93,7 @@
       }
       .checkin-submit-btn {
         // margin-top: 100px;
+        position: relative;
         width: 100px;
         height: 40px;
         color: white;

@@ -6,16 +6,9 @@ import CheckinForm from './checkin_form';
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  let beerId;
-  if (ownProps.match.params.beerId) {
-    beerId = state.entities.beers[ownProps.match.params.beerId]
-  } else {
-    beerId = state.entities.beers[ownProps.beerId]
-  }
-  
   return {
-    user_id: state.session.id,
-    beerId: beerId,
+    userId: state.session.id,
+    beerId: ownProps.beerId,
     errors: state.errors.checkin
   }
 };

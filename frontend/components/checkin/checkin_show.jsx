@@ -7,20 +7,17 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchCheckin(this.props.checkinId)
   }
 
   render() {
     if (!this.props.checkin) {
-      debugger
       return (
         <div>
           <img src={window.loader} alt=""/>
         </div>
       )
     } else {
-      debugger
       const checkin = this.props.checkin
       return (
         <div className="checkin-show-container">

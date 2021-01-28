@@ -5,7 +5,6 @@ import { fetchCheckin } from '../../actions/checkin_actions';
 import CheckinShow from './checkin_show';
 
 const msp = (state, ownProps) => {
-  debugger
   return {
     checkin: state.entities.checkins[ownProps.match.params.checkinId],
     checkinId: ownProps.match.params.checkinId

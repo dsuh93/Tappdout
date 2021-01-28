@@ -9,9 +9,9 @@ function Modal({modal, closeModal, beers}) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal[0]) {
     case 'checkin':
-      component = <CheckinFormContainer beers={beers}/>;
+      component = <CheckinFormContainer beerId={modal[1]} beers={beers}/>;
       break;
     default:
       return null;
@@ -26,10 +26,12 @@ function Modal({modal, closeModal, beers}) {
 }
 
 
-const msp = (state, ownProps) => ({
-  modal: state.ui.modal,
-  beers: state.entities.beers
-})
+const msp = (state, ownProps) => {
+  return {
+    modal: state.ui.modal,
+    beers: state.entities.beers
+  }
+}
 
 const mdp = dispatch => ({
   closeModal: () => dispatch(closeModal())

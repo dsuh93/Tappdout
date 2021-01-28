@@ -8,4 +8,9 @@ class Checkin < ApplicationRecord
   belongs_to :beer,
     foreign_key: :beer_id,
     class_name: :Beer
+
+  has_one_attached :photo
+
+
+
 end
