@@ -8,5 +8,8 @@
       json.partial! '/api/beers/beer', beer: checkin.beer
     end
     json.brewery checkin.beer.brewery.brewery_name
+    if checkin.photo.attached?
+      json.photoURL url_for(checkin.photo)
+    end
   end
 end

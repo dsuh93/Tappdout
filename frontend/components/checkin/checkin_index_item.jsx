@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
-    const checkin = this.props.checkin;
-    const checkinId = this.props.checkinId;
+    const {checkin, checkinId, deleteCheckin} = this.props;
+    const photoURL = checkin.photoURL ? checkin.photoURL : "";
+    const showImage = photoURL ? "show-image" : "hide-image"; 
+
+    const dateFormat = checkin.created_at.split("T")[0].split("-");
+    const yearDigits = dateFormat[0].split('');
+    const yearFormat = [yearDigits[2], yearDigits[3]].join('');
+    const monthFormat = months[dateFormat[1] - 1]
+    const newDateFormat = [dateFormat[2], monthFormat, yearFormat].join(' ');
+
     return (
       <div className="checkin-index-item">
         <div className="checkin-item-row-1">
@@ -25,12 +35,16 @@ class CheckinIndexItem extends React.Component {
             <p>{checkin.rating} Rating img</p>
             <p>{checkin.beer.style}</p>
           </div>
+          <div className={showImage}>
+            <img src={photoURL} id="checkin-img"/>
+          </div>
         </div>
         <div className="checkin-item-row-3">
-          <button>Comment</button>
-          <button>Toast</button>
-          <p>{checkin.created_at}</p>
-          <Link to={`/checkins/${checkin.id}`}>View Detailed Checkin</Link>
+          <button id="comment-btn">Comment</button>
+          <button id="toast-btn">Toast</button>
+          <p>{newDateFormat}</p>
+          <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
+          <Link to={`/checkins`} onClick={() => deleteCheckin(checkinId)}>Delete Check-in</Link>
         </div>
         <div className="checkin-item-row-4">
           <p>number of toasts go here</p>

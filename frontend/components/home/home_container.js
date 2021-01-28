@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchCheckins, fetchCheckin } from '../../actions/checkin_actions';
+import { fetchCheckins, fetchCheckin, deleteCheckin } from '../../actions/checkin_actions';
 import Home from './home';
 
 const msp = (state, ownProps) => ({
@@ -10,7 +10,8 @@ const msp = (state, ownProps) => ({
 
 const mdp = dispatch => ({
   fetchCheckins: () => dispatch(fetchCheckins()),
-  fetchCheckin: (checkinId) => dispatch(fetchCheckin(checkinId))
+  fetchCheckin: (checkinId) => dispatch(fetchCheckin(checkinId)),
+  deleteCheckin: (checkinId) => dispatch(deleteCheckin(checkinId))
 })
 
 export default withRouter(connect(msp, mdp)(Home));

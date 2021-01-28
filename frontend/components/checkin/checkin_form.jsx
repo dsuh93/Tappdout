@@ -45,11 +45,11 @@ class CheckinForm extends React.Component {
 
   showPhoto() {
     const file = document.getElementById('file-upload').files[0];
-    const reader = new FileReader();
-    reader.onload = function(e) {
+    const fileReader = new FileReader();
+    fileReader.onload = (e) => {
       document.getElementById('upload').src=(e.target.result);
     }
-    reader.readAsDataURL(file);
+    fileReader.readAsDataURL(file);
   }
 
   render() {

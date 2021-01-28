@@ -11,10 +11,15 @@ class CheckinIndex extends React.Component {
   }
 
   render() {
-    const checkinIndexItem = Object.values(this.props.checkins).map( (checkin, i) => {
+    const checkinIndexItem = Object.values(this.props.checkins).reverse().map( (checkin, i) => {
       return (
         <li key={i} className="checkin-index-item-container">
-          <CheckinIndexItem key={checkin.id + checkin.rating} checkin={checkin} checkinId={checkin.id} />
+          <CheckinIndexItem
+            key={checkin.id + checkin.rating}
+            checkin={checkin}
+            checkinId={checkin.id}
+            deleteCheckin={this.props.deleteCheckin}  
+          />
         </li>
       )
     })
