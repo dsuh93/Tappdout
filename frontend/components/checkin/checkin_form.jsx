@@ -4,7 +4,7 @@ class CheckinForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rating: "",
+      rating: 0,
       description: "",
       beer_id: this.props.beerId,
       user_id: this.props.userId,
@@ -23,7 +23,9 @@ class CheckinForm extends React.Component {
     formData.append('checkin[description]', this.state.description);
     formData.append('checkin[beer_id]', this.state.beer_id);
     formData.append('checkin[user_id]', this.state.user_id);
-    formData.append('checkin[photo]', this.state.photoFile);
+    if (this.state.photoFile) {
+      formData.append('checkin[photo]', this.state.photoFile);
+    }
     this.props.createCheckin(formData);
     this.props.closeModal();
     this.props.history.push('/home');
@@ -53,6 +55,14 @@ class CheckinForm extends React.Component {
   }
 
   render() {
+    const noRating = () => {
+      return (
+        <div className="no-rating">
+          <p id="p1">NO</p>
+          <p id="p2">RATING</p>
+        </div>
+      )
+    }
     return (
       <div className="checkin-form-container">
         <div className="checkin-form-head">
@@ -72,9 +82,10 @@ class CheckinForm extends React.Component {
           <input id="file-upload" onChange={this.handleFile} type="file"/>
           <div className="checkin-form-bottom">
             <div className="ratings-bar-container">
-              <div className="ratings-bar">Rating Bar</div>
-              <input onChange={this.update('rating')} type="number" step="0.25" min="0" max="5"/>
-              <div className="ratings-value">NO RATING</div>
+              <input onChange={this.update('rating')} id="rating" type="range" step="0.25" min="0" max="5" value={this.state.rating}/>
+              <div className="ratings-value">
+                {this.state.rating === 0 ? noRating() : this.state.rating}
+              </div>
             </div>
             <button className="checkin-submit-btn">Confirm</button>
           </div>

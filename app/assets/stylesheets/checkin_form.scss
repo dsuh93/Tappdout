@@ -68,25 +68,79 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      width: 100%;
+      width: 95%;
       .ratings-bar-container {
-        height: 100px;
-        width: 340px;
+        position: relative;
+        height: fit-content;
+        width: 360px;
         margin: 10px;
+        margin-right: 20px;
         display: flex;
         justify-content: space-between;
-        border: 1px solid black;
-        // .ratings-bar {
-  
-        // }
-        // .ratings-value {
-  
-        // }
+        // border: 1px solid black;
+        #rating {
+          margin-top: 15px;
+          width: 250px;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          height: 10px;
+          background-color: gray;
+          border-radius: 5px;
+        }
+        #rating:active, #rating:focus {
+          border: 0;
+          outline: none;
+        }
+        #rating::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 30px;
+          height: 30px;
+          background-color: rgb(255, 193, 37);
+          border-radius: 18px;
+        }
+        .ratings-value {
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60px;
+          height: 42px;
+          border-radius: 4px;
+          background-color: gray;
+          .no-rating {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            width: 60px;
+            color: white;
+            #p1 {
+              font-size: 22px;
+            }
+            #p2 {
+              font-size: 10px;
+            }
+          }
+        }
+        .ratings-value::before {
+          position: absolute;
+          top: 22;
+          right: 60px;
+          content: " ";
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right: 10px solid gray;
+        }
       }
       .checkin-submit-btn {
-        position: relative;
+        // position: relative;
+        // right: 10px;
         width: 100px;
-        height: 40px;
+        height: 30px;
         color: white;
         background-color: gold;
         border: none;

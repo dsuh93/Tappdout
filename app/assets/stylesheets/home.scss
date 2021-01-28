@@ -66,6 +66,14 @@
                 border: 1px solid #dbdbdb;
                 display: flex;
                 flex-wrap: wrap;
+                #rating-view {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 1px solid black;
+                  height: fit-content;
+                  width: fit-content;
+                }
               }
               .hide-image {
                 visibility: hidden;

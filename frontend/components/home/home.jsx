@@ -7,7 +7,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const {checkins, userId, fetchCheckins, fetchCheckin} = this.props;
+    const {checkins, userId, deleteCheckin, fetchCheckins, fetchCheckin} = this.props;
     return (
       <div className="home-main-div">
         <CheckinIndex
@@ -15,6 +15,7 @@ class Home extends React.Component {
           fetchCheckins={fetchCheckins}
           fetchCheckin={fetchCheckin}
           userId={userId}
+          deleteCheckin={deleteCheckin}
         />
         <div className="home-rt-side">
           <div className="user-container">

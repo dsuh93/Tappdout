@@ -1,15 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from '../rating/rating';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 class CheckinIndexItem extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.deleteCheckin = this.deleteCheckin.bind(this);
+  }
+
+  deleteCheckin(e) {
+    e.preventDefault();
+    this.props.deleteCheckin(this.props.checkinId)
+      .then(() => this.props.history.push('/home'))
   }
 
   render() {
-    const {checkin, userId, checkinId, deleteCheckin} = this.props;
+    const {checkin, userId} = this.props;
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
     const showDelete = checkin.user_id === userId ? "show-delete" : "hide-delete"
@@ -18,7 +27,7 @@ class CheckinIndexItem extends React.Component {
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
     const monthFormat = months[dateFormat[1] - 1]
     const newDateFormat = [dateFormat[2], monthFormat, yearFormat].join(' ');
-
+    debugger
     return (
       <div className="checkin-index-item">
         <div className="checkin-item-row-1">
@@ -32,7 +41,7 @@ class CheckinIndexItem extends React.Component {
           <div className="checkin-item-tri"></div>
           <div className="checkin-body">
             <p>{checkin.description}</p>
-            <p>{checkin.rating} Rating img</p>
+            <Rating rating={checkin.rating}/>
             <p>{checkin.beer.style}</p>
           </div>
           <div className={showImage}>
@@ -44,7 +53,9 @@ class CheckinIndexItem extends React.Component {
           <button id="toast-btn">Toast</button>
           <p>{newDateFormat}</p>
           <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
-          <Link className={showDelete} to={`/checkins`} onClick={() => deleteCheckin(checkinId)}>Delete Check-in</Link>
+          <div className={showDelete}>
+            <Link to={`/checkins`} onClick={this.deleteCheckin}>Delete Check-in</Link>
+          </div>
         </div>
         <div className="checkin-item-row-4">
           <p>number of toasts go here</p>
