@@ -43,6 +43,10 @@ We've gone ahead and calculated the average ratings for you and displayed them i
   }
 ```
 - the result:  ![avg ratings bar](https://github.com/dsuh93/Tappdout/blob/main/app/assets/images/avg%20rating%20example.PNG)
+
+# Technologies
+Tappdout was build on a stack using Ruby on Rails and PostgreSQL for backend framework, and Javascript, specifically React and Redux for the frontend components. Majority of the styling was done with SCSS. AWS was used to store and access image assets.
+
 # Another Round!
 Look forward to these new features to be added soon to your Tappdout experience:
 - Comment on a check-in
@@ -50,4 +54,7 @@ Look forward to these new features to be added soon to your Tappdout experience:
 - Search for beers and breweries from any page using the search function in the navigation bar
 - A profile page for you to view your past and present check-ins
 - Add friends and build your beer-loving community
+
+# Issues
+Feel free to open an issue on this repo if you come into contact with any bugs or if you have suggestions to enhance the Tappdout experience
 
