@@ -1,9 +1,10 @@
 # Tappdout Social Networking Site for Beer
 ![tappdout logo](https://scontent-lga3-2.xx.fbcdn.net/v/t1.15752-9/142710740_171244464756626_3543394188550254900_n.png?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=K_opR1bJDuEAX8RX_Xm&_nc_ht=scontent-lga3-2.xx&oh=4827405eab574884243182d3daf95384&oe=6038B4E6)
+---
 Tappdout is a platform for beer afficionados and beer novices alike, here to satisfy the critics and curious inner-child inside all of us when it comes to whether or not we want to try that new beer from the brewery that's around the corner. 
 
 # Check-in!
-![gif of beer](https://media.giphy.com/media/ietk9bNd6xIsOdXJHo/giphy.gif | width=100)
+![gif of beer](https://media.giphy.com/media/ietk9bNd6xIsOdXJHo/giphy.gif)
 
 `And check out our live site, browse responsibly:` [Tappdout](https://tappdout.herokuapp.com/#/ "cheers!")
 
