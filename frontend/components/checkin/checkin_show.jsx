@@ -77,10 +77,10 @@ class CheckinShow extends React.Component {
               </div>
             </div>
             <div className="checkin-show-toasts">
-              <p>TOASTS GO HERE</p>
+              <p>TOASTS COMING SOON</p>
             </div>
             <div className="checkin-show-comment">
-              <p>COMMENT INPUT GOES HERE</p>
+              <p>COMMENT COMING SOON</p>
             </div>
           </div>
         </div>
