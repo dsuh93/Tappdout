@@ -120,7 +120,7 @@
     outline: none;
     border-radius: 3px;
   }
-  input[type='text'].placeholder {
+  .search-bar-input::placeholder {
     color: lightgray;
   }
   
