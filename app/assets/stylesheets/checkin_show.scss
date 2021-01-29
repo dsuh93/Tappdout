@@ -1,0 +1,131 @@
+.checkin-show-container {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid red;
+  .checkin-show {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // border: 3px solid pink;
+    width: 400px;
+    .checkin-show-details {
+      background-color: white;
+      // border: 1px solid black;
+      padding: 10px;
+      .chk-show-det-1 {
+        padding: 5px;
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        div {
+          padding: 15px;
+          p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+          }
+        }
+      }
+      .chk-show-det-2 {
+        // border: 1px solid black;
+        #chk-show-2-top {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          // border: 1px solid green;
+          #chk-show-beer {
+            width: 60px;
+            height: 60px;
+            padding: 10px;
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+
+            a {
+              margin-top: 15px;
+              text-decoration: none;
+              color: black;
+              font-size: 24px;
+            }
+            #brw {
+              font-size: 17px;
+            }
+            a:hover {
+              color: goldenrod;
+            }
+          }
+        }
+        #chk-show-2-bottom {
+          display:flex;
+          flex-direction: column;
+
+          // border: 1px solid black;
+          padding: 15px;
+          p {
+            font-size: 18px;
+            color: gray;
+            margin-bottom: 10px;
+          }
+          div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            #rating-view {
+              margin: 15px 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              // border: 1px solid black;
+              height: 15px;
+              width: fit-content;
+              img {
+                height: 22px;
+                width: 22px;
+                margin: 1px;
+              }
+            }
+            p {
+              color: black;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .chk-show-det-3 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid lightgray;
+        p {
+          padding: 15px;
+          color: gray;
+        }
+      }
+    }
+    .checkin-show-toasts {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      margin: 15px 0;
+      background-color: white;
+      // border: 1px solid black;
+      p {
+        color: gray;
+        padding: 15px;
+      }
+    }
+    .checkin-show-comment {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: white;
+      // border: 1px solid black;
+      p {
+        color: gray;
+        padding: 15px;
+      }
+    }
+  }
+}
