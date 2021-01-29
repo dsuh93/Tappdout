@@ -42,7 +42,7 @@ We've gone ahead and calculated the average ratings for you and displayed them i
   }
 ```
 - the result
-![]()
+![avg ratings bar](https://github.com/dsuh93/Tappdout/blob/main/app/assets/images/avg%20rating%20example.PNG)
 # Another Round!
 Look forward to these new features to be added soon to your Tappdout experience:
 - Comment on a check-in
