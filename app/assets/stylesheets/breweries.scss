@@ -1,5 +1,5 @@
 .brewery-index-container{
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 700px;
   height: fit-content;
   display: flex;
@@ -78,14 +78,14 @@
       height:fit-content;
       
       .brewery-item {
-        border: 1px solid black;
+        // border: 1px solid black;
         display: flex;
         margin: 15px 0;
         height: fit-content;
         width: 100%;
         border-bottom: 1px solid rgb(231, 231, 231);
         .brewery-item-left {
-          border: 1px solid black;
+          // border: 1px solid black;
 
           display: flex;
           padding-bottom: 10px;
@@ -98,7 +98,7 @@
             width: 70px;
           }
           .brewery-item-details {
-            border: 1px solid black;
+            // border: 1px solid black;
 
             display: flex;
             flex-direction: column;
@@ -131,9 +131,10 @@
           }
         }
         .brewery-item-right {
-          padding-bottom: 15px;
+          // padding-bottom: 15px;
           display: flex;
           flex-wrap: wrap;
+          height: 100%;
           width: 300px;
           align-items: center;
           font-size: 15px;
@@ -142,18 +143,45 @@
             display: flex;
             border-left: 1px solid rgb(231, 231, 231);
             div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
               color: gray;
               font-size: 12px;
               padding: 15px;
+              font-size: 20px;
+              p {
+                margin-left: 10px;
+              }
             }
           }
           #brewery-rating-bar {
+            // border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             border-top: 1px solid rgb(231, 231, 231);
             border-left: 1px solid rgb(231, 231, 231);
             color: gray;
             font-size: 12px;
             padding: 15px;
+            #rating-view {
+              position: relative;
+              right: 15px;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              // border: 1px solid black;
+              height: 15px;
+              width: fit-content;
+              img {
+                height: 20px;
+                width: 20px;
+                margin: 1px;
+              }
+            }
           }
           #brewery-total-beers {
             border-right: 1px solid rgb(231, 231, 231);

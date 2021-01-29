@@ -24,14 +24,15 @@ class BeerIndexItem extends React.Component {
   }
 
   totalRatings() {
-    let allRatings = [];
+    let allRatings;
     if (this.props.beer.checkins) {
-      Object.values(this.props.beer.checkins).forEach( checkin => allRatings.push(checkin.rating));
-      return allRatings.length;
+      let ratings = [];
+      Object.values(this.props.beer.checkins).forEach( checkin => ratings.push(checkin.rating));
+      allRatings = ratings.length;
     } else {
       allRatings = 0;
     }
-    allRatings.length > 0 ? allRathings.length : 0
+    return allRatings;
   }
 
   render() {

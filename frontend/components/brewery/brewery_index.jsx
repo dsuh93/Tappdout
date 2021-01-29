@@ -11,9 +11,6 @@ class BreweryIndex extends React.Component {
     this.props.fetchBreweries();
   }
 
-  // averageRating() {
-    
-  // }
 
   render() {
     const breweryIndexItem = this.props.breweries.map( brewery => {

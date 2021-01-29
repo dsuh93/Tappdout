@@ -26,7 +26,7 @@ class NavBar extends React.Component {
         <div className="navbar-contents">
           <div className="navbar-lft">
             <div className="navbar-title-container">
-              <h1 className="navbar-title">TAPPDOUT</h1>
+              <Link to="/"><h1 className="navbar-title">TAPPDOUT</h1></Link>
               <p className="navbar-title-p">DRINK SOCIALLY</p>
             </div>
             <div className="navbar-links">

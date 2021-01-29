@@ -24,10 +24,14 @@
       .navbar-title-container {
         padding: 15px;
         text-align: center;
-        .navbar-title {
-          font-family: 'Josefin Sans', sans-serif;
-          font-size: 30px;
-          font-weight: 700;
+        a {
+          text-decoration: none;
+          color: white;
+          .navbar-title {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+          }
         }
         .navbar-title-p {
           font-size: 9px;
