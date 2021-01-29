@@ -1,7 +1,12 @@
-# README
+# Tappdout Social Networking Site for Beer
+![gif of beer](https://gph.is/g/4oRjOeJ)
+Tappdout is a platform for beer afficionados and beer novices alike, here to satisfy the critics and curious inner-child inside all of us when it comes to whether or not we want to try that new beer from the brewery that's around the corner. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Check-in!
+
+And check out our live site, browse responsibly: [tappdout link](https://tappdout.herokuapp.com/#/ "Tappdout")
+
+# 
 
 Things you may want to cover:
 
