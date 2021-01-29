@@ -7,7 +7,10 @@ class Rating extends React.Component {
   }
 
   displayRating() {
-    const r = this.props.rating;
+    let r = this.props.rating;
+    if (r % 1 != 0 && r % 1 != 0.25 && r % 1 != 0.5 && r % 1 != 0.75 ) {
+      r = Math.floor(r);
+    }
     let imageArray = [];
     for(let i = 1; i <= 5; i++) {
       if ( i <= r ) {

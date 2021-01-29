@@ -11,6 +11,10 @@ class BreweryIndex extends React.Component {
     this.props.fetchBreweries();
   }
 
+  // averageRating() {
+    
+  // }
+
   render() {
     const breweryIndexItem = this.props.breweries.map( brewery => {
       return (
@@ -22,7 +26,7 @@ class BreweryIndex extends React.Component {
 
     return (
       <div className="brewery-index-container">
-        <div className="brewery-index-title">Top Rated Breweries</div>
+        <div className="brewery-index-title">All Breweries</div>
         <div className="brewery-index-tags">
           <Link to='/beers' className="beers-tag tag">Beers</Link>
           <Link to='/breweries' className="breweries-tag tag">Breweries</Link>

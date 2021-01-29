@@ -1,10 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from '../rating/rating';
 
 class BeerIndexItem extends React.Component {
   constructor(props) {
     super(props);
     
+    this.averageRating = this.averageRating.bind(this);
+    this.totalRatings = this.totalRatings.bind(this);
+  }
+
+  averageRating() {
+    let avgRatings;
+    if (this.props.beer.checkins) {
+      let allRatings = [];
+      Object.values(this.props.beer.checkins).forEach( checkin => allRatings.push(checkin.rating));
+      const ratingsSum = allRatings.reduce((a, b) => a + b);
+      avgRatings = (ratingsSum / allRatings.length).toFixed(2);
+    } else {
+      avgRatings = 0;
+    }
+    return avgRatings;
+  }
+
+  totalRatings() {
+    let allRatings = [];
+    if (this.props.beer.checkins) {
+      Object.values(this.props.beer.checkins).forEach( checkin => allRatings.push(checkin.rating));
+      return allRatings.length;
+    } else {
+      allRatings = 0;
+    }
+    allRatings.length > 0 ? allRathings.length : 0
   }
 
   render() {
@@ -38,8 +65,11 @@ class BeerIndexItem extends React.Component {
         <div className="beer-item-bottom">
           <div id="abv">{beer.abv}% ABV</div>
           <div id="ibu">{beer.ibu ? beer.ibu : 'N/A'} IBU</div>
-          <div id="beer-rating-bar">rating bar</div>
-          <div id="beer-total-ratings">total Ratings</div>
+          <div id="beer-rating-bar">
+            <Rating rating={this.averageRating()}/>
+            <p>{this.averageRating()}</p>
+          </div>
+          <div id="beer-total-ratings">{this.totalRatings()} Ratings</div>
           <div id="beer-created-at">Added {newDateFormat}</div>
         </div>
       </div>

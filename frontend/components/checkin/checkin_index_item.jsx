@@ -7,7 +7,6 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.deleteCheckin = this.deleteCheckin.bind(this);
   }
 
@@ -18,16 +17,15 @@ class CheckinIndexItem extends React.Component {
   }
 
   render() {
-    const {checkin, userId} = this.props;
+    const {checkin, sessionId} = this.props;
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
-    const showDelete = checkin.user.id === userId ? "show-delete" : "hide-delete"
+    const showDelete = checkin.user.id === sessionId ? "show-delete" : "hide-delete"
     const dateFormat = checkin.created_at.split("T")[0].split("-");
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
     const monthFormat = months[dateFormat[1] - 1]
     const newDateFormat = [dateFormat[2], monthFormat, yearFormat].join(' ');
-    debugger
     return (
       <div className="checkin-index-item">
         <div className="checkin-item-row-1">

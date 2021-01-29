@@ -27,7 +27,7 @@ class BeerIndex extends React.Component {
 
     return (
       <div className="beer-index-container">
-        <div className="beer-index-title">Top Rated Beers</div>
+        <div className="beer-index-title">All Beers</div>
         <div className="beer-index-tags">
           <Link to='/beers' className="beers-tag tag">Beers</Link>
           <Link to='/breweries' className="breweries-tag tag">Breweries</Link>
