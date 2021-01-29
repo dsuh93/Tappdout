@@ -4,9 +4,9 @@ Tappdout is a platform for beer afficionados and beer novices alike, here to sat
 
 # Check-in!
 ![gif of beer](https://media.giphy.com/media/ietk9bNd6xIsOdXJHo/giphy.gif)
-```markdown
-And check out our live site, browse responsibly: [tappdout link](https://tappdout.herokuapp.com/#/ "Tappdout")
-```
+
+`And check out our live site, browse responsibly:` [tappdout link](https://tappdout.herokuapp.com/#/ "Tappdout")
+
 # Features
 - Create a personal account to sign up, or click the demo login button to quickly get started
 - View another user's check-in
