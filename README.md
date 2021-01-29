@@ -4,7 +4,7 @@
 Tappdout is a platform for beer afficionados and beer novices alike, here to satisfy the critics and curious inner-child inside all of us when it comes to whether or not we want to try that new beer from the brewery that's around the corner. 
 
 # Check-in!
-<img width="100px" src="https://media.giphy.com/media/ietk9bNd6xIsOdXJHo/giphy.gif">
+<img width="200px" src="https://media.giphy.com/media/ietk9bNd6xIsOdXJHo/giphy.gif">
 
 `And check out our live site, browse responsibly:` [Tappdout](https://tappdout.herokuapp.com/#/ "cheers!")
 
