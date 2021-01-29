@@ -26,7 +26,7 @@ class BeerForm extends React.Component {
     e.preventDefault();
     const beer = Object.assign({}, this.state)
     this.props.createBeer(beer)
-      .then(() => this.props.history.push(`/breweries/${this.props.match.params.breweryId}`))
+      .then((res) => this.props.history.push(`/beers/${res.beer.id}`))
   }
 
   update(key) {

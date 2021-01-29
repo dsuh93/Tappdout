@@ -6,6 +6,7 @@ import Root from './components/root';
 // import * as SessionAPIUtil from './util/session_api_util';
 // import * as BreweriesAPIUtil from './util/brewery_api_util';
 // import * as BeersAPIUtil from './util/beer_api_util';
+import * as BeerActions from './actions/beer_actions';
 // import * as CheckinAPIUtil from './util/checkin_api_util';
 import * as CheckinActions from './actions/checkin_actions';
 import { login, signup, logout } from './actions/session_actions';
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing beer_api_util ajax fxs
   // window.fetchBeers = BeersAPIUtil.fetchBeers;
   // window.fetchBeer = BeersAPIUtil.fetchBeer;
-  // window.createBeer = BeersAPIUtil.createBeer;
+  window.createBeer = BeerActions.createBeer;
   // window.updateBeer = BeersAPIUtil.updateBeer;
   // window.deleteBeer = BeersAPIUtil.deleteBeer;
 

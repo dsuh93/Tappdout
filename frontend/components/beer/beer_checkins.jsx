@@ -8,7 +8,7 @@ class BeerCheckins extends React.Component {
   render() {
     return(
       <div className="beer-checkins">
-        beer checkin index with individual items
+        coming soon!
       </div>
     )
   }

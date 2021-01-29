@@ -67,7 +67,7 @@ class BeerShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="beer-show-imgs">images go here</div>
+            <div className="beer-show-imgs">coming soon!</div>
             <BeerCheckins/>
           </div>
           <div className="edit-beer-btn-container">
