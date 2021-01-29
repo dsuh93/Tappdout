@@ -5,7 +5,8 @@ import Home from './home';
 
 const msp = (state, ownProps) => ({
   checkins: state.entities.checkins,
-  userId: state.session.id
+  userId: state.session.id,
+  user: state.entities.users[state.session.id]
   
 });
 

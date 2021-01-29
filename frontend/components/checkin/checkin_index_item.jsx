@@ -51,18 +51,22 @@ class CheckinIndexItem extends React.Component {
           </div>
         </div>
         <div className="checkin-item-row-3">
-          <button id="comment-btn">Comment</button>
-          <button id="toast-btn">Toast</button>
-          <p>{newDateFormat}</p>
-          <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
-          <div className={showDelete}>
-            <Link to={`/checkins`} onClick={this.deleteCheckin}>Delete Check-in</Link>
+          <div className="checkin-item-btn">
+            <button id="comment-btn">Comment</button>
+            <button id="toast-btn">Toast</button>
+          </div>
+          <div className="checkin-item-links">
+            <p>{newDateFormat}</p>
+            <Link to={`/checkins/${checkin.id}`}>View Detailed Check-in</Link>
+            <div className={showDelete}>
+              <Link to={`/checkins`} onClick={this.deleteCheckin}>Delete Check-in</Link>
+            </div>
           </div>
         </div>
-        <div className="checkin-item-row-4">
+        {/* <div className="checkin-item-row-4">
           <p>number of toasts go here</p>
           <p>users profile images go here</p>
-        </div>
+        </div> */}
       </div>
     )
   }

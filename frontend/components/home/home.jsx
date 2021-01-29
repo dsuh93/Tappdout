@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckinIndex from '../checkin/checkin_index';
+// import TopRatedBeers from './top_rated_beers';
 
 class Home extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const {checkins, userId, deleteCheckin, fetchCheckins, fetchCheckin} = this.props;
+    const {checkins, user, userId, deleteCheckin, fetchCheckins, fetchCheckin} = this.props;
     return (
       <div className="home-main-div">
         <CheckinIndex
@@ -20,23 +21,27 @@ class Home extends React.Component {
         <div className="home-rt-side">
           <div className="user-container">
             <div className="user-info-row-1">
-              {/* {profile img with user fn and ln and username} */}
+              <img src={window.defAvatar}/>
+              <div id="user-fullname-icon">
+                <h3>{user.first_name} {user.last_name}</h3>
+                <img src={window.proIcon}/>
+                <p>{user.username}</p>
+              </div>
             </div>
             <div className="user-info-row-2">
               <div className="total-checkins"><p>num TOTAL</p></div>
               <div className="unique-checkins"><p>num UNIQUE</p></div>
             </div>
           </div>
-          <div className="top-rated-beers-container">
+          {/* <div className="top-rated-beers-container">
             <h3>Top Beers</h3>
             <div className="top-rated-beers-index">
-              {/* {add only 5 beers here with their name and brewery, sorted by rating} */}
+              <TopRatedBeers checkins={checkins} />
             </div>
             <a href="#">
               See All Beers
-              {/* {this link should take you to the user's beers index sorted by rating} */}
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     )
