@@ -4,6 +4,11 @@
     <title>Tappdout</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('beer_favicon.jpg') %>
+
     <meta property="og:title" content="Tappdout" />
     <meta property='og:image' content="<%= image_url('tappdout.jpg') %>"/>
     <meta property="og:description"
@@ -24,7 +29,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet"> %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     <script type="text/javascript">
       window.beerSplashLogo = "<%= image_url('logos/beer_splash_logo.png') %>";
       window.mapBg = "<%= image_url('map.jpg') %>"
@@ -45,8 +49,6 @@
       window.capFull = "<%= image_url('rating/cap-full.png') %>"
       window.proIcon = "<%= image_url('profile-icon.png') %>"
     </script>
-    <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('beer_favicon.jpg') %>
   </head>
 
   <body>
