@@ -2,7 +2,7 @@ class Api::ToastsController < ApplicationController
   def create
     @toast = Toast.new(toast_params)
     if @toast.save
-      redirect_to api_checkin(@toast.checkin_id)
+      redirect_to api_checkin_url(@toast.checkin_id)
     else
       render @toast.errors.full_messages, status: 422
     end
