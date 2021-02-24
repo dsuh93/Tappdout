@@ -9,6 +9,10 @@ class Checkin < ApplicationRecord
     foreign_key: :beer_id,
     class_name: :Beer
 
+  has_many :toasts,
+    foreign_key: :checkin_id,
+    class_name: :Toast
+
   has_one_attached :photo
 
 

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :breweries, only: [ :index, :show ]
     resources :beers, only: [ :index, :show, :create, :update, :destroy ]
     resources :checkins, only: [ :index, :show, :create, :destroy ]
+    resources :toasts, only: [ :create, :destroy ]
     resource :session, only: [ :create, :destroy ]
   end
   

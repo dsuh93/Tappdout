@@ -10,6 +10,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Checkin 
 
+  has_many :toasts,
+    foreign_key: :toaster_id,
+    class_name: :Toast
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
