@@ -7,6 +7,7 @@ import Root from './components/root';
 // import * as BreweriesAPIUtil from './util/brewery_api_util';
 // import * as BeersAPIUtil from './util/beer_api_util';
 import * as ToastsAPIUtil from './util/toast_api_util';
+import * as ToastActions from './actions/toast_actions';
 import * as BeerActions from './actions/beer_actions';
 // import * as CheckinAPIUtil from './util/checkin_api_util';
 import * as CheckinActions from './actions/checkin_actions';
@@ -37,8 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.deleteCheckin = CheckinActions.deleteCheckin;
   
   //testing toast_api_util ajax fxs
-  window.createToast = ToastsAPIUtil.createToast;
-  window.deleteToast = ToastsAPIUtil.deleteToast;
+  // window.createToast = ToastsAPIUtil.createToast;
+  // window.deleteToast = ToastsAPIUtil.deleteToast;
+  //testing toast actions
+  window.createToast = ToastActions.createToast;
+  window.deleteToast = ToastActions.deleteToast;
 
   //testing beer_api_util ajax fxs
   // window.fetchBeers = BeersAPIUtil.fetchBeers;
