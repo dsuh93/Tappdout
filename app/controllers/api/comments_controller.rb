@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
   def update
     @comment = Comment.find_by(id: params[:id])
     if @comment.update(comment_params)
-      redirect_to api_checkin_url(@comment.checkin_id)
+      render :show
     else
       render @comment.errors.full_messages, status: 422
     end

@@ -15,6 +15,12 @@
 #                           POST   /api/checkins(.:format)                                                                  api/checkins#create {:format=>:json}
 #               api_checkin GET    /api/checkins/:id(.:format)                                                              api/checkins#show {:format=>:json}
 #                           DELETE /api/checkins/:id(.:format)                                                              api/checkins#destroy {:format=>:json}
+#                api_toasts POST   /api/toasts(.:format)                                                                    api/toasts#create {:format=>:json}
+#                 api_toast DELETE /api/toasts/:id(.:format)                                                                api/toasts#destroy {:format=>:json}
+#              api_comments POST   /api/comments(.:format)                                                                  api/comments#create {:format=>:json}
+#               api_comment PATCH  /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
+#                           PUT    /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
+#                           DELETE /api/comments/:id(.:format)                                                              api/comments#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #                      root GET    /                                                                                        static_pages#root
