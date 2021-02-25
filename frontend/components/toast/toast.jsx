@@ -46,7 +46,9 @@ class Toast extends React.Component {
             type="button"
             id="toast-btn"
             className={`${toastStatus}`}
-          >Toast
+          >
+            <img src={window.feedToastIcon}/>
+            <p>Toast</p>
           </button>
         </div>
       )

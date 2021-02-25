@@ -8,11 +8,23 @@
   color: white;
   font-size: 17px;
   font-weight: bold;
+  #toast-btn {
+    display: flex;
+    justify-content: center;
+    border: none;
+    img {
+      margin-right: 10px;
+    }
+  }
   #toast-btn:hover {
     cursor: pointer;
   }
+  #toast-btn.untoasted:hover {
+    background-color: gray;
+  }
   #toast-btn.toasted {
     background-color: gold;
+    border: none;
   }
   #toast-btn.untoasted {
     background-color: lightgray;
