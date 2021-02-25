@@ -5,6 +5,7 @@ import Toast from './toast';
 
 const msp = (state, ownProps) => ({
   checkin: state.entities.checkins[ownProps.checkinId],
+  checkinId: ownProps.checkinId,
   toasterId: state.session.id
 })
 

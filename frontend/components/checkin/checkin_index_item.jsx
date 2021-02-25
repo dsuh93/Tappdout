@@ -52,7 +52,7 @@ class CheckinIndexItem extends React.Component {
         <div className="checkin-item-row-3">
           <div className="checkin-item-btn">
             <button id="comment-btn">Comment</button>
-            <ToastContainer />
+            <ToastContainer checkinId={this.props.checkinId}/>
             {/* <button id="toast-btn">Toast</button> */}
           </div>
           <div className="checkin-item-links">
