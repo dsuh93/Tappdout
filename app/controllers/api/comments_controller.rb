@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to api_checkin_url(@comment.checkin_id)
+      render :show
     else
       render @comment.errors.full_messages, status: 422
     end
