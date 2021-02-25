@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 
 //test imports
-import * as CommentAPIUtil from './util/comment_api_util';
+import * as CommentActions from './actions/comment_actions';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
 
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   //for testing, don't forget to delete these later
   //testing comment_api_util ajax fxs
-  window.createComment = CommentAPIUtil.createComment;
-  window.updateComment = CommentAPIUtil.updateComment;
-  window.deleteComment = CommentAPIUtil.deleteComment;
+  window.createComment = CommentActions.createComment;
+  window.updateComment = CommentActions.updateComment;
+  window.deleteComment = CommentActions.deleteComment;
 
   //testing for store
   window.store = store;
