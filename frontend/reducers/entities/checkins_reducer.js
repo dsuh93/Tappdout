@@ -11,6 +11,7 @@ import {
 
 import {
   RECEIVE_CHECKIN_COMMENT,
+  RECEIVE_UPDATED_COMMENT,
   REMOVE_CHECKIN_COMMENT
 } from '../../actions/comment_actions';
 
@@ -25,7 +26,9 @@ const checkinsReducer = (state = {}, action ) => {
     case RECEIVE_CHECKIN_TOASTS:
       return Object.assign({}, state, { [action.checkinToasts.id]: action.checkinToasts});
     case RECEIVE_CHECKIN_COMMENT:
-      newState[action.comment.checkin_id].comments[action.comment.id] = action.comment;
+      return Object.assign({}, state, { [action.checkinWithComment.id]: action.checkinWithComment})
+    case RECEIVE_UPDATED_COMMENT:
+      newState[action.updatedComment.checkin_id].comments[action.updatedComment.id] = action.updatedComment;
       return newState;
     case REMOVE_CHECKIN_COMMENT:
       delete newState[action.deletedComment.checkin_id].comments[action.deletedComment.id];
