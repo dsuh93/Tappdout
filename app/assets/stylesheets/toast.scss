@@ -1,0 +1,20 @@
+.toast-btn-container {
+  width: 50%;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  #toast-btn:hover {
+    cursor: pointer;
+  }
+  #toast-btn.toasted {
+    background-color: gold;
+  }
+  #toast-btn.untoasted {
+    background-color: lightgray;
+  }
+}

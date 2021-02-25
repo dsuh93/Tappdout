@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../rating/rating';
+import ToastContainer from '../toast/toast_container';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -51,7 +52,8 @@ class CheckinIndexItem extends React.Component {
         <div className="checkin-item-row-3">
           <div className="checkin-item-btn">
             <button id="comment-btn">Comment</button>
-            <button id="toast-btn">Toast</button>
+            <ToastContainer />
+            {/* <button id="toast-btn">Toast</button> */}
           </div>
           <div className="checkin-item-links">
             <p>{newDateFormat}</p>
