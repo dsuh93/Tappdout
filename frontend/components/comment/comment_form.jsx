@@ -27,8 +27,8 @@ class CommentForm extends React.Component {
   render() {
     
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="comment-form-container">
+        <form className="comment-form" onSubmit={this.handleSubmit}>
           <textarea
             id="comment-form-textarea"
             cols="30"
@@ -39,9 +39,9 @@ class CommentForm extends React.Component {
             value={this.state.body}
           >
           </textarea>
-          <div>
+          <div className="comment-form-bottom">
             <p className="chars-typed">{this.state.body.length}/140</p>
-            <button type="button">Post</button>
+            <button className="comment-form-btn" type="button">Post</button>
           </div>
         </form>
       </div>
