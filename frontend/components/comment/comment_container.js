@@ -4,7 +4,7 @@ import CommentIndex from './comment_index';
 import { updateComment, deleteComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => ({
-  comments: ownProps.comments
+  comments: Object.values(ownProps.comments),
 })
 
 const mdp = dispatch => ({

@@ -13,11 +13,12 @@ class CommentIndexItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let comment = this.props.comment;
     this.props.updateComment({
-      id: this.props.comment.id,
+      id: comment.id,
       body: this.state.body,
-      author_id: this.props.authorId,
-      checkin_id: this.props.checkinId
+      author_id: comment.author_id,
+      checkin_id: comment.checkin_id
     });
     this.setState({ editForm: false });
   }
@@ -38,7 +39,8 @@ class CommentIndexItem extends React.Component {
   }
 
   render() {
-    let timeAgo = new Date();
+    let timeAgo = this.props.comment.created_at;
+    const commentId = this.props.comment.id;
     let charCount = this.state.body.length;
     let hideBody = this.state.editForm ? "hidden" : ""
     let hideEditForm = this.state.editForm ? "" : "hidden"
@@ -51,7 +53,7 @@ class CommentIndexItem extends React.Component {
           <div className="comment-btns">
             <p>{timeAgo}</p>
             <button onClick={this.editFormState} type="button">Edit</button>
-            <button onClick={() => this.props.deleteComment()} type="button">Delete</button>
+            <button onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
           </div>
         </div>
         <div className={`comment-edit-form-container ${hideEditForm}`}>
