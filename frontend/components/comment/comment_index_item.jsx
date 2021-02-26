@@ -51,7 +51,7 @@ class CommentIndexItem extends React.Component {
           <div className="comment-btns">
             <p>{timeAgo}</p>
             <button onClick={this.editFormState} type="button">Edit</button>
-            <button type="button">Delete</button>
+            <button onClick={() => this.props.deleteComment()} type="button">Delete</button>
           </div>
         </div>
         <div className={`comment-edit-form-container ${hideEditForm}`}>
