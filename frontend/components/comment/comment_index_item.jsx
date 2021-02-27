@@ -47,7 +47,7 @@ class CommentIndexItem extends React.Component {
     let hideEditForm = this.state.editForm ? "" : "hidden"
     return (
       <div className="comment-index-item-container">
-        <img className="author-img" src="" alt=""/>
+        <img className="author-img" src={window.defAvatar} alt=""/>
         <div className={`static-comment-body ${hideBody}`}>
           <div className="comment-body">
             <p>{body}</p>

@@ -247,9 +247,29 @@
                 }
               }
             }
-            .checkin-item-row-4.hidden {
+            .checkin-item-row-4.hidden, .checkin-item-row-5.hidden {
               display: none;
             }
+            .checkin-item-row-5 {
+              border: 1px solid black;
+              width: 80%;
+              .comment-index-container {
+                // border: 1px solid red;
+                .comment-index {
+                  // border: 1px solid green;
+                  .comment-index-item-container {
+                    border: 1px solid blue;
+                    display: flex;
+                    .author-img {
+                      width: 35px;
+                      height: 35px;
+                      border-radius: 50px;
+                    }
+                  }
+                }
+              }
+            }
+            
           }
         }
       }
