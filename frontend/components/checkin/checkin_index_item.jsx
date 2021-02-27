@@ -14,14 +14,23 @@ class CheckinIndexItem extends React.Component {
   deleteCheckin(e) {
     e.preventDefault();
     this.props.deleteCheckin(this.props.checkinId)
-      .then(() => this.props.history.push('/home'))
+      // .then(() => this.props.history.push('/home'))
   }
 
   render() {
     const {checkin, sessionId} = this.props;
+    const showToasts = checkin.toasts ? (Object.keys(checkin.toasts).length > 0 ? "" : "hidden") : "hidden";
+    const numToasts = checkin.toasts ? Object.keys(checkin.toasts).length : ""
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
     const showDelete = checkin.user.id === sessionId ? "show-delete" : "hide-delete"
+
+    const userAvatars = checkin.toasts ? Object.keys(checkin.toasts).length > 0 ? Object.keys(checkin.toasts).map((toaster, i) => {
+      return (
+        <img className="toast-avatar" src={window.defAvatar}/>
+      )
+    }) : "" : ""
+
     const dateFormat = checkin.created_at.split("T")[0].split("-");
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
@@ -63,10 +72,11 @@ class CheckinIndexItem extends React.Component {
             </div>
           </div>
         </div>
-        {/* <div className="checkin-item-row-4">
-          <p>number of toasts go here</p>
-          <p>users profile images go here</p>
-        </div> */}
+        <div className={`checkin-item-row-4 ${showToasts}`}>
+          <p>{numToasts}<img src={window.numToastIcon}/></p>
+          <div className="border"></div>
+          <div className="toast-avatars-container">{userAvatars}</div>
+        </div>
       </div>
     )
   }

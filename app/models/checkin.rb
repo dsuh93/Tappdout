@@ -11,11 +11,13 @@ class Checkin < ApplicationRecord
 
   has_many :toasts,
     foreign_key: :checkin_id,
-    class_name: :Toast
+    class_name: :Toast,
+    dependent: :destroy
   
   has_many :comments,
     foreign_key: :checkin_id,
-    class_name: :Comment
+    class_name: :Comment,
+    dependent: :destroy
 
   has_one_attached :photo
 
