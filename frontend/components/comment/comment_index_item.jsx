@@ -39,23 +39,27 @@ class CommentIndexItem extends React.Component {
   }
 
   render() {
-    const timeAgo = this.props.comment.created_at;
-    const body = this.props.comment.body;
+    const comment = this.props.comment
+    const timeAgo = comment.created_at;
+    const author = comment.author;
+    const body = comment.body;
     const commentId = this.props.comment.id;
     let charCount = this.state.body.length;
     let hideBody = this.state.editForm ? "hidden" : ""
     let hideEditForm = this.state.editForm ? "" : "hidden"
     return (
       <div className="comment-index-item-container">
-        <img className="author-img" src={window.defAvatar} alt=""/>
-        <div className={`static-comment-body ${hideBody}`}>
-          <div className="comment-body">
-            <p>{body}</p>
-          </div>
-          <div className="comment-btns">
-            <p>{timeAgo}</p>
-            <button onClick={this.editFormState} type="button">Edit</button>
-            <button onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
+        <div className="comment-index-item">
+          <img className="author-img" src={window.defAvatar} alt=""/>
+          <div className={`static-comment-body `}>
+            <div className="comment-body">
+              <p>{author}: {body}</p>
+            </div>
+            <div className="comment-btns">
+              <p>{timeAgo}</p>
+              <button onClick={this.editFormState} type="button">Edit</button>
+              <button onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
+            </div>
           </div>
         </div>
         <div className={`comment-edit-form-container ${hideEditForm}`}>

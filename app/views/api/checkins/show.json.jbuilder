@@ -17,6 +17,7 @@ json.comments do
   @checkin.comments.each do |comment|
     json.set! comment.id do
       json.partial! '/api/comments/comment', comment: comment
+      json.author comment.author.first_name + " " + comment.author.last_name
     end
   end
 end

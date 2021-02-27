@@ -251,19 +251,23 @@
               display: none;
             }
             .checkin-item-row-5 {
-              border: 1px solid black;
+              // border: 1px solid black;
               width: 80%;
               .comment-index-container {
                 // border: 1px solid red;
                 .comment-index {
                   // border: 1px solid green;
                   .comment-index-item-container {
-                    border: 1px solid blue;
-                    display: flex;
-                    .author-img {
-                      width: 35px;
-                      height: 35px;
-                      border-radius: 50px;
+                    // border: 1px solid blue;
+                    .comment-index-item {
+                      border: 1px solid green;
+                      display: flex;
+                      padding: 5px;
+                      .author-img {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50px;
+                      }
                     }
                   }
                 }
