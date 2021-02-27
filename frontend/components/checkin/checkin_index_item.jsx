@@ -2,13 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../rating/rating';
 import ToastContainer from '../toast/toast_container';
+import CommentFormContainer from '../comment/comment_form_container';
+import CommentContainer from '../comment/comment_container';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showCommentForm: false,
+    }
     this.deleteCheckin = this.deleteCheckin.bind(this);
+    this.handleCommentButton = this.handleCommentButton.bind(this);
+  }
+
+  handleCommentButton(e) {
+    e.preventDefault();
+    if (this.state.showCommentForm) {
+      this.setState({showCommentForm: false})
+    } else {
+      this.setState({showCommentForm: true})
+    }
   }
 
   deleteCheckin(e) {
@@ -19,7 +34,9 @@ class CheckinIndexItem extends React.Component {
 
   render() {
     const {checkin, sessionId} = this.props;
+    const comments = checkin.comments ? checkin.comments : {}
     const showToasts = checkin.toasts ? (Object.keys(checkin.toasts).length > 0 ? "" : "hidden") : "hidden";
+    const showComments = checkin.comments ? (Object.keys(checkin.comments).length > 0 ? "" : "hidden") : "hidden";
     const numToasts = checkin.toasts ? Object.keys(checkin.toasts).length : ""
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
     const showImage = photoURL ? "show-image" : "hide-image"; 
@@ -27,7 +44,7 @@ class CheckinIndexItem extends React.Component {
 
     const userAvatars = checkin.toasts ? Object.keys(checkin.toasts).length > 0 ? Object.keys(checkin.toasts).map((toaster, i) => {
       return (
-        <img className="toast-avatar" src={window.defAvatar}/>
+        <img key={`${toaster}-${i}`} className="toast-avatar" src={window.defAvatar}/>
       )
     }) : "" : ""
 
@@ -60,7 +77,13 @@ class CheckinIndexItem extends React.Component {
         </div>
         <div className="checkin-item-row-3">
           <div className="checkin-item-btn">
-            <button id="comment-btn">Comment</button>
+            <button
+              id="comment-btn"
+              onClick={this.handleCommentButton}
+            >
+              <img src={window.feedCommentIcon}/>
+              <p>Comment</p>
+            </button>
             <ToastContainer checkinId={this.props.checkinId}/>
             {/* <button id="toast-btn">Toast</button> */}
           </div>
@@ -76,6 +99,10 @@ class CheckinIndexItem extends React.Component {
           <p>{numToasts}<img src={window.numToastIcon}/></p>
           <div className="border"></div>
           <div className="toast-avatars-container">{userAvatars}</div>
+        </div>
+        <div className={`checkin-item-row-5 ${showComments}`}>
+          <CommentContainer comments={comments} />
+          <CommentFormContainer showCommentForm={this.state.showCommentForm}/>
         </div>
       </div>
     )

@@ -39,7 +39,8 @@ class CommentIndexItem extends React.Component {
   }
 
   render() {
-    let timeAgo = this.props.comment.created_at;
+    const timeAgo = this.props.comment.created_at;
+    const body = this.props.comment.body;
     const commentId = this.props.comment.id;
     let charCount = this.state.body.length;
     let hideBody = this.state.editForm ? "hidden" : ""
@@ -49,6 +50,7 @@ class CommentIndexItem extends React.Component {
         <img className="author-img" src="" alt=""/>
         <div className={`static-comment-body ${hideBody}`}>
           <div className="comment-body">
+            <p>{body}</p>
           </div>
           <div className="comment-btns">
             <p>{timeAgo}</p>

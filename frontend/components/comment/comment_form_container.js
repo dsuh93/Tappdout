@@ -5,7 +5,8 @@ import CommentForm from './comment_form';
 
 const msp = (state, ownProps) => ({
   checkinId: ownProps.checkinId,
-  authorId: state.session.id
+  authorId: state.session.id,
+  showCommentForm: ownProps.showCommentForm
 })
 
 const mdp = dispatch => ({

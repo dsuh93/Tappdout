@@ -25,9 +25,9 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    
+    const showCommentForm = this.props.showCommentForm ? "" : "hidden"
     return (
-      <div className="comment-form-container">
+      <div className={`comment-form-container ${showCommentForm}`}>
         <form className="comment-form" onSubmit={this.handleSubmit}>
           <textarea
             id="comment-form-textarea"

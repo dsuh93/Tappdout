@@ -167,8 +167,17 @@
                   font-weight: bold;
                 }
                 #comment-btn {
-                  background-color: gold;
+                  display: flex;
+                  justify-content: center;
+                  background-color: lightgray;
                   margin-right: 15px;
+
+                }
+                #comment-btn:hover {
+                  background-color: rgb(167, 167, 167);
+                }
+                #comment-btn:active {
+                  background-color: gray;
                 }
                 #toast-btn {
                   width: 100%;
@@ -237,6 +246,9 @@
                   height: 30px;
                 }
               }
+            }
+            .checkin-item-row-4.hidden {
+              display: none;
             }
           }
         }
