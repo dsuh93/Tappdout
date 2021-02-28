@@ -5,8 +5,7 @@ import CommentForm from './comment_form';
 
 const msp = (state, ownProps) => ({
   checkinId: ownProps.checkinId,
-  authorId: state.session.id,
-  showCommentForm: ownProps.showCommentForm
+  authorId: state.session.id
 })
 
 const mdp = dispatch => ({
@@ -14,3 +13,6 @@ const mdp = dispatch => ({
 })
 
 export default withRouter(connect(msp, mdp)(CommentForm))
+
+// ,
+  // showCommentForm: ownProps.showCommentForm

@@ -11,11 +11,14 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const commentForm = document.getElementById(`comment-form-${this.props.checkinId}`)
     this.props.createComment({
       body: this.state.body,
       author_id: this.props.authorId,
       checkin_id: this.props.checkinId
     })
+    this.setState({body: ""})
+    commentForm.classList.add("collapsed");
   }
 
   update(key) {
@@ -25,9 +28,10 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    const showCommentForm = this.props.showCommentForm ? "" : "collapsed"
+    // const showCommentForm = this.props.showCommentForm ? "" : "collapsed"
+    //  ${showCommentForm}
     return (
-      <div className={`comment-form-container ${showCommentForm}`}>
+      <div id={`comment-form-${this.props.checkinId}`} className={`comment-form-container collapsed`}>
         <form className="comment-form" onSubmit={this.handleSubmit}>
           <textarea
             id="comment-form-textarea"
@@ -41,7 +45,7 @@ class CommentForm extends React.Component {
           </textarea>
           <div className="comment-form-bottom">
             <p className="chars-typed">{this.state.body.length}/140</p>
-            <button className="comment-form-btn" type="button">Post</button>
+            <button className="comment-form-btn">Post</button>
           </div>
         </form>
       </div>

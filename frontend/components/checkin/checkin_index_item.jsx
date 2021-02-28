@@ -10,20 +10,23 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showCommentForm: false,
-    }
+    // this.state = {
+    //   showCommentForm: false,
+    // }
     this.deleteCheckin = this.deleteCheckin.bind(this);
     this.handleCommentButton = this.handleCommentButton.bind(this);
   }
 
   handleCommentButton(e) {
     e.preventDefault();
-    if (this.state.showCommentForm) {
-      this.setState({showCommentForm: false})
-    } else {
-      this.setState({showCommentForm: true})
-    }
+    const commentForm = document.getElementById(`comment-form-${this.props.checkin.id}`);
+    commentForm.classList.toggle('collapsed');
+    // if (this.state.showCommentForm) {
+    //   this.setState({showCommentForm: false})
+    // } else {
+    //   this.setState({showCommentForm: true})
+      
+    // }
   }
 
   deleteCheckin(e) {
@@ -102,7 +105,7 @@ class CheckinIndexItem extends React.Component {
         </div>
         <div className={`checkin-item-row-5`}>
           <CommentContainer showComments={showComments} comments={comments} />
-          <CommentFormContainer showCommentForm={this.state.showCommentForm}/>
+          <CommentFormContainer checkinId={checkin.id} />
         </div>
       </div>
     )
@@ -110,3 +113,5 @@ class CheckinIndexItem extends React.Component {
 }
 
 export default CheckinIndexItem;
+
+// showCommentForm={this.state.showCommentForm}
