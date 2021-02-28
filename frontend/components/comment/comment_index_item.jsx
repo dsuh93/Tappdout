@@ -1,4 +1,5 @@
 import React from 'react';
+import DateContainer from '../date/date_container';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
