@@ -169,7 +169,7 @@
                 #comment-btn {
                   display: flex;
                   justify-content: center;
-                  background-color: lightgray;
+                  background-color: rgb(177, 176, 176);
                   margin-right: 15px;
                   outline: none;
                   .comment-btn-icon {
@@ -177,10 +177,10 @@
                   }
                 }
                 #comment-btn:hover {
-                  background-color: rgb(167, 167, 167);
+                  background-color: gray;
                 }
                 #comment-btn:active {
-                  background-color: gray;
+                  background-color: rgb(78, 78, 78);
                 }
                 #toast-btn {
                   width: 100%;
@@ -279,6 +279,49 @@
               .comment-form-container {
                 background-color: rgb(250, 248, 248);
                 padding: 8px;
+                overflow: hidden;
+                transition: all 0.75s;
+                -o-transition: all 0.75s;
+                -webkit-transition: all 0.75s;
+                height: fit-content;
+                max-height: 300px;
+                .comment-form {
+                  .comment-form-bottom {
+                    display: flex;
+                    .chars-typed {
+                      margin-top: 5px;
+                      margin-left: 5px;
+                      font-family: 'Roboto', sans-serif;
+                      font-size: 15px;
+                      color: lightgray;
+                    }
+                    .comment-form-btn {
+                      outline: none;
+                      border: none;
+                      border-radius: 4px;
+                      margin-top: 5px;
+                      margin-left: auto;
+                      padding: 5px 40px;
+                      background-color: rgb(177, 176, 176);
+                      font-family: 'Roboto', sans-serif;
+                      font-weight: 600;
+                      font-size: 18px;
+                      color: white;
+                    }
+                    .comment-form-btn:hover {
+                      cursor: pointer;
+                      background-color: gray;
+                    }
+                    .comment-form-btn:active {
+                      background-color: rgb(78, 78, 78);
+                    }
+                  }
+                }
+              }
+              .comment-form-container.collapsed {
+                visibility: hidden;
+                max-height: 0px;
+                
               }
             }
             
