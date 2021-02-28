@@ -262,7 +262,7 @@
                 .comment-index {
                   // border: 1px solid green;
                   .comment-index-item-container {
-                    // border: 1px solid blue;
+                    border-bottom: 1px solid rgb(231, 231, 231);
                     .comment-index-item {
                       background-color: #faf8f8;
                       display: flex;
@@ -271,6 +271,11 @@
                         width: 35px;
                         height: 35px;
                         border-radius: 50px;
+                      }
+                      .static-comment-body {
+                        .comment-btns {
+                          display: flex;
+                        }
                       }
                     }
                     .comment-index-item.hidden {
