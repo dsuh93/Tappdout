@@ -4,21 +4,29 @@ class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: ""
+      body: "",
+      commentFormError: false
     };
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const commentForm = document.getElementById(`comment-form-${this.props.checkinId}`)
-    this.props.createComment({
-      body: this.state.body,
-      author_id: this.props.authorId,
-      checkin_id: this.props.checkinId
-    })
-    this.setState({body: ""})
-    commentForm.classList.add("collapsed");
+    if (this.state.body.length === 0) {
+      this.setState({commentFormError: true})
+    } else {
+      this.setState({commentFormError: false})
+      const commentFormContainer = document.getElementById(`comment-form-container-${this.props.checkinId}`)
+      const commentForm = document.getElementById(`comment-form-${this.props.checkinId}`)
+      this.props.createComment({
+        body: this.state.body,
+        author_id: this.props.authorId,
+        checkin_id: this.props.checkinId
+      })
+      this.setState({body: ""})
+      commentFormContainer.classList.add("collapsed")
+    }
+    
   }
 
   update(key) {
@@ -28,11 +36,11 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    // const showCommentForm = this.props.showCommentForm ? "" : "collapsed"
-    //  ${showCommentForm}
+    const renderError = this.state.commentFormError ? "Nothing has been added. Please add comment." : null;
     return (
-      <div id={`comment-form-${this.props.checkinId}`} className={`comment-form-container collapsed`}>
+      <div id={`comment-form-container-${this.props.checkinId}`} className={`comment-form-container collapsed`}>
         <form className="comment-form" onSubmit={this.handleSubmit}>
+          <p>{renderError}</p>
           <textarea
             id="comment-form-textarea"
             cols="69.5"

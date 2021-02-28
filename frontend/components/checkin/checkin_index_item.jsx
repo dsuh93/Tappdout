@@ -10,23 +10,15 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 class CheckinIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   showCommentForm: false,
-    // }
+    
     this.deleteCheckin = this.deleteCheckin.bind(this);
     this.handleCommentButton = this.handleCommentButton.bind(this);
   }
 
   handleCommentButton(e) {
     e.preventDefault();
-    const commentForm = document.getElementById(`comment-form-${this.props.checkin.id}`);
-    commentForm.classList.toggle('collapsed');
-    // if (this.state.showCommentForm) {
-    //   this.setState({showCommentForm: false})
-    // } else {
-    //   this.setState({showCommentForm: true})
-      
-    // }
+    const commentFormContainer = document.getElementById(`comment-form-container-${this.props.checkin.id}`);
+    commentFormContainer.classList.toggle('collapsed');
   }
 
   deleteCheckin(e) {

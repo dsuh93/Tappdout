@@ -255,7 +255,7 @@
             }
             .checkin-item-row-5 {
               // border: 1px solid black;
-              margin-top: 10px;
+              margin-top: 15px;
               width: 80%;
               .comment-index-container {
                 // border: 1px solid red;
@@ -264,7 +264,7 @@
                   .comment-index-item-container {
                     // border: 1px solid blue;
                     .comment-index-item {
-                      border: 1px solid green;
+                      background-color: #faf8f8;
                       display: flex;
                       padding: 5px;
                       .author-img {
@@ -272,6 +272,19 @@
                         height: 35px;
                         border-radius: 50px;
                       }
+                    }
+                    .comment-index-item.hidden {
+                      display: none;
+                    }
+                    .comment-edit-form-container {
+                      .comment-edit-form {
+                        #comment-edit-textarea {
+                          resize: none;
+                        }
+                      }
+                    }
+                    .comment-edit-form-container.hidden {
+                      display: none;
                     }
                   }
                 }
@@ -321,7 +334,6 @@
               .comment-form-container.collapsed {
                 visibility: hidden;
                 max-height: 0px;
-                
               }
             }
             
