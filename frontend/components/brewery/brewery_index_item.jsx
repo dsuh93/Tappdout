@@ -35,7 +35,6 @@ class BreweryIndexItem extends React.Component {
   }
 
   render() {
-    debugger
     const brewery = this.props.brewery;
     const beers = Object.values(brewery.beers);
     return (

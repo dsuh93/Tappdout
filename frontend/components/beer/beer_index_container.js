@@ -6,7 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 import BeerIndex from './beer_index';
 
 const msp = (state, ownProps) => {
-  debugger
   return {
     beers: Object.values(state.entities.beers)
   }

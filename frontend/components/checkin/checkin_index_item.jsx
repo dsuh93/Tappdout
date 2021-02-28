@@ -81,7 +81,7 @@ class CheckinIndexItem extends React.Component {
               id="comment-btn"
               onClick={this.handleCommentButton}
             >
-              <img src={window.feedCommentIcon}/>
+              <img className="comment-btn-icon" src={window.feedCommentIcon}/>
               <p>Comment</p>
             </button>
             <ToastContainer checkinId={this.props.checkinId}/>
@@ -100,8 +100,8 @@ class CheckinIndexItem extends React.Component {
           <div className="border"></div>
           <div className="toast-avatars-container">{userAvatars}</div>
         </div>
-        <div className={`checkin-item-row-5 ${showComments}`}>
-          <CommentContainer comments={comments} />
+        <div className={`checkin-item-row-5`}>
+          <CommentContainer showComments={showComments} comments={comments} />
           <CommentFormContainer showCommentForm={this.state.showCommentForm}/>
         </div>
       </div>

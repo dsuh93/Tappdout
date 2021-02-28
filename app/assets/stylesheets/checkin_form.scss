@@ -43,6 +43,20 @@
       border: 1px solid lightgray;
       border-radius: 3px;
     }
+    .checkin-char-count {
+      text-align: center;
+      padding: 2px;
+      font-size: 11px;
+      width:fit-content;
+      height:fit-content;
+      position: absolute;
+      top: 59.75%;
+      bottom: 41.25%;
+      left: 74.75%;
+      right: 25.25%;
+      background-color: rgb(236, 236, 236);
+      color: rgb(148, 148, 148);
+    }
     input[type="file"] {
       display: none;
     }

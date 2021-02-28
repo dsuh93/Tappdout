@@ -52,6 +52,7 @@ class CheckinForm extends React.Component {
   }
 
   render() {
+    const charsLeft = 255 - this.state.description.length;
     const noRating = () => {
       return (
         <div className="no-rating">
@@ -72,9 +73,12 @@ class CheckinForm extends React.Component {
             className="checkin-form-textarea"
             cols="50"
             rows="5"
+            maxLength="255"
             value={this.state.description}
             onChange={this.update('description')}
-          ></textarea>
+          >
+          </textarea>
+          <div className="checkin-char-count">{`${charsLeft}`}</div>
           <label htmlFor="file-upload" className="photo-upload"><img id="upload" src={window.addPhoto}/></label>
           <input id="file-upload" onChange={this.handleFile} type="file"/>
           <div className="checkin-form-bottom">

@@ -31,8 +31,8 @@ class CommentForm extends React.Component {
         <form className="comment-form" onSubmit={this.handleSubmit}>
           <textarea
             id="comment-form-textarea"
-            cols="30"
-            rows="10"
+            cols="69.5"
+            rows="3"
             placeholder="Leave a comment..."
             maxLength="140"
             onChange={this.update("body")}

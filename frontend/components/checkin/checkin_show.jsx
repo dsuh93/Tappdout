@@ -44,7 +44,6 @@ class CheckinShow extends React.Component {
       const finalDate = [newTime, newDateFormat].join(' ');
 
 
-      debugger
       return (
         <div className="checkin-show-container">
           <div className="checkin-show">
