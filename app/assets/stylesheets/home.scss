@@ -273,9 +273,31 @@
                         border-radius: 50px;
                       }
                       .static-comment-body {
+                        width: 100%;
+                        margin-left: 10px;
                         .comment-btns {
                           display: flex;
+                          margin-top: 8px;
+                          font-size: 12px;
+                          color: rgb(173, 173, 173);
+                          button {
+                            appearance: none;
+                            border: none;
+                            outline: none;
+                            background: none;
+                            margin-left: 15px;
+                            color:rgb(231, 166, 0);
+                            font-size: 12px;
+                          }
+                          button:hover {
+                            cursor: pointer;
+                            color:rgb(255, 190, 24);
+                          }
+                          button.hidden {
+                            display: none;
+                          }
                         }
+
                       }
                     }
                     .comment-index-item.hidden {

@@ -13,6 +13,7 @@ class CommentIndex extends React.Component {
         <li key={`${comment.id}-${i}`}>
           <CommentIndexItem
             comment={comment}
+            currentUser={this.props.currentUser}
             updateComment={this.props.updateComment}
             deleteComment={this.props.deleteComment}
           />

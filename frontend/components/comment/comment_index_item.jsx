@@ -1,5 +1,4 @@
 import React from 'react';
-import DateContainer from '../date/date_container';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
@@ -41,8 +40,14 @@ class CommentIndexItem extends React.Component {
 
   render() {
     const comment = this.props.comment
-    const timeAgo = comment.created_at;
+    const timeAgo = new Date(`${comment.created_at}`).toDateString().split(" ");
+
+    //comment button should only be available if comment author is current user
     const author = comment.author;
+    const authorId = comment.author_id;
+    const currentUser = this.props.currentUser;
+    const showButtons = (authorId === currentUser) ? "" : "hidden"
+
     const body = comment.body;
     const commentId = this.props.comment.id;
     let charCount = this.state.body.length;
@@ -57,9 +62,9 @@ class CommentIndexItem extends React.Component {
               <p>{author}: {body}</p>
             </div>
             <div className="comment-btns">
-              <p>{timeAgo}</p>
-              <button onClick={this.editFormState} type="button">Edit</button>
-              <button onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
+              <p>{`${timeAgo[2]} ${timeAgo[1]} ${timeAgo[3].slice(2)}`}</p>
+              <button className={`${showButtons}`} onClick={this.editFormState} type="button">Edit</button>
+              <button className={`${showButtons}`} onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
             </div>
           </div>
         </div>
