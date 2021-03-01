@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   //for testing, don't forget to delete these later
-  //testing beer_api_util and brewery_api_util ajax fxs for search terms
-  window.fetchBeers = BeerAPIUtil.fetchBeers;
-  window.fetchBreweries = BreweryAPIUtil.fetchBreweries;
+  
 
   //testing for store
   window.store = store;
