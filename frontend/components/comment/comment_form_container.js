@@ -13,6 +13,3 @@ const mdp = dispatch => ({
 })
 
 export default withRouter(connect(msp, mdp)(CommentForm))
-
-// ,
-  // showCommentForm: ownProps.showCommentForm

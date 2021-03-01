@@ -55,9 +55,9 @@ class CommentIndexItem extends React.Component {
     let hideEditForm = this.state.editForm ? "" : "hidden"
     return (
       <div className="comment-index-item-container">
-        <div className={`comment-index-item ${hideBody}`}>
+        <div className={`comment-index-item`}>
           <img className="author-img" src={window.defAvatar} alt=""/>
-          <div className={`static-comment-body `}>
+          <div className={`static-comment-body ${hideBody}`}>
             <div className="comment-body">
               <p>{author}: {body}</p>
             </div>
@@ -67,24 +67,24 @@ class CommentIndexItem extends React.Component {
               <button className={`${showButtons}`} onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
             </div>
           </div>
-        </div>
-        <div className={`comment-edit-form-container ${hideEditForm}`}>
-          <form className="comment-edit-form">
-            <textarea
-              id="comment-edit-textarea"
-              cols="30"
-              rows="10"
-              maxLength="140"
-              value={this.state.body}
-              onChange={this.update("body")}
-            ></textarea>
-            <div>
+          <div className={`comment-edit-form-container ${hideEditForm}`}>
+            <form className="comment-edit-form">
+              <textarea
+                id="comment-edit-textarea"
+                cols="62"
+                rows="3"
+                maxLength="140"
+                value={this.state.body}
+                onChange={this.update("body")}
+              ></textarea>
+              <div>
+              </div>
+            </form>
+            <div className="comment-edit-form-bottom">
+              <p>{charCount}/140</p>
+              <button id="edit-update" onClick={this.handleSubmit} className="comment-update-btn" type="button">Update</button>
+              <button id="edit-cancel" onClick={this.editFormState} className="comment-cancel-btn" type="button">Cancel</button>
             </div>
-          </form>
-          <div className="comment-edit-form-bottom">
-            <p>{charCount}/140</p>
-            <button onClick={this.handleSubmit} className="comment-update-btn" type="button">Update</button>
-            <button onClick={this.editFormState} className="comment-cancel-btn" type="button">Cancel</button>
           </div>
         </div>
       </div>

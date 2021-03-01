@@ -303,19 +303,51 @@
                         }
 
                       }
-                    }
-                    .comment-index-item.hidden {
-                      display: none;
-                    }
-                    .comment-edit-form-container {
-                      .comment-edit-form {
-                        #comment-edit-textarea {
-                          resize: none;
+                      .static-comment-body.hidden {
+                        display: none;
+                      }
+                      .comment-edit-form-container {
+                        width: 100%;
+                        margin-left: 10px;
+                        .comment-edit-form {
+                          #comment-edit-textarea {
+                            resize: none;
+                            border-radius: 5px;
+                            box-shadow: inset 1px 1px 5px 1px lightgray
+                          }
+                        }
+                        .comment-edit-form-bottom {
+                          display: flex;
+                          align-items: center;
+                          p {
+                            color: lightgray;
+                            font-size: 15px;
+                            margin-right: auto;
+                          }
+                          button {
+                            appearance: none;
+                            background: none;
+                            border: none;
+                            outline: none;
+                            color:rgb(228, 148, 0);
+                            font-size: 15px;
+                            font-weight: bold;
+                          }
+                          button:hover {
+                            cursor: pointer;
+                          }
+                          #edit-update:hover {
+                            color:rgb(241, 183, 35)
+                          }
+                          #edit-cancel {
+                            margin-left: 15px;
+                            color: gray;
+                          }
                         }
                       }
-                    }
-                    .comment-edit-form-container.hidden {
-                      display: none;
+                      .comment-edit-form-container.hidden {
+                        display: none;
+                      }
                     }
                   }
                 }
