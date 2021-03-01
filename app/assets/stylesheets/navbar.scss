@@ -123,6 +123,16 @@
   .search-bar-input::placeholder {
     color: lightgray;
   }
+  .searchbar-index-container {
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    .searchbar-index {
+      
+    }
+  }
   
 }
 

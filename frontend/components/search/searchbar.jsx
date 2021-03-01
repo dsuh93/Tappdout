@@ -5,20 +5,29 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      keyword: ""
     };
   }
 
   update(keyword) {
     return (e) => {
       this.setState({[keyword]: e.target.value })
-      this.props.fetchSearchBeers(this.state.search);
-      this.props.fetchSearchBreweries(this.state.search);
+      this.props.fetchSearchBeers(this.state.keyword)
+      this.props.fetchSearchBreweries(this.state.keyword)
     }
   }
 
   render() {
     const showSearchIndex = this.state.keyword.length > 0 ? "" : "hidden";
+    const searchBar = document.getElementById("search-bar");
+    const searchIndex = document.getElementById("search-index-container");
+    document.addEventListener("click", e => {
+      if (e.target != searchBar) {
+        searchIndex.classList.add("hidden");
+      } else {
+        searchIndex.classList.remove("hidden");
+      }
+    })
 
     return (
       <div className="search-bar">
@@ -28,9 +37,9 @@ class SearchBar extends React.Component {
           placeholder="Find a brewery or bar..."
           type="text"
           value={this.state.keyword}
-          onChange={this.update("search")}
+          onChange={this.update("keyword")}
         />
-        <div className={`search-bar-index ${showSearchIndex}`}>
+        <div id="search-index-container" className={`searchbar-index-container ${showSearchIndex}`}>
           <SearchbarIndexContainer />
         </div>
       </div>

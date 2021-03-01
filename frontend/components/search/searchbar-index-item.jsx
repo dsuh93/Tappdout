@@ -7,7 +7,7 @@ class SearchbarIndexItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="searchbar-index-item">
         <p>searchbar index item</p>
       </div>
     )
