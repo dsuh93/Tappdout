@@ -1,6 +1,8 @@
 class Api::BeersController < ApplicationController
   def index
-    @beers = Beer.all
+    beers = params[:search] ? Beer.search_beers(params[:search]) : Beer.all
+    # @beers = Beer.all
+    @beers = beers
     render :index 
   end
   

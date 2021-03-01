@@ -18,5 +18,10 @@ class Brewery < ApplicationRecord
   has_many :beer_checkins,
     through: :beers,
     source: :checkins
-
+  
+  def self.search_breweries(search_term)
+    self.joins(:beers)
+      .where('brewery_name ILIKE ?', "%#{search_term}%")
+      .limit(3)
+  end
 end
