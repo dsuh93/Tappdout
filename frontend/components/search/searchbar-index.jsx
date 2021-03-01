@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchbarIndexItem from './searchbar-index-item';
 
 class SearchbarIndex extends React.Component {
   constructor(props) {
