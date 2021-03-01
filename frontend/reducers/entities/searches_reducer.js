@@ -11,10 +11,10 @@ const SearchesReducer = (state = defaultSearches, action) => {
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_SEARCH_BEERS:
-      newState[beers] = action.searchBeers;
+      newState.beers = action.searchBeers;
       return newState;
     case RECEIVE_SEARCH_BREWERIES:
-      newState[breweries] = action.searchBreweries;
+      newState.breweries = action.searchBreweries;
       return newState;
     default:
       return state;
