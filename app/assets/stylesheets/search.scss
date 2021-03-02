@@ -24,7 +24,7 @@
     width: 100%;
     .searchbar-index {
       .searchbar-beer-list.hide, .searchbar-brewery-list.hide {
-        visibility: hidden;
+        display: none;
       }
     }
   }
