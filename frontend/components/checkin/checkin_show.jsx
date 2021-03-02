@@ -21,8 +21,13 @@ class CheckinShow extends React.Component {
         </div>
       )
     } else {
-      //.toDateString and .toLocaleTimeString
       const checkin = this.props.checkin
+      const toasts = checkin.toasts ? Object.values(checkin.toasts).length : 0;
+      const toastAvatars = checkin.toasts ? Object.values(checkin.toasts).map(toast => {
+        return(
+          <img src={window.defAvatar}/>
+        )
+      }) : ""
 
       const date = new Date(`${checkin.created_at}`).toDateString().split(" ");
       const time = new Date(`${checkin.created_at}`).toLocaleTimeString().split(" ");
@@ -67,7 +72,11 @@ class CheckinShow extends React.Component {
               </div>
             </div>
             <div className="checkin-show-toasts">
-              <p>TOASTS COMING SOON</p>
+              <button className="show-toast-btn">
+                <div className="show-toast-icon">Toast</div>
+              </button>
+              <div className="show-toast-count">{toasts}</div>
+              <div className="show-toast-avatars">{toastAvatars}</div>
             </div>
             <div className="checkin-show-comment">
               <p>COMMENT COMING SOON</p>

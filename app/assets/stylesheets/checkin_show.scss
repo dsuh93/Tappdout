@@ -109,14 +109,13 @@
       }
     }
     .checkin-show-toasts {
+      display: flex;
+      align-items: center;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       margin: 15px 0;
       background-color: white;
       // border: 1px solid black;
-      p {
-        color: gray;
-        padding: 15px;
-      }
+      
     }
     .checkin-show-comment {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
