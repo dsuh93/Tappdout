@@ -6,11 +6,27 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 class CheckinShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCheckin(this.props.checkinId)
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    const checkin = this.props.checkin;
+    if (checkin.toasts) {
+      const toasts = checkin.toasts;
+      if (Object.keys(toasts).includes(`${this.props.currentUser}`)) {
+        this.props.deleteToast(toasts.currentUser.id)
+      } else {
+        this.props.createToast({toaster_id: this.props.currentUser, checkin_id: this.props.checkinId})
+      }
+    } else {
+      this.props.createToast({toaster_id: this.props.currentUser, checkin_id: this.props.checkinId})
+    }
   }
 
   render() {
@@ -29,7 +45,7 @@ class CheckinShow extends React.Component {
         )
       }) : ""
       debugger
-      const toasted = checkin.toasts ? (Object.keys(checkin.toasts).includes(`${this.props.authorId}`)) ? "toasted" : "" : ""
+      const toasted = checkin.toasts ? (Object.keys(checkin.toasts).includes(`${this.props.currentUser}`)) ? "toasted" : "" : ""
 
       const date = new Date(`${checkin.created_at}`).toDateString().split(" ");
       const time = new Date(`${checkin.created_at}`).toLocaleTimeString().split(" ");
@@ -74,7 +90,7 @@ class CheckinShow extends React.Component {
               </div>
             </div>
             <div className="checkin-show-toasts">
-              <button className={`show-toast-btn ${toasted}`}>
+              <button onClick={this.handleClick} className={`show-toast-btn ${toasted}`}>
                 <div className={`show-toast-icon ${toasted}`}>Toast</div>
               </button>
               <div className="show-toast-count">{toasts}</div>

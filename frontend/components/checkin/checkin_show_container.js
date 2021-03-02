@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
   return {
     checkin: state.entities.checkins[ownProps.match.params.checkinId],
     checkinId: ownProps.match.params.checkinId,
-    authorId: state.session.id
+    currentUser: state.session.id
   }
 }
 
