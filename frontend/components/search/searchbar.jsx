@@ -31,14 +31,17 @@ class SearchBar extends React.Component {
 
     return (
       <div className="search-bar">
-        <input
-          id="search-bar"
-          className="search-bar-input"
-          placeholder="Find a brewery or bar..."
-          type="text"
-          value={this.state.keyword}
-          onChange={this.update}
-        />
+        <div id="search-bar-container">
+          <input
+            id="search-bar"
+            className="search-bar-input"
+            placeholder="Find a beer or brewery..."
+            type="text"
+            value={this.state.keyword}
+            onChange={this.update}
+          />
+          <img id="search-icon" src={window.searchIcon}/>
+        </div>
         <div id="search-index-container" className={`searchbar-index-container ${showSearchIndex}`}>
           <SearchbarIndexContainer keyword={this.state.keyword}/>
         </div>

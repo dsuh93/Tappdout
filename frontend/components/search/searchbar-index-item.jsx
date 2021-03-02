@@ -10,16 +10,22 @@ class SearchbarIndexItem extends React.Component {
       const beer = this.props.beer;
       return (
         <div className="searchbar-index-item">
-          <p>{beer.beer_name}</p>
-          <p>{beer.brewery.brewery_name}</p>
+          <img src={window.beerPic}/>
+          <div>
+            <p id="search-beer-name">{beer.beer_name}</p>
+            <p id="search-beer-brewery">{beer.brewery.brewery_name}</p>
+          </div>
         </div>
       )
     } else if (this.props.list === "brewery") {
       const brewery = this.props.brewery;
       return (
         <div className="searchbar-index-item">
-          <p>{brewery.brewery_name}</p>
-          <p>{brewery.location}</p>
+          <img src={window.breweryPic} alt=""/>
+          <div>
+            <p id="search-brewery-name">{brewery.brewery_name}</p>
+            <p id="search-brewery-location">{brewery.location}</p>
+          </div>
         </div>
       )
     }

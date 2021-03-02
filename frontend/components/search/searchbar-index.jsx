@@ -9,7 +9,6 @@ class SearchbarIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger
     if (prevProps.keyword !== this.props.keyword) {
       if (this.props.keyword.length >= 1) {
         this.props.fetchSearchBeers(this.props.keyword)
@@ -40,20 +39,24 @@ class SearchbarIndex extends React.Component {
         </Link>
       )
     })
-    debugger
+    
     const displayBeers = Object.values(this.props.searchBeers).length > 0 ? "" : "hide";
     const displayBreweries = Object.values(this.props.searchBreweries).length > 0 ? "" : "hide";
     return (
       <div className="searchbar-index">
         <ul className={`searchbar-beer-list ${displayBeers}`}>
-          <p>Beers</p>
+          <p className="li-header">BEERS</p>
           {searchBeers}
-          <Link to="/beers">See More Beers</Link>
+          <div className="see-more-div">
+            <Link className="see-more" to="/beers">See More Beers</Link>
+          </div>
         </ul>
         <ul className={`searchbar-brewery-list ${displayBreweries}`}>
-          <p>Breweries</p>
+          <p className="li-header">BREWERIES</p>
           {searchBreweries}
-          <Link to="/breweries">See More Breweries</Link>
+          <div className="see-more-div">
+            <Link className="see-more" to="/breweries">See More Breweries</Link>
+          </div>
         </ul>
       </div>
     )

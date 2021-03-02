@@ -4,17 +4,28 @@
   justify-content: center;
   // border: lightgray 2px solid;
   border-radius: 3px;
-  .search-bar-input {
-    width: 200px;
-    height: 25px;
-    padding: 5px;
-    padding-right: 15px;
-    border: none;
-    outline: none;
+  #search-bar-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
     border-radius: 3px;
-  }
-  .search-bar-input::placeholder {
-    color: lightgray;
+    #search-icon {
+      margin-right: 10px;
+    }
+    .search-bar-input {
+      width: 200px;
+      height: 25px;
+      padding: 5px;
+      padding-right: 15px;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      font-size: 15px;
+    }
+    .search-bar-input::placeholder {
+      color: lightgray;
+      font-size: 15px;
+    }
   }
   .searchbar-index-container {
     background-color: white;
@@ -26,6 +37,57 @@
       .searchbar-beer-list.hide, .searchbar-brewery-list.hide {
         display: none;
       }
+      ul {
+        width: 100%;
+        .li-header {
+          padding: 4px 5px;
+          background-color: rgb(233, 233, 233);
+          color: gray;
+          font-size: 12px;
+        }
+        .see-more-div {
+          border-top: 0.5px solid lightgray;
+          padding: 5px 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          .see-more {
+            
+            text-align: center;
+            color: rgb(233, 128, 0);
+          }
+          .see-more:hover {
+            color: rgb(255, 166, 0);
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        .searchbar-index-item {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          img {
+            width: 25px;
+            height: 25px;
+          }
+          div {
+            margin-left: 10px;
+          }
+          #search-beer-name, #search-brewery-name {
+            color: black;
+          }
+          #search-beer-brewery, #search-brewery-location {
+            color: gray;
+            margin-top: 5px;
+            font-size: 12px;
+          }
+        }
+        .searchbar-index-item:hover {
+          background-color: rgb(231, 231, 231);
+        }
+      }
+      
     }
   }
   .searchbar-index-container.hide {
