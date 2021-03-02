@@ -10,21 +10,24 @@ class SearchBar extends React.Component {
     this.update = this.update.bind(this)
   }
 
+  componentDidMount() {
+    const searchBar = document.getElementById("search-bar");
+    const searchIndex = document.getElementById("search-index-container");
+    document.addEventListener("click", e => {
+      if (e.target != searchBar) {
+        searchIndex.classList.add("hide");
+      } else if (e.target == searchBar && this.state.length > 0) {
+        searchIndex.classList.remove("hide");
+      }
+    })
+  }
+
   update(e) {
     this.setState({keyword: e.target.value })
   }
 
   render() {
-    const showSearchIndex = this.state.keyword.length > 0 ? "" : "hidden";
-    const searchBar = document.getElementById("search-bar");
-    const searchIndex = document.getElementById("search-index-container");
-    document.addEventListener("click", e => {
-      if (e.target != searchBar) {
-        searchIndex.classList.add("hidden");
-      } else {
-        searchIndex.classList.remove("hidden");
-      }
-    })
+    const showSearchIndex = this.state.keyword.length > 0 ? "" : "hide";
 
     return (
       <div className="search-bar">

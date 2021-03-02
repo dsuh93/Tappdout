@@ -1,5 +1,6 @@
 import { RECEIVE_SEARCH_BEERS } from '../../actions/beer_actions';
 import { RECEIVE_SEARCH_BREWERIES } from '../../actions/brewery_actions';
+import { RESET_SEARCH_INDEX } from '../../actions/search_actions';
 
 const defaultSearches = {
   beers: {},
@@ -16,6 +17,8 @@ const SearchesReducer = (state = defaultSearches, action) => {
     case RECEIVE_SEARCH_BREWERIES:
       newState.breweries = action.searchBreweries;
       return newState;
+    case RESET_SEARCH_INDEX:
+      return Object.assign({}, state, defaultSearches)
     default:
       return state;
   }

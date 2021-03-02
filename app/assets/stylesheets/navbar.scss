@@ -104,38 +104,6 @@
   }
 }
 
-
-.search-bar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  // border: lightgray 2px solid;
-  border-radius: 3px;
-  .search-bar-input {
-    width: 200px;
-    height: 25px;
-    padding: 5px;
-    padding-right: 15px;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-  }
-  .search-bar-input::placeholder {
-    color: lightgray;
-  }
-  .searchbar-index-container {
-    background-color: white;
-    color: black;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    .searchbar-index {
-      
-    }
-  }
-  
-}
-
 .navbar-hidden {
   visibility: hidden;  
 }
