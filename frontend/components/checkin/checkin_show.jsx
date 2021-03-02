@@ -21,27 +21,18 @@ class CheckinShow extends React.Component {
         </div>
       )
     } else {
-
+      //.toDateString and .toLocaleTimeString
       const checkin = this.props.checkin
 
-      const dateFormat = checkin.created_at.split("T")[0].split("-");
-      const yearDigits = dateFormat[0].split('');
-      const timeSlice = checkin.created_at.split("T")[1].split(".");
-      const hms = timeSlice[0].split(':');
-      let h;
-      let dayornight;
-      if ( hms[0] > 12 ) {
-        h = `${hms[0] % 12}`;
-        dayornight = 'PM';
-      } else {
-        h = `${hms[0]}`;
-        dayornight = 'AM';
-      }
-      const newTime = [h, (hms[1])].join(':') + ` ${dayornight}`;
-      const yearFormat = [yearDigits[2], yearDigits[3]].join('');
-      const monthFormat = months[dateFormat[1] - 1]
-      const newDateFormat = [dateFormat[2], monthFormat, yearFormat].join(' ');
-      const finalDate = [newTime, newDateFormat].join(' ');
+      const date = new Date(`${checkin.created_at}`).toDateString().split(" ");
+      const time = new Date(`${checkin.created_at}`).toLocaleTimeString().split(" ");
+      const dateTime = [
+        time[0].slice(0, time[0].lastIndexOf(":")),
+        time[1],
+        date[2],
+        date[1],
+        date[3].slice(0, 2)
+      ].join(" ");
 
 
       return (
@@ -72,7 +63,7 @@ class CheckinShow extends React.Component {
                 </div>
               </div>
               <div className="chk-show-det-3">
-                <p>{finalDate}</p>
+                <p>{dateTime}</p>
               </div>
             </div>
             <div className="checkin-show-toasts">
