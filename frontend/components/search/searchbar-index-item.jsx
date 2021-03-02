@@ -6,11 +6,23 @@ class SearchbarIndexItem extends React.Component {
   }
 
   render() {
-    return (
-      <div className="searchbar-index-item">
-        <p>searchbar index item</p>
-      </div>
-    )
+    if (this.props.list === "beer") {
+      const beer = this.props.beer;
+      return (
+        <div className="searchbar-index-item">
+          <p>{beer.beer_name}</p>
+          <p>{beer.brewery.brewery_name}</p>
+        </div>
+      )
+    } else if (this.props.list === "brewery") {
+      const brewery = this.props.brewery;
+      return (
+        <div className="searchbar-index-item">
+          <p>{brewery.brewery_name}</p>
+          <p>{brewery.location}</p>
+        </div>
+      )
+    }
   }
 }
 

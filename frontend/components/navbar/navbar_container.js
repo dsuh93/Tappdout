@@ -10,9 +10,7 @@ const msp = ( {entities, session}, ownProps ) => ({
 });
 
 const mdp = dispatch => ({
-  logout: () => dispatch(logout()),
-  fetchSearchBeers: (search) => dispatch(fetchSearchBeers(search)),
-  fetchSearchBreweries: (search) => dispatch(fetchSearchBreweries(search))
+  logout: () => dispatch(logout())
 });
 
 export default connect(msp, mdp)(NavBar);
