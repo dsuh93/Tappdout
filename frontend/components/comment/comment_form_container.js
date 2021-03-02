@@ -1,6 +1,7 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CommentForm from './comment_form';
+import {createComment} from '../../actions/comment_actions';
 
 
 const msp = (state, ownProps) => ({
