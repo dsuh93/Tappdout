@@ -114,7 +114,22 @@
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       margin: 15px 0;
       background-color: white;
-      // border: 1px solid black;
+      .show-toast-btn {
+        border: none;
+        outline: none;
+        appearance: none;
+        background: none;
+        .show-toast-icon {
+          background: image-url('btn_toast.png') left bottom no-repeat;
+          padding-left: 25px;
+        }
+      }
+      .show-toast-btn.toasted {
+        background-color: gold;
+        .show-toast-icon.toasted {
+          background-position: top left;
+        }
+      }
       
     }
     .checkin-show-comment {

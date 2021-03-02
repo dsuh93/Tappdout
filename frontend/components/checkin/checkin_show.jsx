@@ -28,6 +28,8 @@ class CheckinShow extends React.Component {
           <img src={window.defAvatar}/>
         )
       }) : ""
+      debugger
+      const toasted = checkin.toasts ? (Object.keys(checkin.toasts).includes(`${this.props.authorId}`)) ? "toasted" : "" : ""
 
       const date = new Date(`${checkin.created_at}`).toDateString().split(" ");
       const time = new Date(`${checkin.created_at}`).toLocaleTimeString().split(" ");
@@ -72,8 +74,8 @@ class CheckinShow extends React.Component {
               </div>
             </div>
             <div className="checkin-show-toasts">
-              <button className="show-toast-btn">
-                <div className="show-toast-icon">Toast</div>
+              <button className={`show-toast-btn ${toasted}`}>
+                <div className={`show-toast-icon ${toasted}`}>Toast</div>
               </button>
               <div className="show-toast-count">{toasts}</div>
               <div className="show-toast-avatars">{toastAvatars}</div>
