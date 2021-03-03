@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckinIndex from '../checkin/checkin_index';
+import { Link } from 'react-router-dom';
 
 
 class Profile extends React.Component {
@@ -24,6 +25,7 @@ class Profile extends React.Component {
       const total = Object.keys(checkins).length;
       const uniqueHash = {};
       const photos = {};
+      const topRatedBeers = {};
       const uniqueCount = Object.values(checkins).forEach(checkin => {
         if (!uniqueHash[checkin.beer_id]) uniqueHash[checkin.beer_id] = 0;
         uniqueHash[checkin.beer_id]++;
@@ -32,6 +34,10 @@ class Profile extends React.Component {
             photos[checkin.id] = checkin.photoURL;
           }
         }
+        if(!topRatedBeers[checkin.rating]) topRatedBeers[checkin.rating] = {
+          beer: checkin.beer.beer_name,
+          brewery: checkin.brewery
+        }
       })
       const unique = Object.keys(uniqueHash).length;
       const displayPhotos = Object.values(photos).map(photoURL => {
@@ -39,6 +45,15 @@ class Profile extends React.Component {
           <img key={photoURL} className="profile-photoURL" src={photoURL}/>
         )
       })
+      const topBeers = Object.keys(topRatedBeers).sort().reverse().slice(0, 4).map(rating => {
+        return (
+          <div className="top-beers-item">
+            <p>{topRatedBeers[rating].beer}</p>
+            <p>{topRatedBeers[rating].brewery}</p>
+          </div>
+        )
+      })
+      
       return (
         <div className="profile-container">
           <div className="profile-cover">
@@ -69,7 +84,11 @@ class Profile extends React.Component {
               </div>
             </div>
             <div className="profile-right">
-              <div>Top Beers</div>
+              <h3>Top Beers</h3>
+              <ul className="top-beers-index">
+                {topBeers}
+              </ul>
+              <Link to="/beers">See All Beers</Link>
             </div>
           </div>
       </div>
