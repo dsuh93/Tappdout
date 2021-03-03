@@ -25,6 +25,9 @@ class CommentForm extends React.Component {
       })
       this.setState({body: ""})
       commentFormContainer.classList.add("collapsed")
+      if(this.props.root === "profile") {
+        this.props.fetchUser(this.props.match.params.profileId)
+      }
     }
     
   }

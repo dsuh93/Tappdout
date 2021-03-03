@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
@@ -8,7 +10,8 @@ class CommentIndexItem extends React.Component {
       editForm: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.editFormState = this.editFormState.bind(this)
+    this.editFormState = this.editFormState.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleSubmit(e) {
@@ -21,6 +24,17 @@ class CommentIndexItem extends React.Component {
       checkin_id: comment.checkin_id
     });
     this.setState({ editForm: false });
+    if(this.props.root === "profile") {
+      this.props.fetchUser(this.props.match.params.profileId)
+    }
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteComment(this.props.comment.id);
+    if(this.props.root === "profile") {
+      this.props.fetchUser(this.props.match.params.profileId)
+    }
   }
 
   editFormState(e) {
@@ -64,7 +78,7 @@ class CommentIndexItem extends React.Component {
             <div className="comment-btns">
               <p>{`${timeAgo[2]} ${timeAgo[1]} ${timeAgo[3].slice(2)}`}</p>
               <button className={`${showButtons}`} onClick={this.editFormState} type="button">Edit</button>
-              <button className={`${showButtons}`} onClick={() => this.props.deleteComment(commentId)} type="button">Delete</button>
+              <button className={`${showButtons}`} onClick={this.handleDelete} type="button">Delete</button>
             </div>
           </div>
           <div className={`comment-edit-form-container ${hideEditForm}`}>
@@ -92,4 +106,4 @@ class CommentIndexItem extends React.Component {
   }
 }
 
-export default CommentIndexItem;
+export default withRouter(CommentIndexItem);

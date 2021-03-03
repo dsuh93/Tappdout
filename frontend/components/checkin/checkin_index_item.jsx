@@ -98,8 +98,8 @@ class CheckinIndexItem extends React.Component {
           <div className="toast-avatars-container">{userAvatars}</div>
         </div>
         <div className={`checkin-item-row-5`}>
-          <CommentContainer showComments={showComments} comments={comments} />
-          <CommentFormContainer checkinId={checkin.id} />
+          <CommentContainer root={this.props.root} showComments={showComments} comments={comments} />
+          <CommentFormContainer root={this.props.root} checkinId={checkin.id} />
         </div>
       </div>
     )

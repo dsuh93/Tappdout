@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
+import { withRouter } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class CommentIndex extends React.Component {
             currentUser={this.props.currentUser}
             updateComment={this.props.updateComment}
             deleteComment={this.props.deleteComment}
+            root={this.props.root}
+            fetchUser={this.props.fetchUser}
           />
         </li>
       )
