@@ -36,6 +36,7 @@ class Profile extends React.Component {
         }
         if(!topRatedBeers[checkin.rating]) topRatedBeers[checkin.rating] = {
           beer: checkin.beer.beer_name,
+          beerId: checkin.beer_id,
           brewery: checkin.brewery
         }
       })
@@ -46,10 +47,15 @@ class Profile extends React.Component {
         )
       })
       const topBeers = Object.keys(topRatedBeers).sort().reverse().slice(0, 4).map(rating => {
+        const beerName = topRatedBeers[rating].beer;
+        const shorterBeerName = beerName.length > 20 ? (beerName.slice(0, 20) + "...") : beerName;
         return (
           <div className="top-beers-item">
-            <p>{topRatedBeers[rating].beer}</p>
-            <p>{topRatedBeers[rating].brewery}</p>
+            <img src={window.defBeer} alt=""/>
+            <div className="top-beers-names">
+              <p><Link to={`/beers/${topRatedBeers[rating].beerId}`}>{shorterBeerName}</Link></p>
+              <p className="top-beer-brewery">{topRatedBeers[rating].brewery}</p>
+            </div>
           </div>
         )
       })
@@ -88,7 +94,9 @@ class Profile extends React.Component {
               <ul className="top-beers-index">
                 {topBeers}
               </ul>
-              <Link to="/beers">See All Beers</Link>
+              <div className="top-beer-all">
+                <Link className="top-beer-all-link" to="/beers">See All Beers</Link>
+              </div>
             </div>
           </div>
       </div>

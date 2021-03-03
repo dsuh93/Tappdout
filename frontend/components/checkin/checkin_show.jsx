@@ -16,7 +16,6 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchCheckins();
     // this.props.fetchCheckin(this.props.checkinId)
   }

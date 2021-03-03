@@ -5,7 +5,6 @@ import { updateComment, deleteComment } from '../../actions/comment_actions';
 import { fetchUser } from '../../actions/profile_actions';
 
 const msp = (state, ownProps) => {
-  debugger
   return {
     comments: Object.values(ownProps.comments),
     currentUser: state.session.id,

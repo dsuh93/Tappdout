@@ -1,5 +1,4 @@
 .profile-container {
-  border: 1px solid black;
   width: 1010px;
   display: flex;
   flex-direction: column;
@@ -50,7 +49,6 @@
     }
   }
   .profile-content {
-    border: 1px solid yellow;
     width: 100%;
     display: flex;
     .profile-left {
@@ -68,17 +66,70 @@
         }
       }
       .profile-checkins-container {
-        border: 1px solid green;
         align-self: flex-start;
         width: 100%;
-        
       }
     }
     .profile-right {
       background-color: white;
       margin: 20px 0 0 40px;
+      padding: 10px;
       width: 30%;
-      height: 300px;
+      height: fit-content;
+      h3 {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid lightgray;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .top-beers-index {
+        width: 100%;
+        padding: 5px;
+        .top-beers-item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          margin: 10px 0;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          .top-beers-names {
+            margin-left: 10px;
+            a {
+              text-decoration: none;
+              color: goldenrod;
+              font-size: 17px;
+            }
+            a:hover {
+              color: rgb(255, 208, 0);
+            }
+            .top-beer-brewery {
+              margin-top: 5px;
+              font-size: 13px;
+              color: gray;
+            }
+          }
+        }
+      }
+      .top-beer-all {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        margin-top: 10px;
+        border-top: 0.5px solid lightgray;
+        .top-beer-all-link {
+          margin-top: 10px;
+          text-decoration: none;
+          color: goldenrod;
+          text-align: center;
+        }
+        .top-beer-all-link:hover {
+          color: rgb(255, 208, 0);
+        }
+      }
     }
   }
 }
