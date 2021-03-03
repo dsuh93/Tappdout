@@ -22,6 +22,7 @@ json.checkins do
           end
         end
       end
+      json.photoURL url_for(checkin.photo) if checkin.photo.attached?
     end
   end
 end
