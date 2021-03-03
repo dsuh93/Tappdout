@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
+import configureStore from './store/store.js';
 
 //test imports
-import * as ProfileAction from './actions/profile_actions';
-import * as CommentActions from './actions/comment_actions';
-import { login, signup, logout } from './actions/session_actions';
-import configureStore from './store/store.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -25,9 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   //for testing, don't forget to delete these later
-  // testing profile api util
-  window.fetchUser = ProfileAction.fetchUser;
-
   //testing for store
   window.store = store;
   window.dispatch = store.dispatch;
@@ -36,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //testing for external brewery db
   // window.breweryDBGet = SessionAPIUtil.breweryDBGet;
 
-  // const store = configureStore();
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 })
