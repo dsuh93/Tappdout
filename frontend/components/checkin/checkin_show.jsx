@@ -16,6 +16,7 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchCheckins();
     // this.props.fetchCheckin(this.props.checkinId)
   }
@@ -62,12 +63,12 @@ class CheckinShow extends React.Component {
   render() {
     if (!this.props.checkin) {
       return (
-        <div>
-          <img src={window.loader} alt=""/>
+        <div className="loading-container">
+          <img className="loading" src={window.loader} alt=""/>
         </div>
       )
     } else {
-      const checkin = this.props.checkin
+      const checkin = this.props.checkin;
       const toasts = checkin.toasts ? Object.values(checkin.toasts).length : 0;
       const toastAvatars = checkin.toasts ? Object.values(checkin.toasts).map((toast, i) => {
         return(
@@ -126,7 +127,7 @@ class CheckinShow extends React.Component {
               <div className="show-toast-avatars">{toastAvatars}</div>
             </div>
             <div className="checkin-show-comment">
-              <CommentContainer comments={checkin.comments}/>
+              <CommentContainer comments={checkin.comments ? checkin.comments : {}}/>
               <CommentFormContainer checkinId={checkin.id}/>
             </div>
           </div>
