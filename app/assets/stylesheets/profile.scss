@@ -32,14 +32,14 @@
       }
       .profile-stats {
         display: flex;
-        width: 200px;
-        .profile-total-beers {
+        width: 150px;
+        .profile-total-beers, .profile-unique-beers {
           display: flex;
           align-items: flex-end;
           p {
             font-size: 15px;
           }
-          #total {
+          #total, #unique {
             margin-right: 5px;
             font-size: 20px;
           }
