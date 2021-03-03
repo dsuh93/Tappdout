@@ -25,7 +25,7 @@ export const receiveCheckinErrors = errors => ({
 export const fetchCheckins = () => dispatch => CheckinAPITUtil.fetchCheckins()
   .then( checkins => dispatch(receiveAllCheckins(checkins)));
 
-export const fetchCheckin = (checkin) => dispatch => CheckinAPITUtil.fetchCheckin(checkin)
+export const fetchCheckin = (checkinId) => dispatch => CheckinAPITUtil.fetchCheckin(checkinId)
   .then( checkin => dispatch(receiveCheckin(checkin)));
 
 export const createCheckin = (checkin) => dispatch => CheckinAPITUtil.createCheckin(checkin)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchCheckin } from '../../actions/checkin_actions';
+import { fetchCheckins } from '../../actions/checkin_actions';
 import { createToast, deleteToast } from '../../actions/toast_actions';
 import CheckinShow from './checkin_show';
 
@@ -14,7 +14,7 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => ({
-  fetchCheckin: (checkinId) => dispatch(fetchCheckin(checkinId)),
+  fetchCheckins: () => dispatch(fetchCheckins()),
   createToast: (toast) => dispatch(createToast(toast)),
   deleteToast: (toastId) => dispatch(deleteToast(toastId))
 })

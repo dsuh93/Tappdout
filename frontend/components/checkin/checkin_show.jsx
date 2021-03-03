@@ -14,15 +14,14 @@ class CheckinShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCheckin(this.props.checkinId)
+    this.props.fetchCheckins();
+    // this.props.fetchCheckin(this.props.checkinId)
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.checkin) {
       if (this.props.checkin.toasts) {
-        debugger
         if (prevProps.checkin.toasts != this.props.checkin.toasts) {
-          debugger
           if (Object.keys(this.props.checkin.toasts).includes(`${this.props.currentUser}`)) {
             this.setState({toasted: true})
           } else {
@@ -41,7 +40,6 @@ class CheckinShow extends React.Component {
     toastBtn.classList.toggle("toasted");
     toastIcon.classList.toggle("toasted");
     if (checkin.toasts) {
-      debugger
       const toasts = checkin.toasts;
       if (Object.keys(toasts).includes(`${this.props.currentUser}`)) {
         this.setState({toasted: false})
@@ -54,7 +52,9 @@ class CheckinShow extends React.Component {
       this.setState({toasted: true})
       this.props.createToast({toaster_id: currentUser, checkin_id: checkinId})
     }
-    this.props.fetchCheckin(this.props.checkinId)
+    // this.props.fetchCheckin(this.props.checkinId)
+    this.props.fetchCheckins();
+
   }
 
   render() {
@@ -72,7 +72,6 @@ class CheckinShow extends React.Component {
           <img key={`${toast}-${i}`} src={window.defAvatar}/>
         )
       }) : ""
-      debugger
       const toasted = checkin.toasts ? (Object.keys(checkin.toasts).includes(`${this.props.currentUser}`)) ? "toasted" : "" : ""
 
       const date = new Date(`${checkin.created_at}`).toDateString().split(" ");
