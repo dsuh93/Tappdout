@@ -1,15 +1,54 @@
 .profile-container {
   border: 1px solid black;
-  width: 700px;
+  width: 1010px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 52px;
-  .profile-info {
+  .profile-cover {
     border: 1px solid blue;
+    background: image-url("def-cover-2.jpg");
+    height: 260px;
     width: 100%;
     display: flex;
     align-items: flex-end;
+    .profile-avatar {
+      margin: 0 45px 30px 20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50px;
+      border: 2px solid white;
+    }
+    .profile-info {
+      margin-bottom: 25px;
+      color: white;
+      .profile-fullname {
+        font-weight: bold;
+        font-size: 32px;
+      }
+      .profile-username {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      .profile-stats {
+        display: flex;
+        width: 200px;
+        .profile-total-beers {
+          display: flex;
+          align-items: flex-end;
+          p {
+            font-size: 15px;
+          }
+          #total {
+            margin-right: 5px;
+            font-size: 20px;
+          }
+        }
+        .profile-unique-beers {
+          margin-left: auto;
+        }
+      }
+    }
   }
   .profile-content {
     border: 1px solid yellow;

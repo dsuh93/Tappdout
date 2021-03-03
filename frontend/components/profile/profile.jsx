@@ -10,24 +10,32 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (!this.props.profileId) {
+    if (Object.keys(this.props.profile).length < 1) {
+      debugger
       return (
         <div>
-          Loading...
+          <img src={window.loader}/>
         </div>
       )
     } else {
-      const profile = this.props.profile;
+      const { checkins, first_name, id, last_name, username } = this.props.profile;
+      const total = Object.keys(checkins).length;
+      const uniqueHash = {};
+      const uniqueCount = Object.values(checkins).forEach(checkin => {
+        if (!uniqueHash[checkin.beer_id]) uniqueHash[checkin.beer_id] = 0;
+        uniqueHash[checkin.beer_id]++;
+      })
+      const unique = Object.keys(uniqueHash).length;
       return (
         <div className="profile-container">
-          <div className="profile-info">
-            <img src={window.defAvatar} alt=""/>
-            <div>
-              <p>user full name</p>
-              <p>username</p>
-              <div>
-                <p>total beers</p>
-                <p>total unique beers</p>
+          <div className="profile-cover">
+            <img className="profile-avatar" src={window.defAvatar} alt=""/>
+            <div className="profile-info">
+              <p className="profile-fullname">{first_name} {last_name}</p>
+              <p className="profile-username">{username}</p>
+              <div className="profile-stats">
+                <div className="profile-total-beers"><p id="total">{total}</p><p>TOTAL</p></div>
+                <div className="profile-unique-beers"><p id="unique">{unique}</p><p>UNIQUE</p></div>
               </div>
             </div>
           </div>
