@@ -7,7 +7,7 @@ const msp = (state, ownProps) => ({
 })
 
 const mdp = dispatch => ({
-
+  
 })
 
 export default withRouter(connect(msp, mdp)(Profile));
