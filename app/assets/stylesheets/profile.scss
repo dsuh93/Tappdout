@@ -55,11 +55,18 @@
     width: 100%;
     display: flex;
     .profile-left {
-      width: 50%;
+      width: 70%;
       .checkin-images {
         width: 100%;
         border: 1px solid red;
-        // padding: 15px;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        .profile-photoURL {
+          width: 120px;
+          height: 120px;
+          margin-right: 20px;
+        }
       }
       .profile-checkins-container {
         align-self: flex-start;
@@ -68,7 +75,7 @@
       }
     }
     .profile-right {
-      width: 50%;
+      width: auto;
     }
   }
 }

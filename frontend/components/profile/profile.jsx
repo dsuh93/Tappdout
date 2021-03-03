@@ -53,9 +53,7 @@ class Profile extends React.Component {
           <div className="profile-content">
             <div className="profile-left">
               <div className="checkin-images">
-                <div>
-                  {displayPhotos}
-                </div>
+                {displayPhotos.slice(0, 5)}
               </div>
               <div className="profile-checkins-container">
                 <h3>Your Recent Activity</h3>
