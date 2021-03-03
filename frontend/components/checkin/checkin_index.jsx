@@ -25,11 +25,11 @@ class CheckinIndex extends React.Component {
         </li>
       )
     })
-    
+    const title = this.props.root ? "Your Recent Activity" : "Recent Activity"
     return (
       <div className="checkin-index-container">
         <div className="checkin-index">
-          <h1 className="checkin-index-title">Recent Activity</h1>
+          <h1 className="checkin-index-title">{title}</h1>
           <ul className="checkin-index-ul">
             {checkinIndexItem}
           </ul>

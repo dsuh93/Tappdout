@@ -58,7 +58,6 @@ class Profile extends React.Component {
                 {displayPhotos.slice(0, 5)}
               </div>
               <div className="profile-checkins-container">
-                <h3>Your Recent Activity</h3>
                 <CheckinIndex
                   checkins={checkins}
                   fetchCheckins={fetchCheckins}

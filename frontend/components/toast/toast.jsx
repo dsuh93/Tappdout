@@ -27,12 +27,21 @@ class Toast extends React.Component {
     e.preventDefault();
     const toasterId = this.props.toasterId;
     const checkinId = this.props.checkinId;
+    debugger
     if (!this.state.toasted) {
+      debugger
       this.setState({toasted: true});
       this.props.createToast({toaster_id: toasterId, checkin_id: checkinId})
+      if(this.props.root === "profile") {
+        this.props.fetchUser(this.props.match.params.profileId)
+      }
     } else {
+      debugger
       this.setState({toasted: false});
       this.props.deleteToast(this.props.checkin.toasts[toasterId].id)
+      if(this.props.root === "profile") {
+        this.props.fetchUser(this.props.match.params.profileId)
+      }
     }
   }
 
@@ -40,6 +49,7 @@ class Toast extends React.Component {
     if (!this.props.checkinId) {
       return null;
     } else {
+      debugger
       const toastStatus = this.state.toasted ? "toasted" : "untoasted"
       return (
         <div className="toast-btn-container">

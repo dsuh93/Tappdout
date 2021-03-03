@@ -30,7 +30,9 @@ class CheckinIndexItem extends React.Component {
   render() {
     const {checkin, sessionId} = this.props;
     const comments = checkin.comments ? checkin.comments : {}
+    debugger
     const showToasts = checkin.toasts ? (Object.keys(checkin.toasts).length > 0 ? "" : "hidden") : "hidden";
+    debugger
     const showComments = checkin.comments ? (Object.keys(checkin.comments).length > 0 ? "" : "hidden") : "hidden";
     const numToasts = checkin.toasts ? Object.keys(checkin.toasts).length : ""
     const photoURL = checkin.photoURL ? checkin.photoURL : "";

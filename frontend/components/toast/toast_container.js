@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { createToast, deleteToast } from '../../actions/toast_actions';
+import { fetchUser } from '../../actions/profile_actions';
 import Toast from './toast';
 
 
@@ -8,13 +10,15 @@ const msp = (state, ownProps) => {
   return {
     checkin: checkin,
     checkinId: ownProps.checkinId,
-    toasterId: state.session.id
+    toasterId: state.session.id,
+    root: ownProps.root
   }
 }
 
 const mdp = dispatch => ({
   createToast: toast => dispatch(createToast(toast)),
-  deleteToast: toastId => dispatch(deleteToast(toastId))
+  deleteToast: toastId => dispatch(deleteToast(toastId)),
+  fetchUser: (userId) => dispatch(fetchUser(userId))
 })
 
-export default connect(msp, mdp)(Toast);
+export default withRouter(connect(msp, mdp)(Toast));
