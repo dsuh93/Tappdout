@@ -1,6 +1,8 @@
 .loading-container {
-  .loading {
-    
+  width: fit-content;
+  margin-top: 52px;
+  .loading-gif {
+    margin-left: 150px;
   }
 }
 
@@ -11,18 +13,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // border: 1px solid red;
   .checkin-show {
-    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    // border: 3px solid pink;
     width: 400px;
     .checkin-show-details {
       background-color: white;
-      // border: 1px solid black;
       padding: 10px;
       .chk-show-det-1 {
         padding: 5px;
-        // border: 1px solid black;
         display: flex;
         align-items: center;
         img {
@@ -38,12 +35,10 @@
         }
       }
       .chk-show-det-2 {
-        // border: 1px solid black;
         #chk-show-2-top {
           width: 100%;
           display: flex;
           flex-wrap: wrap;
-          // border: 1px solid green;
           #chk-show-beer {
             width: 60px;
             height: 60px;

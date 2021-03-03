@@ -64,7 +64,7 @@ class CheckinShow extends React.Component {
     if (!this.props.checkin) {
       return (
         <div className="loading-container">
-          <img className="loading" src={window.loader} alt=""/>
+          <img className="loading-gif" src={window.loader} alt=""/>
         </div>
       )
     } else {
