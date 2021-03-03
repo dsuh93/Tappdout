@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUser } from '../../actions/profile_actions';
 
-const msp = (state) => ({
-  profile: state.entities.profile
+const msp = (state, ownProps) => ({
+  profile: state.entities.profile,
+  profileId: ownProps.match.params.profileId
 })
 
 const mdp = dispatch => ({

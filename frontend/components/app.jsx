@@ -37,7 +37,7 @@ const App = () => (
       <ProtectedRoute exact path='/breweries/:breweryId' component={BreweryShowContainer}/>
       <ProtectedRoute exact path='/breweries/:breweryId/new_beer' component={BeerFormContainer}/>
       <ProtectedRoute exact path='/checkins/:checkinId' component={CheckinShowContainer}/>
-      <ProtectedRoute exact patth='/profiles/:profileId' component={ProfileContainer}/>
+      <ProtectedRoute exact path='/profiles/:profileId' component={ProfileContainer}/>
     </Switch>
     <footer>
       <Footer/>

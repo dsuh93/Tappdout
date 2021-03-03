@@ -3,39 +3,51 @@ import React from 'react';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+  }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.profileId);
   }
 
   render() {
-    return (
-      <div className="profile-container">
-        <div className="profile-info">
-          <img src={window.defAvatar} alt=""/>
-          <div>
-            <p>user full name</p>
-            <p>username</p>
+    if (!this.props.profileId) {
+      return (
+        <div>
+          Loading...
+        </div>
+      )
+    } else {
+      const profile = this.props.profile;
+      return (
+        <div className="profile-container">
+          <div className="profile-info">
+            <img src={window.defAvatar} alt=""/>
             <div>
-              <p>total beers</p>
-              <p>total unique beers</p>
+              <p>user full name</p>
+              <p>username</p>
+              <div>
+                <p>total beers</p>
+                <p>total unique beers</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="profile-content">
-          <div className="profile-left">
-            <div className="checkin-images">
-              <div>map out checkin images here</div>
+          <div className="profile-content">
+            <div className="profile-left">
+              <div className="checkin-images">
+                <div>map out checkin images here</div>
+              </div>
+              <div className="profile-checkins-container">
+                <h3>Your Recent Activity</h3>
+                <div>checkins go here</div>
+              </div>
             </div>
-            <div className="profile-checkins-container">
-              <h3>Your Recent Activity</h3>
-              <div>checkins go here</div>
+            <div className="profile-right">
+              <div>Top Beers</div>
             </div>
           </div>
-          <div className="profile-right">
-            <div>Top Beers</div>
-          </div>
-        </div>
-    </div>
-    )
+      </div>
+      )
+    }
   }
 }
 
