@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 
 //test imports
-import * as BeerSearchAction from './actions/beer_actions';
-import * as BrewerySearchAction from './actions/brewery_actions';
+import * as ProfileAPIUtil from './util/profile_api_util';
 import * as CommentActions from './actions/comment_actions';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
@@ -26,9 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   //for testing, don't forget to delete these later
-  // testing search actions
-  window.fetchSearchBeers = BeerSearchAction.fetchSearchBeers;
-  window.fetchSearchBreweries = BrewerySearchAction.fetchSearchBreweries;
+  // testing profile api util
+  window.fetchUser = ProfileAPIUtil.fetchUser;
 
   //testing for store
   window.store = store;
