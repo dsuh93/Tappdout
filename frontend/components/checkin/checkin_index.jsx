@@ -19,12 +19,13 @@ class CheckinIndex extends React.Component {
             checkin={checkin}
             checkinId={checkin.id}
             sessionId={this.props.sessionId}
-            deleteCheckin={this.props.deleteCheckin}  
+            deleteCheckin={this.props.deleteCheckin}
+            root={this.props.root ? this.props.root : "home"} 
           />
         </li>
       )
     })
-
+    
     return (
       <div className="checkin-index-container">
         <div className="checkin-index">

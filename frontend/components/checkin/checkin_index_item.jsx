@@ -42,7 +42,7 @@ class CheckinIndexItem extends React.Component {
         <img key={`${toaster}-${i}`} className="toast-avatar" src={window.defAvatar}/>
       )
     }) : "" : ""
-
+    
     const dateFormat = checkin.created_at.split("T")[0].split("-");
     const yearDigits = dateFormat[0].split('');
     const yearFormat = [yearDigits[2], yearDigits[3]].join('');
@@ -79,7 +79,7 @@ class CheckinIndexItem extends React.Component {
               <img className="comment-btn-icon" src={window.feedCommentIcon}/>
               <p>Comment</p>
             </button>
-            <ToastContainer checkinId={this.props.checkinId}/>
+            <ToastContainer root={this.props.root} checkinId={this.props.checkinId}/>
             {/* <button id="toast-btn">Toast</button> */}
           </div>
           <div className="checkin-item-links">

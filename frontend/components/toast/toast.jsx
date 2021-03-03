@@ -10,7 +10,9 @@ class Toast extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     if (this.props.checkin.toasts) {
+      debugger
       if (this.props.checkin.toasts[this.props.toasterId]) {
         this.setState({toasted: true})
       } else {

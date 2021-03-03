@@ -1,4 +1,6 @@
 import React from 'react';
+import CheckinIndex from '../checkin/checkin_index';
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class Profile extends React.Component {
       )
     } else {
       const { checkins, first_name, id, last_name, username } = this.props.profile;
+      const { sessionId, fetchCheckins, fetchCheckin, deleteCheckin } = this.props;
       const total = Object.keys(checkins).length;
       const uniqueHash = {};
       const photos = {};
@@ -56,7 +59,14 @@ class Profile extends React.Component {
               </div>
               <div className="profile-checkins-container">
                 <h3>Your Recent Activity</h3>
-                <div>checkins go here</div>
+                <CheckinIndex
+                  checkins={checkins}
+                  fetchCheckins={fetchCheckins}
+                  fetchCheckin={fetchCheckin}
+                  sessionId={sessionId}
+                  deleteCheckin={deleteCheckin}
+                  root="profile"
+                />
               </div>
             </div>
             <div className="profile-right">

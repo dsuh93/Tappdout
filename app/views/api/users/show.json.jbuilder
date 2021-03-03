@@ -22,6 +22,9 @@ json.checkins do
           end
         end
       end
+      json.user do
+        json.partial! '/api/users/user', user: checkin.user
+      end
       json.photoURL url_for(checkin.photo) if checkin.photo.attached?
     end
   end
