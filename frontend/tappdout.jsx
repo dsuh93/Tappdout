@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 
 //test imports
-import * as ProfileAPIUtil from './util/profile_api_util';
+import * as ProfileAction from './actions/profile_actions';
 import * as CommentActions from './actions/comment_actions';
 import { login, signup, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   //for testing, don't forget to delete these later
   // testing profile api util
-  window.fetchUser = ProfileAPIUtil.fetchUser;
+  window.fetchUser = ProfileAction.fetchUser;
 
   //testing for store
   window.store = store;
