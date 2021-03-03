@@ -114,24 +114,45 @@
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       margin: 15px 0;
       background-color: white;
+      height: fit-content;
       .show-toast-btn {
         border: none;
         outline: none;
         appearance: none;
         background: none;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        height: 50px;
+        width: 100px;
         .show-toast-icon {
           background: image-url('btn_toast.png') left bottom no-repeat;
-          padding-left: 25px;
+          padding: 3px 0 4px 25px;
+          margin-left: 5px;
         }
       }
       .show-toast-btn.toasted {
-        background-color: gold;
+        background-color: rgb(252, 199, 25);
+        box-shadow: inset 1px 1px 3px 0px goldenrod, inset -1px -1px 3px 0px goldenrod;
         .show-toast-icon.toasted {
           background-position: top left;
         }
       }
       .show-toast-btn:hover {
         cursor: pointer;
+      }
+      .show-toast-count {
+        font-size: 20px;
+        padding: 10px;
+        margin: 5px 0;
+        border-right: 0.5px solid lightgray;
+      }
+      .show-toast-avatars {
+        img {
+          width: 30px;
+          height: 30px;
+          margin-left: 10px;
+        }
       }
       
     }
