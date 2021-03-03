@@ -1,6 +1,6 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Profiel from './profile';
+import Profile from './profile';
 
 const msp = (state, ownProps) => ({
 

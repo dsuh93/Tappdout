@@ -20,12 +20,19 @@ class Profile extends React.Component {
             </div>
           </div>
         </div>
-        <div className="checkin-images">
-          <div>map out checkin images here</div>
-        </div>
-        <div className="profile-checkins-container">
-          <h3>Your Recent Activity</h3>
-          <div>checkins go here</div>
+        <div className="profile-content">
+          <div className="profile-left">
+            <div className="checkin-images">
+              <div>map out checkin images here</div>
+            </div>
+            <div className="profile-checkins-container">
+              <h3>Your Recent Activity</h3>
+              <div>checkins go here</div>
+            </div>
+          </div>
+          <div className="profile-right">
+            <div>Top Beers</div>
+          </div>
         </div>
     </div>
     )
