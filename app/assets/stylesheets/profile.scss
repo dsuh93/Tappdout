@@ -6,7 +6,6 @@
   align-items: center;
   margin-top: 52px;
   .profile-cover {
-    border: 1px solid blue;
     background: image-url("def-cover-2.jpg");
     height: 260px;
     width: 100%;
@@ -58,20 +57,20 @@
       width: 70%;
       .checkin-images {
         width: 100%;
-        border: 1px solid red;
         padding: 15px 0;
         display: flex;
         align-items: center;
         .profile-photoURL {
           width: 120px;
           height: 120px;
+          object-fit: cover;
           margin-right: 20px;
         }
       }
       .profile-checkins-container {
+        border: 1px solid green;
         align-self: flex-start;
         width: 100%;
-        border: 1px solid green;
       }
     }
     .profile-right {

@@ -53,7 +53,7 @@ class CheckinIndexItem extends React.Component {
         <div className="checkin-item-row-1">
           <img src={window.defAvatar} alt="user-profile-img"/>
           <p>
-            {checkin.user.first_name} {checkin.user.last_name} is drinking a <Link to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link> by <Link to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>
+            <Link to={`/profiles/${checkin.user.id}`}>{checkin.user.first_name} {checkin.user.last_name}</Link> is drinking a <Link to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link> by <Link to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>
           </p>
           <img id="checkin-brewery-pic" src={window.beerPic} alt="beer-pic"/>
         </div>

@@ -11,7 +11,6 @@ class Profile extends React.Component {
 
   render() {
     if (Object.keys(this.props.profile).length < 1) {
-      debugger
       return (
         <div>
           <img src={window.loader}/>
