@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../rating/rating';
+import CommentContainer from '../comment/comment_container';
+import CommentFormContainer from '../comment/comment_form_container';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -124,7 +126,8 @@ class CheckinShow extends React.Component {
               <div className="show-toast-avatars">{toastAvatars}</div>
             </div>
             <div className="checkin-show-comment">
-              <p>COMMENT COMING SOON</p>
+              <CommentContainer comments={checkin.comments}/>
+              <CommentFormContainer checkinId={checkin.id}/>
             </div>
           </div>
         </div>

@@ -22,5 +22,3 @@ class Api::UsersController < ApplicationController
   end
 end
 
-
-# .except(:repeat) figure out whether i can use this for remove the repeate password from the params
