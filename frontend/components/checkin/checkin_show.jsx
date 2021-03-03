@@ -7,6 +7,9 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 class CheckinShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      toasted: ""
+    }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -14,19 +17,44 @@ class CheckinShow extends React.Component {
     this.props.fetchCheckin(this.props.checkinId)
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.checkin) {
+      if (this.props.checkin.toasts) {
+        debugger
+        if (prevProps.checkin.toasts != this.props.checkin.toasts) {
+          debugger
+          if (Object.keys(this.props.checkin.toasts).includes(`${this.props.currentUser}`)) {
+            this.setState({toasted: true})
+          } else {
+            this.setState({toasted: false})
+          }
+        }
+      }
+    }
+  } 
+
   handleClick(e) {
     e.preventDefault();
-    const checkin = this.props.checkin;
+    const { checkin, checkinId, currentUser } = this.props;
+    const toastBtn = document.getElementById("show-toast-btn");
+    const toastIcon = document.getElementById("show-toast-icon");
+    toastBtn.classList.toggle("toasted");
+    toastIcon.classList.toggle("toasted");
     if (checkin.toasts) {
+      debugger
       const toasts = checkin.toasts;
       if (Object.keys(toasts).includes(`${this.props.currentUser}`)) {
-        this.props.deleteToast(toasts.currentUser.id)
+        this.setState({toasted: false})
+        this.props.deleteToast(toasts[currentUser].id)
       } else {
-        this.props.createToast({toaster_id: this.props.currentUser, checkin_id: this.props.checkinId})
+        this.setState({toasted: true})
+        this.props.createToast({toaster_id: currentUser, checkin_id: checkinId})
       }
     } else {
-      this.props.createToast({toaster_id: this.props.currentUser, checkin_id: this.props.checkinId})
+      this.setState({toasted: true})
+      this.props.createToast({toaster_id: currentUser, checkin_id: checkinId})
     }
+    this.props.fetchCheckin(this.props.checkinId)
   }
 
   render() {
@@ -39,9 +67,9 @@ class CheckinShow extends React.Component {
     } else {
       const checkin = this.props.checkin
       const toasts = checkin.toasts ? Object.values(checkin.toasts).length : 0;
-      const toastAvatars = checkin.toasts ? Object.values(checkin.toasts).map(toast => {
+      const toastAvatars = checkin.toasts ? Object.values(checkin.toasts).map((toast, i) => {
         return(
-          <img src={window.defAvatar}/>
+          <img key={`${toast}-${i}`} src={window.defAvatar}/>
         )
       }) : ""
       debugger
@@ -90,8 +118,8 @@ class CheckinShow extends React.Component {
               </div>
             </div>
             <div className="checkin-show-toasts">
-              <button onClick={this.handleClick} className={`show-toast-btn ${toasted}`}>
-                <div className={`show-toast-icon ${toasted}`}>Toast</div>
+              <button id="show-toast-btn" onClick={this.handleClick} className={`show-toast-btn ${toasted}`}>
+                <div id="show-toast-icon" className={`show-toast-icon ${toasted}`}>Toast</div>
               </button>
               <div className="show-toast-count">{toasts}</div>
               <div className="show-toast-avatars">{toastAvatars}</div>
