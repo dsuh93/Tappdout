@@ -20,8 +20,6 @@ class BeerShow extends React.Component {
   }
 
   render() {
-    const beer = this.props.beer;
-    const beerId = this.props.beerId;
     if(!this.props.beer) {
       return (
         <div>
@@ -29,6 +27,15 @@ class BeerShow extends React.Component {
         </div>
       )
     } else {
+      const beer = this.props.beer;
+      const beerId = this.props.beerId;
+      const total = Object.keys(beer.checkins).length;
+      const userCount = {};
+      const countUsers = Object.values(beer.checkins).forEach(checkin => {
+        if(!userCount[checkin.user_id]) userCount[checkin.user_id] = 0;
+        userCount[checkin.user_id]++;
+      })
+      const unique = Object.keys(userCount).length;
       return (
         <div className="beer-show-container">
           <div className="beer-show">
@@ -41,8 +48,8 @@ class BeerShow extends React.Component {
                   <p id="br-type">{beer.style}</p>
                 </div>
                 <div id="br-row-1-stats">
-                  <div id="total"><p>TOTAL</p><p>#</p></div>
-                  <div id="unique"><p>UNIQUE</p><p>#</p></div>
+                  <div id="total"><p>TOTAL</p><p>{total}</p></div>
+                  <div id="unique"><p>UNIQUE</p><p>{unique}</p></div>
                   <div id="monthly"><p>MONTHLY</p><p>#</p></div>
                   <div id="you"><p>YOU</p>#</div>
                 </div>
