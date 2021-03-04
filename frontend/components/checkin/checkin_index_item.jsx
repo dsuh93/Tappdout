@@ -34,9 +34,8 @@ class CheckinIndexItem extends React.Component {
     const showComments = checkin.comments ? (Object.keys(checkin.comments).length > 0 ? "" : "hidden") : "hidden";
     const numToasts = checkin.toasts ? Object.keys(checkin.toasts).length : ""
     const photoURL = checkin.photoURL ? checkin.photoURL : "";
-    const showImage = photoURL ? "show-image" : "hide-image"; 
-    const showDelete = checkin.user.id === sessionId ? "show-delete" : "hide-delete"
-
+    const showImage = photoURL ? "show-image" : "hide-image";
+    const showDelete = checkin.user_id === sessionId ? "show-delete" : "hide-delete"
     const userAvatars = checkin.toasts ? Object.keys(checkin.toasts).length > 0 ? Object.keys(checkin.toasts).map((toaster, i) => {
       return (
         <img key={`${toaster}-${i}`} className="toast-avatar" src={window.defAvatar}/>
@@ -53,7 +52,7 @@ class CheckinIndexItem extends React.Component {
         <div className="checkin-item-row-1">
           <img src={window.defAvatar} alt="user-profile-img"/>
           <p>
-            <Link to={`/profiles/${checkin.user.id}`}>{checkin.user.first_name} {checkin.user.last_name}</Link> is drinking a <Link to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link> by <Link to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>
+            <Link to={`/profiles/${checkin.user_id}`}>{checkin.user.first_name} {checkin.user.last_name}</Link> is drinking a <Link to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link> by <Link to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>
           </p>
           <img id="checkin-brewery-pic" src={window.beerPic} alt="beer-pic"/>
         </div>

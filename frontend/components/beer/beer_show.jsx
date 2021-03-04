@@ -30,30 +30,32 @@ class BeerShow extends React.Component {
     } else {
       const beer = this.props.beer;
       const beerId = this.props.beerId;
-      const total = Object.keys(beer.checkins).length;
+      const total = beer.checkins ? Object.keys(beer.checkins).length : 0;
       const userCount = {};
       const photos = {};
       let monthlyCount = 0;
       let currentUserCount = 0;
       let totalRatings = 0;
       let ratingsCount = 0;
-      const countUsers = Object.values(beer.checkins).forEach(checkin => {
-        if(!userCount[checkin.user_id]) userCount[checkin.user_id] = 0;
-        userCount[checkin.user_id]++;
-        if(Math.floor((new Date() - new Date(checkin.created_at)) / 86400000) < 30) monthlyCount++;
-        if(checkin.user_id == this.props.currentUser) currentUserCount++;
-        if(checkin.rating) {
-          totalRatings += checkin.rating;
-          ratingsCount++;
-        }
-        if (checkin.photoURL) {
-          if (!photos[checkin.id]) {
-            photos[checkin.id] = checkin.photoURL;
+      if (beer.checkins) {
+        const countUsers = Object.values(beer.checkins).forEach(checkin => {
+          if(!userCount[checkin.user_id]) userCount[checkin.user_id] = 0;
+          userCount[checkin.user_id]++;
+          if(Math.floor((new Date() - new Date(checkin.created_at)) / 86400000) < 30) monthlyCount++;
+          if(checkin.user_id == this.props.currentUser) currentUserCount++;
+          if(checkin.rating) {
+            totalRatings += checkin.rating;
+            ratingsCount++;
           }
-        }
-      })
+          if (checkin.photoURL) {
+            if (!photos[checkin.id]) {
+              photos[checkin.id] = checkin.photoURL;
+            }
+          }
+        })
+      }
       const unique = Object.keys(userCount).length;
-      const avgRating = totalRatings / total;
+      const avgRating = totalRatings > 0 ? totalRatings / total : 0;
       const displayPhotos = Object.values(photos).slice(0, 5).map(photoURL => {
         return (
           <img key={photoURL} className="profile-photoURL" src={photoURL}/>
@@ -105,7 +107,7 @@ class BeerShow extends React.Component {
               {displayPhotos}
             </div>
             <CheckinIndex
-              checkins={beer.checkins}
+              checkins={beer.checkins ? beer.checkins : {}}
               fetchCheckins={this.props.fetchCheckins}
               fetchCheckin={this.props.fetchCheckin}
               sessionId={this.props.currentUser}
