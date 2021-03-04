@@ -25,7 +25,7 @@ class CheckinIndex extends React.Component {
         </li>
       )
     })
-    const title = this.props.root ? "Your Recent Activity" : "Recent Activity"
+    const title = this.props.root === "profile" ? "Your Recent Activity" : "Recent Activity"
     return (
       <div className="checkin-index-container">
         <div className="checkin-index">

@@ -11,6 +11,8 @@ const msp = (state, ownProps) => {
     checkin = state.entities.profile.checkins[ownProps.checkinId]
   } else if (ownProps.root === "beer-show") {
     checkin = state.entities.beers[ownProps.match.params.beerId].checkins[ownProps.checkinId]
+  } else if (ownProps.root === "brewery-show") {
+    checkin = state.entities.breweries[ownProps.match.params.breweryId].checkins[ownProps.checkinId]
   } else {
     checkin = state.entities.checkins[ownProps.checkinId]
   }
