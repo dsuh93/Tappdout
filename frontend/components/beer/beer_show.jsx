@@ -1,6 +1,7 @@
 import React from 'react';
 import BeerCheckins from './beer_checkins';
 import { Link } from 'react-router-dom';
+import Rating from '../rating/rating';
 
 class BeerShow extends React.Component {
   constructor(props) {
@@ -31,11 +32,22 @@ class BeerShow extends React.Component {
       const beerId = this.props.beerId;
       const total = Object.keys(beer.checkins).length;
       const userCount = {};
+      let monthlyCount = 0;
+      let currentUserCount = 0;
+      let totalRatings = 0;
+      let ratingsCount = 0;
       const countUsers = Object.values(beer.checkins).forEach(checkin => {
         if(!userCount[checkin.user_id]) userCount[checkin.user_id] = 0;
         userCount[checkin.user_id]++;
+        if(Math.floor((new Date() - new Date(checkin.created_at)) / 86400000) < 30) monthlyCount++;
+        if(checkin.user_id == this.props.currentUser) currentUserCount++;
+        if(checkin.rating) {
+          totalRatings += checkin.rating;
+          ratingsCount++;
+        }
       })
       const unique = Object.keys(userCount).length;
+      const avgRating = totalRatings / total;
       return (
         <div className="beer-show-container">
           <div className="beer-show">
@@ -48,20 +60,24 @@ class BeerShow extends React.Component {
                   <p id="br-type">{beer.style}</p>
                 </div>
                 <div id="br-row-1-stats">
-                  <div id="total"><p>TOTAL</p><p>{total}</p></div>
-                  <div id="unique"><p>UNIQUE</p><p>{unique}</p></div>
-                  <div id="monthly"><p>MONTHLY</p><p>#</p></div>
-                  <div id="you"><p>YOU</p>#</div>
+                  <div className="top-row-stats">
+                    <div id="total"><p id="t">TOTAL</p><p className="total">{total}</p></div>
+                    <div id="unique"><p id="u">UNIQUE</p><p className="unique">{unique}</p></div>
+                  </div>
+                  <div className="bottom-row-stats">
+                    <div id="monthly"><p id="m">MONTHLY</p><p className="monthly">{monthlyCount}</p></div>
+                    <div id="you"><p id="y">YOU</p><p className="you">{currentUserCount}</p></div>
+                  </div>
                 </div>
               </div>
               <div className="beer-info-row-2">
-                <div id="br-row-2-ratings-bar">{beer.abv}% ABV</div>
-                <div><p id="br-row-2-total-ratings">{beer.ibu ? `${beer.ibu} IBU` : `No IBU`}</p></div>
-                <div><p id="br-row-2-total-beers">Ratings Bar</p></div>
-                <div id="br-row-2-num-ratings"><p>num Ratings</p></div>
+                <div className="abv"><p id="abv">{beer.abv}% ABV</p></div>
+                <div className="ibu"><p id="ibu">{beer.ibu ? `${beer.ibu} IBU` : `No IBU`}</p></div>
+                <div className="ratings-bar"><Rating rating={avgRating}/><p id="ratings-bar">({avgRating})</p></div>
+                <div className="total-ratings"><p id="total-ratings">{ratingsCount} Ratings</p></div>
               </div>
               <div className="beer-info-row-3">
-                <p className="br-info-description">{beer.description}</p>
+                <p className="description">{beer.description}</p>
                 <button onClick={() => this.props.openModal({ modal: 'checkin', beerId: beerId})} className="beer-item-checkin-btn">
                   <div id="checkin-tag" className="checkin-tag hidden">
                     <div id="checkin-tag-tri"></div>

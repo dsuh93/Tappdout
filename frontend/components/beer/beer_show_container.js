@@ -9,7 +9,8 @@ const msp = (state, ownProps) => {
   const beerId = ownProps.match.params.beerId;
   return ({
     beer: state.entities.beers[beerId],
-    beerId: beerId
+    beerId: beerId,
+    currentUser: state.session.id
   })
 };
 
