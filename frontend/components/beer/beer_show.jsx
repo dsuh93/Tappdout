@@ -1,7 +1,7 @@
 import React from 'react';
-import BeerCheckins from './beer_checkins';
 import { Link } from 'react-router-dom';
 import Rating from '../rating/rating';
+import CheckinIndex from '../checkin/checkin_index';
 
 class BeerShow extends React.Component {
   constructor(props) {
@@ -32,6 +32,7 @@ class BeerShow extends React.Component {
       const beerId = this.props.beerId;
       const total = Object.keys(beer.checkins).length;
       const userCount = {};
+      const photos = {};
       let monthlyCount = 0;
       let currentUserCount = 0;
       let totalRatings = 0;
@@ -45,9 +46,19 @@ class BeerShow extends React.Component {
           totalRatings += checkin.rating;
           ratingsCount++;
         }
+        if (checkin.photoURL) {
+          if (!photos[checkin.id]) {
+            photos[checkin.id] = checkin.photoURL;
+          }
+        }
       })
       const unique = Object.keys(userCount).length;
       const avgRating = totalRatings / total;
+      const displayPhotos = Object.values(photos).slice(0, 5).map(photoURL => {
+        return (
+          <img key={photoURL} className="profile-photoURL" src={photoURL}/>
+        )
+      })
       return (
         <div className="beer-show-container">
           <div className="beer-show">
@@ -90,8 +101,17 @@ class BeerShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="beer-show-imgs">coming soon!</div>
-            <BeerCheckins/>
+            <div className="beer-show-imgs">
+              {displayPhotos}
+            </div>
+            <CheckinIndex
+              checkins={beer.checkins}
+              fetchCheckins={this.props.fetchCheckins}
+              fetchCheckin={this.props.fetchCheckin}
+              sessionId={this.props.currentUser}
+              deleteCheckin={this.props.deleteCheckin}
+              root="beer-show"
+            />
           </div>
           <div className="edit-beer-btn-container">
             <Link id="edit-beer-btn" to={`/beers/${beerId}/edit`}>Edit this beer!</Link>

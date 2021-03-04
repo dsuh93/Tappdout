@@ -7,19 +7,17 @@
 }
 
 .beer-show-container {
-  border: 1px solid black;
   height: 100%;
   display: flex;
   margin-top: 52px;
   width: 1020px;
   .beer-show {
-    border: 1px solid red;
     width: 70%;
     .beer-info {
       display: flex;
       flex-direction: column;
       margin-top: 30px;
-      padding: 15px;
+      padding: 15px 15px 0 15px;
       width: 96%;
       background-color: rgb(250, 250, 250);
       font-weight: bold;
@@ -128,7 +126,7 @@
         display: flex;
         .description {
           width: 75%;
-          margin: 10px 10px 10px 0;
+          margin: 15px 10px 10px 0;
           font-size: 17px;
         }
         .beer-item-checkin-btn {
@@ -220,29 +218,22 @@
     }
 
     .beer-show-imgs {
-      height: 100px;
+      height: 150px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      .profile-photoURL {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        margin: 0 10px;
+
+      }
     }
 
-    .beer-checkins {
-      padding: 15px;
-      background-color: white;
-      box-shadow: 0 1px 5px 0.5px rgb(231, 231, 231),
-        0 0 0 0 rgb(231, 231, 231);
-      // .br-show-chk-h1 {
-      //   padding-bottom: 10px;
-      //   border-bottom: 1px solid rgb(231, 231, 231);
-      // }
-      // .br-chk-items {
-      //   padding: 10px 0;
-      // }
-    }
+    
   }
   
   .edit-beer-btn-container {
-    border: 1px solid green;
     padding: 10px;
     background-color: white;
     border-radius: 4px;
@@ -250,7 +241,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 50px;
+    margin: 50px 0 0 50px;
     width: fit-content;
     height: 100px;
     #edit-beer-btn {

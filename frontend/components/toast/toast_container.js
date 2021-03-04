@@ -6,7 +6,14 @@ import Toast from './toast';
 
 
 const msp = (state, ownProps) => {
-  const checkin = ownProps.root === "profile" ? state.entities.profile.checkins[ownProps.checkinId] : state.entities.checkins[ownProps.checkinId]
+  let checkin;
+  if(ownProps.root === "profile") {
+    checkin = state.entities.profile.checkins[ownProps.checkinId]
+  } else if (ownProps.root === "beer-show") {
+    checkin = state.entities.beers[ownProps.match.params.beerId].checkins[ownProps.checkinId]
+  } else {
+    checkin = state.entities.checkins[ownProps.checkinId]
+  }
   return {
     checkin: checkin,
     checkinId: ownProps.checkinId,
