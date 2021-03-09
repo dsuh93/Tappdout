@@ -15,16 +15,16 @@ class Splash extends React.Component {
         <div className="splash-row-1">
           <div className="splash-row-1-img">
             <div className="splash-bg-img-div">
-              <img className="splash-bg-img" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80" alt="beer"/>
+              <div className="splash-bg-img-screen"></div>
             </div>
           </div>
           
           <div className="auth-bar">
             <div>
-              <Link className="auth-bar-link" to='/login'>SIGN IN</Link>
+              <Link className="auth-bar-link login" to='/login'>SIGN IN</Link>
             </div>
             <div>
-              <Link className="auth-bar-link" to='/signup'>CREATE AN ACCOUNT</Link>
+              <Link className="auth-bar-link signup" to='/signup'>CREATE AN ACCOUNT</Link>
             </div>
           </div>
 
@@ -39,16 +39,16 @@ class Splash extends React.Component {
               <p className="splash-logo-p-2">Discover and share your favorite beer.</p>
             </div>
 
-            <div>
+            {/* <div>
               <img className="splash-logo-side-img" src="https://untappd.akamaized.net/assets/custom/homepage/images/masthead-img-main.png" alt=""/>
-            </div>
+            </div> */}
 
           </div>
 
 
         </div>
         <div className="splash-row div-2">
-          <div>
+          <div className="left">
             <img src="https://untappd.akamaized.net/assets/custom/homepage/images/ratings.png"/>
             <h3>CHECK IN AND RATE BEER</h3>
             <p>Keep track of what you've tried and what you thought of it by checking in a beer and rating it.</p>

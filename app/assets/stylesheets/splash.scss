@@ -5,10 +5,11 @@
   width: 100%;
   .splash-row-1 {
     position: relative;
-
+    height: fit-content;
     .auth-bar {
       position: relative;
-      top: 16px;
+      top: 27px;
+      right: 3px;
       display: flex;
       justify-content: flex-end;
       // align-items: flex-end;
@@ -17,15 +18,19 @@
 
       .auth-bar-link {
         font-family: 'Raleway', sans-serif;
-        padding: 10px 15px;
+        padding: 14px 23px;
         margin: 8px;
         border: white solid 2px;
         border-radius: 3px;
-        font-size: 12px;
+        font-size: 15px;
         font-weight: 600;
         text-decoration: none;
         color: white;
         transition: 0.5s;
+      }
+      .auth-bar-link.login {
+        padding: 14px 21px;
+        margin-right: 9px;
       }
 
       .auth-bar-link:hover {
@@ -35,25 +40,31 @@
       }
     }
     .splash-bg-img-div {
-      min-height: 100%;
+      // padding: 10px;
+      // min-height: 100%;
       min-width: 1024px;
       width: 120%;
-      height: auto;
+      height: 1000px;
       position: absolute;
+      background: image-url('splash-4.gif') top left no-repeat;
+      background-size: cover;
       background-color: black;
       opacity: 1;
       z-index: 1;
     }
 
     
-    .splash-bg-img {
-      min-height: 100%;
+    .splash-bg-img-screen {
+      background-color: black;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      z-index: 1.5;
+      // min-height: 100%;
       // max-height: 1024px;
-      min-width: 1024px;
-      width: 120%;
-      height: auto;
-      z-index: -10;
-      opacity: 0.40;
+      // min-width: 1024px;
+      // height: auto;
+      // object-fit: cover;
     }
 
     .splash-logo {
@@ -62,18 +73,17 @@
       // flex-direction: column;
       justify-content: center;
       align-items: center;
-      top: 50px;
+      top: 150px;
       width: 100%;
       z-index: 1;
-      // background-color:yellowgreen;
-
+      margin: 100px 0;
       .splash-logo-title {
         // position: relative;
         // top: 100px;
         // left: 100px;
         font-family: 'Josefin Sans', sans-serif;
         color: white;
-        font-size: 40px;
+        font-size: 45px;
         font-weight: bold;
         z-index: 2;
       }
@@ -87,7 +97,7 @@
         padding: 20px;
         margin: 20px;
         .splash-logo-beer {
-          width: 100px;
+          width: 150px;
           padding-bottom: 5px;
         }
       }
@@ -114,7 +124,7 @@
         text-align: center;
         width: 390px;
         color: white;
-        font-size: 30px;
+        font-size: 35px;
         font-weight: 600;
         z-index: 2;
       }
@@ -142,7 +152,7 @@
 
   .div-2 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: whitesmoke;
     div {
@@ -151,22 +161,26 @@
       align-items: center;
       img {
         margin: 10px 60px;
-        width: 280px;
+        width: 350px;
         box-shadow:
           0px 0px 10px 2px rgba(0, 0, 0, 0.03),
           0px 0px 10px 2px rgba(0, 0, 0, 0.03);
       }
       h3 {
-        font-size: 20px;
+        font-size: 25px;
         padding-top: 25px;
         font-weight: bold;
       }
       p {
         font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
         padding-top: 20px;
-        width: 400px;
+        width: 500px;
         text-align: center;
       }
+    }
+    .left {
+      margin-right: 30px;
     }
   }
   
