@@ -48,8 +48,8 @@ brewery1 = Brewery.create!(
   fb_url: "https://www.facebook.com/10BarrelBrewingDenver/",
   insta_url: "https://www.instagram.com/10barrelbrewing/"
 )
-brewery1pic = open('https://tappdout-seeds.s3.amazonaws.com/tappdout-seeds/b-1.jpeg')
-brewer1.brewery_photo.attach(io: brewer1pic, filename: 'b-1.jpeg')
+file = URI.open('https://tappdout-seeds.s3.amazonaws.com/tappdout-seeds/b-1.jpeg')
+brewery1.photo.attach(io: file, filename: 'b-1.jpeg')
 brewery2 = Brewery.create!(
   brewery_name: "8 Bit Brewing Company",
   brewery_type: "Brew Pub",
@@ -171,7 +171,7 @@ beer9 = Beer.create!(
   brewery_id: brewery2.id,
   abv: 9.1,
   style: "IPA - English",
-  description: "DDH w/ Citra, Mosaic & 'The Bruce'.".
+  description: "DDH w/ Citra, Mosaic & 'The Bruce'."
 )
 beer10 = Beer.create!(
   beer_name: "Citradome",

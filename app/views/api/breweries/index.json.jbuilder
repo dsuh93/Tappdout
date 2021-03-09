@@ -1,7 +1,7 @@
 @breweries.each do |brewery|
   json.set! brewery.id do
     json.partial! 'api/breweries/brewery', brewery: brewery
-    json.breweryPhotoURL url_for(@brewery.brewery_photo) if @brewery.brewery_photo.attached?
+    json.breweryPhotoURL url_for(@brewery.photo) if @brewery.photo.attached?
     json.beers do
       brewery.beers.each do |beer|
         json.set! beer.id do

@@ -19,7 +19,7 @@ class Brewery < ApplicationRecord
     through: :beers,
     source: :checkins
   
-  has_one_attached :brewery_photo
+  has_one_attached :photo
   
   def self.search_breweries(search_term)
     self.where('brewery_name ILIKE ?', "%#{search_term}%")
