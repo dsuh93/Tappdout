@@ -54,7 +54,7 @@ class CheckinIndexItem extends React.Component {
           <p>
             <Link to={`/profiles/${checkin.user_id}`}>{checkin.user.first_name} {checkin.user.last_name}</Link> is drinking a <Link to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link> by <Link to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>
           </p>
-          <img id="checkin-brewery-pic" src={window.beerPic} alt="beer-pic"/>
+          <img id="checkin-brewery-pic" src={checkin.breweryPhotoURL} alt="beer-pic"/>
         </div>
         <div className="checkin-item-row-2">
           <div className="checkin-item-tri"></div>

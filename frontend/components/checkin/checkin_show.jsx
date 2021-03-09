@@ -100,7 +100,7 @@ class CheckinShow extends React.Component {
               </div>
               <div className="chk-show-det-2">
                 <div id="chk-show-2-top">
-                  <img id="chk-show-beer" src={window.defBeer}/>
+                  <img id="chk-show-beer" src={checkin.beer.beerPhotoURL}/>
                   <div>
                     <Link id="beer" to={`/beers/${checkin.beer.id}`}>{checkin.beer.beer_name}</Link>
                     <Link id="brw" to={`/breweries/${checkin.beer.brewery_id}`}>{checkin.brewery}</Link>

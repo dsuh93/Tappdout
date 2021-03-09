@@ -40,7 +40,7 @@ class BreweryIndexItem extends React.Component {
     return (
       <div className="brewery-item">
         <div className="brewery-item-left">
-          <img className="brewery-item-img" src={window.breweryPic}/>
+          <img className="brewery-item-img" src={brewery.breweryPhotoURL}/>
           <div className="brewery-item-details">
             <Link id="brewery-item-name" to={`/breweries/${brewery.id}`}>{brewery.brewery_name}</Link>
             <p id="brewery-item-location">{brewery.location}</p>

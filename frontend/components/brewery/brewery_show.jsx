@@ -84,7 +84,7 @@ class BreweryShow extends React.Component {
           <div className="brewery-show">
             <div className="brewery-info">
               <div className="brew-info-row-1">
-                <img id="bw-row-1-img"src={window.breweryPic}/>
+                <img id="bw-row-1-img"src={brewery.breweryPhotoURL}/>
                 <div id="bw-row-1-details">
                   <h3 id="bw-name">{brewery.brewery_name}</h3>
                   <p id="bw-location">{brewery.location}</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckinIndex from '../checkin/checkin_index';
+import { Link } from 'react-router-dom';
 // import TopRatedBeers from './top_rated_beers';
 
 class Home extends React.Component {
@@ -46,7 +47,7 @@ class Home extends React.Component {
         <div className="home-rt-side">
           <div className="user-container">
             <div className="user-info-row-1">
-              <img src={window.defAvatar}/>
+              <Link to={`/profiles/${sessionId}`}><img src={window.defAvatar}/></Link>
               <div id="user-fullname-icon">
                 <h3>{user.first_name} {user.last_name}</h3>
                 <img src={window.proIcon}/>
