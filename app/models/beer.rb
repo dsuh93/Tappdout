@@ -10,6 +10,8 @@ class Beer < ApplicationRecord
     foreign_key: :beer_id,
     class_name: :Checkin
 
+  has_one_attached :beer_photo
+  
   def self.search_beers(search_term)
     self.where('beer_name ILIKE ?', "%#{search_term}%")
       .limit(3)
