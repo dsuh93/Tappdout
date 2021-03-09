@@ -51,13 +51,13 @@ brewery1 = Brewery.create!(
   insta_url: "https://www.instagram.com/10barrelbrewing/"
 )
 brewery2 = Brewery.create!(
-  brewery_name: "101 North Brewing Company",
-  brewery_type: "Micro Brewery",
-  location: "Petaluma, California",
-  description: "101 North Brewing Company, A Petaluna based craft brewery has built a signficant following among craft beer enthusiasts through their exceptional brews, unique packaging and innovative marketing techniques. The brewery was founded in September 2012 by a group of former Bear Republic employees, including brewmaster Joel Johnson.",
-  web_url: "https://www.brewerydb.com/brewery/IPhAuu",
-  fb_url: "https://www.facebook.com/101northbrewingco/",
-  insta_url: "https://www.instagram.com/101northbrewing/?hl=en"
+  brewery_name: "8 Bit Brewing Company",
+  brewery_type: "Brew Pub",
+  location: "Murrieta, California",
+  description: "A family owned brewpub in Murrieta, CA specializing in Craft Beer in Artisan Eats.",
+  web_url: "https://www.8bitbrewingcompany.com/craft-beer/",
+  fb_url: "https://www.facebook.com/8bitBrewingCompany?ref=hl",
+  insta_url: "https://www.instagram.com/8bitbrewingcompany/"
 )
 brewery3 = Brewery.create!(
   brewery_name: "Abnormal Beer Company",
@@ -78,13 +78,13 @@ brewery4 = Brewery.create!(
   insta_url: "https://www.instagram.com/brewerytwentyfive/?hl=en"
 )
 brewery5 = Brewery.create!(
-  brewery_name: "Danville Brewing Company",
-  brewery_type: "Brew Pub",
-  location: "Danville, California",
-  description: "The Maita family has been in the beer business since shortly after prohibition; distributing and working with some of the best breweries in the world. When a great spot became available in historic downtown Danville we thought, perfect location for a brewery! So the process began. In order to make this place extra spectacular, the Maitas partnered with general and managing partner of local favorites Bridges and the Vine, Randy Negi. We knew this alliance would ensure we compliment great craft beer with incredible food. Put our passions together, and a fun spot called Danville Brewing Co. is born. Our head brewer, Matt Sager is a UC Davis Master Brewers program graduate and has been an award winning brewer for 20 years. Matt has engineered some worthy brews and he's always eager to talk shop, so when you see him on site or any of us around, feel free to say hi. We look forward to welcoming all of our friends, family, and new friends to be made to the locally owned and operated DBC. Cheers!!",
-  web_url: "http://www.danvillebrewing.com/about.html",
-  fb_url: "https://www.facebook.com/DanvilleBrewingCo/",
-  insta_url: "https://www.instagram.com/danvillebrewingco/"
+  brewery_name: "Drake's Brewing Co.",
+  brewery_type: "Macro Brewery",
+  location: "San Leandro, California",
+  description: "Drake’s started brewing inside a former Dodge car factory during the first wave of craft beer in the Bay Area. Since then, the company has evolved from pioneer to persistent innovator.",
+  web_url: "https://drinkdrakes.com/",
+  fb_url: "https://www.facebook.com/DrakesBeer/",
+  insta_url: "https://www.instagram.com/drakesbeer/"
 )
 
 # brewery1
@@ -146,39 +146,39 @@ checkin2 = Checkin.create!(
 
 # brewery2
 beer6 = Beer.create!(
-  beer_name: "101 North Heroine IPA",
+  beer_name: "Perfectly Adrift",
   brewery_id: brewery2.id,
-  abv: 7.2,
-  style: "IPA - American",
-  description: "Immodest hop additions throughout the brewing process characterize this distinctive, amber colored NorCal fashioned India Pale Ale."
+  abv: 4.8,
+  style: "Pilsner",
+  description: "Czech Style Pilsner w/ Saaz and Saphir."
 )
 beer7 = Beer.create!(
-  beer_name: "101 Lookout Stout",
+  beer_name: "True Brewmance",
   brewery_id: brewery2.id,
-  abv: 6,
-  style: "Stout",
-  description: "Pitch black beer with a tan head, a bit syrupy with a burnt bitter chocolate flavor and lots of roasted grain."
+  abv: 7.1,
+  style: "IPA - American",
+  description: "West Coast IPA w/ Mosaic."
 )
 beer8 = Beer.create!(
-  beer_name: "101 Pecker Pole Pale Ale",
+  beer_name: "Call of Brewty: Ghost Ops",
   brewery_id: brewery2.id,
-  abv: 5.6,
-  style: "Pale Ale",
-  description: "Classic Ale that is pleasantly hoppy, very easy to drink and our most popular!"
+  abv: 10.2,
+  style: "IPA - English",
+  description: "Hazy TIPA TDH w/ Mosaic, El Dorado & Idaho 7."
 )
 beer9 = Beer.create!(
-  beer_name: "Heroine India Pale Ale",
+  beer_name: "The Archive",
   brewery_id: brewery2.id,
-  abv: 7.2,
-  style: "IPA - American",
-  description: "Immodest hop additions throughout the brewing process characterize this distinctive, amber colored NorCal fashioned India Pale Ale."
+  abv: 9.1,
+  style: "IPA - English",
+  description: "DDH w/ Citra, Mosaic & 'The Bruce'.".
 )
 beer10 = Beer.create!(
-  beer_name: "Hook Tender Honey Brown Ale",
+  beer_name: "Citradome",
   brewery_id: brewery2.id,
-  abv: 5.5,
-  style: "Brown Ale",
-  description: "Caramelly and Roasty but smooth and with the floral flavor of honey. Quite yummy and full or grain flavor."
+  abv: 8.8,
+  style: "IPA - American",
+  description: "hazy DIPA w/ Citra, enigma, mosaic."
 )
 
 # brewery3
@@ -207,12 +207,12 @@ beer13 = Beer.create!(
   description: "Citrus and tropical fruits dominate, but dont leave the slight bready malt flavor behind, while its crispness keeps you wanting another sip."
 )
 beer14 = Beer.create!(
-  beer_name: "Tiki Life for Me",
+  beer_name: "Peach Cobbler",
   brewery_id: brewery3.id,
-  abv: 5.8,
-  ibu: 10,
-  style: "Wheat Beer",
-  description: " Inspired by classic tiki cocktails we used some classic components like pineapple, coconut and almond. "
+  abv: 6.8,
+  ibu: 5,
+  style: "IPA - Imperial",
+  description: "Introducing Abnormal Peach Cobbler, a fruity-sweet and refreshing play on the classic dessert. We add 1lb per gallon of Peach Purée, a blend of rich Vanilla Beans, and a touch of Cinnamon to our imperial berlinerweiss to achieve all the flavors in the actual pie."
 )
 beer15 = Beer.create!(
   beer_name: "Mocha Stout",
@@ -262,39 +262,44 @@ beer20 = Beer.create!(
 
 # brewery5
 beer21 = Beer.create!(
-  beer_name: "Danville IPA",
-  brewery_id: brewery5.id,
-  abv: 6.2,
-  style: "IPA - American",
-  description: "Resinous pine and grapefruit from Northwest hops, crisp and clean."
-)
-beer22 = Beer.create!(
-  beer_name: "925 Blonde",
+  beer_name: "1500",
   brewery_id: brewery5.id,
   abv: 5.5,
-  style: "Blonde Ale",
-  description: "Delicate flavors of melon, and strawberry aroma, soft bitterness."
+  ibu: 48,
+  style: "Pale Ale",
+  description: "Generously dry-hopped with Amarillo and Simcoe for a bright, piney punch, 1500 brings together orange blossom and grapefruit notes with a touch of honey sweetness. We don’t like choosing favorites, but 1500 is our perfect everyday hoppy beer."
+)
+beer22 = Beer.create!(
+  beer_name: "Best Coast IPA",
+  brewery_id: brewery5.id,
+  abv: 7,
+  ibu: 64,
+  style: "Pale Ale",
+  description: "A classic West Coast IPA! Best Coast IPA is a harmonious fusion of resinous pine and orange peel cascading over a backdrop of lightly toasted caramel and brisk bitterness. Revel in the bright aromatics and let Drake’s Best Coast IPA show you why the West Coast is the Best Coast!"
 )
 beer23 = Beer.create!(
-  beer_name: "Chux Double IPA",
+  beer_name: "Denogginizer",
   brewery_id: brewery5.id,
-  abv: 8,
+  abv: 9.75,
+  ibu: 90,
   style: "IPA - American",
-  description: "Citrusy-tropical hop aromas, soft malt sweetness."
+  description: "Brace yourself. Denogginizer is a massive Double IPA that’s sublimely hopped with an over-the-top dosing of dank, sticky, West Coast hops. With just enough malt backbone to keep the big, bold, resinous hop monster in check, be careful, you might lose your head to the Denogginizer."
 )
 beer24 = Beer.create!(
-  beer_name: "Hop Magee IPA",
+  beer_name: "Flyway Pils",
   brewery_id: brewery5.id,
-  abv: 7.4,
-  style: "IPA - American",
-  description: "North East style IPA, juicy, soft, hazy."
+  abv: 4.5,
+  ibu: 43,
+  style: "Pilsner",
+  description: "Flyway Pils is a North German style pilsner, which are distinctive in their high hopping rates and clean, dry body. We combine extra premium pale German pilsner malt with the most American ingredient of all, flaked maize, which dries the body out nicely, and we hop it exclusively with a noble-style American hop called Vanguard. The beer displays a nice spiciness with a subtle fruited note, and finishes clean and dry."
 )
 beer25 = Beer.create!(
-  beer_name: "Station 31",
+  beer_name: "Hefeweizen",
   brewery_id: brewery5.id,
-  abv: 5,
-  style: "German Ale",
-  description: "German lager, bold malt and light smoke."
+  abv: 4.5,
+  ibu: 15,
+  style: "Hefeweizen",
+  description: "Like the fog lingering over the bay, our take on the classic wheat beer is unfiltered for a hazy appearance and fluffy mouthfeel. It’s a smooth, easy drinker, with notes of fresh banana and clove spice that finishes with a soft, mellow sweetness. Just say: 'hay-fuh-vite-sun!'"
 )
 
 
