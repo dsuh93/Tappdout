@@ -4,6 +4,7 @@
     json.brewery do
       json.partial! '/api/breweries/brewery', brewery: beer.brewery
     end
+    json.beerPhotoURL url_for(beer.photo) if beer.photo.attached?
     json.checkins do
       beer.checkins.each do |checkin|
         json.set! checkin.id do
