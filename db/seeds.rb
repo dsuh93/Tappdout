@@ -228,8 +228,8 @@ beer12 = Beer.create!(
   style: "IPA - American",
   description: "The aggressively hop forward nose, provided by Nugget and Mosaic, is followed by waves of citrus and tropical fruits from Cascade and Citra."
 )
-file = URI.open('https://tappdout-seeds.s3.amazonaws.com/tappdout-seeds/3-2.jpg')
-beer12.photo.attach(io: file, filename: '3-2.jpg')
+file = URI.open('https://tappdout-seeds.s3.amazonaws.com/tappdout-seeds/3-1.jpg')
+beer12.photo.attach(io: file, filename: '3-1.jpg')
 beer13 = Beer.create!(
   beer_name: "Secret Safari",
   brewery_id: brewery3.id,

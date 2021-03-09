@@ -3,6 +3,7 @@
     json.partial! '/api/beers/beer', beer: beer
     json.brewery do
       json.partial! '/api/breweries/brewery', brewery: beer.brewery
+      json.breweryPhotoURL url_for(beer.brewery.photo) if beer.brewery.photo.attached?
     end
     json.beerPhotoURL url_for(beer.photo) if beer.photo.attached?
     json.checkins do
@@ -14,6 +15,7 @@
           end
           json.beer do
             json.partial! '/api/beers/beer', beer: checkin.beer
+            json.beerPhotoURL url_for(checkin.beer.photo) if checkin.beer.photo.attached?
           end
           json.brewery checkin.beer.brewery.brewery_name
           json.toasts do
