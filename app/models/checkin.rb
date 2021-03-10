@@ -1,5 +1,5 @@
 class Checkin < ApplicationRecord
-  validates :rating, :description, :beer_id, :user_id, presence: true
+  validates :beer_id, :user_id, presence: true
 
   belongs_to :user,
     foreign_key: :user_id,
