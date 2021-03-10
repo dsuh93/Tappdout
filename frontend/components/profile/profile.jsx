@@ -20,13 +20,14 @@ class Profile extends React.Component {
         </div>
       )
     } else {
+      debugger
       const { checkins, first_name, id, last_name, username } = this.props.profile;
       const { sessionId, profileId, fetchUser, fetchCheckins, fetchCheckin, deleteCheckin } = this.props;
-      const total = Object.keys(checkins).length;
+      const total = checkins ? Object.keys(checkins).length : 0;
       const uniqueHash = {};
       const photos = {};
       const topRatedBeers = {};
-      const uniqueCount = Object.values(checkins).forEach(checkin => {
+      const uniqueCount = checkins ? Object.values(checkins).forEach(checkin => {
         if (!uniqueHash[checkin.beer_id]) uniqueHash[checkin.beer_id] = 0;
         uniqueHash[checkin.beer_id]++;
         if (checkin.photoURL) {
@@ -39,7 +40,7 @@ class Profile extends React.Component {
           beerId: checkin.beer_id,
           brewery: checkin.brewery
         }
-      })
+      }) : "";
       const unique = Object.keys(uniqueHash).length;
       const displayPhotos = Object.values(photos).map(photoURL => {
         return (
@@ -80,7 +81,7 @@ class Profile extends React.Component {
               </div>
               <div className="profile-checkins-container">
                 <CheckinIndex
-                  checkins={checkins}
+                  checkins={checkins ? checkins : {}}
                   fetchUser={fetchUser}
                   profileId={profileId}
                   fetchCheckins={fetchCheckins}

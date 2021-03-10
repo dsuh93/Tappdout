@@ -24,9 +24,7 @@ class CheckinIndexItem extends React.Component {
   deleteCheckin(e) {
     e.preventDefault();
     this.props.deleteCheckin(this.props.checkinId)
-    debugger
     if (this.props.root === "profile") {
-      debugger
       this.props.fetchUser(this.props.profileId)
     }
   }

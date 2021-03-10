@@ -22,12 +22,11 @@ class Home extends React.Component {
   }
 
   uniqueBeerCounter() {
+    const sessionId = this.props.sessionId;
     const uniqueBeers = {};
     Object.values(this.props.checkins).map( checkin => {
-      debugger
-      if (!uniqueBeers[checkin.beer_id] && checkin.user_id === this.props.sessionId) {
-        uniqueBeers[checkin.beer_id] = 0
-      } else {
+      if(checkin.user_id === sessionId) {
+        if (!uniqueBeers[checkin.beer_id]) uniqueBeers[checkin.beer_id] = 0;
         uniqueBeers[checkin.beer_id]++;
       }
     })
