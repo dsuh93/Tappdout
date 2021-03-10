@@ -11,6 +11,7 @@ class BeerShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchBeer(this.props.beerId)
   }
 

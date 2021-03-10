@@ -8,7 +8,8 @@ import { resetSearchIndex } from '../../actions/search_actions';
 const msp = (state, ownProps) => ({
   searchBeers: state.entities.searches.beers,
   searchBreweries: state.entities.searches.breweries,
-  keyword: ownProps.keyword
+  keyword: ownProps.keyword,
+  resetState: ownProps.resetState
 })
 
 const mdp = dispatch => ({

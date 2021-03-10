@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       keyword: ""
     };
     this.update = this.update.bind(this)
+    this.resetState = this.resetState.bind(this)
   }
 
   componentDidMount() {
@@ -20,6 +21,10 @@ class SearchBar extends React.Component {
         searchIndex.classList.remove("hide");
       }
     })
+  }
+
+  resetState() {
+    this.setState({keyword: ""})
   }
 
   update(e) {
@@ -43,7 +48,7 @@ class SearchBar extends React.Component {
           <img id="search-icon" src={window.searchIcon}/>
         </div>
         <div id="search-index-container" className={`searchbar-index-container ${showSearchIndex}`}>
-          <SearchbarIndexContainer keyword={this.state.keyword}/>
+          <SearchbarIndexContainer resetState={this.resetState} keyword={this.state.keyword}/>
         </div>
       </div>
     )

@@ -5,7 +5,20 @@ import { Link } from 'react-router-dom';
 class SearchbarIndex extends React.Component {
   constructor(props) {
     super(props);
-    
+  }
+
+  handleClick({beerId, breweryId}) {
+    return e => {
+      e.preventDefault();
+      // const searchInput = document.getElementById('search-bar');
+      // searchInput.value = "";
+      if(beerId) {
+        this.props.history.push(`/beers/${beerId}`)
+      } else if (breweryId) {
+        this.props.history.push(`/breweries/${breweryId}`)
+      }
+      this.props.resetState();
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -27,15 +40,15 @@ class SearchbarIndex extends React.Component {
   render() {
     const searchBeers = Object.values(this.props.searchBeers).map( beer => {
       return(
-        <Link to={`/beers/${beer.id}`}>
-          <SearchbarIndexItem list="beer" beer={beer} />
+        <Link key={`${beer.beer_name}-${beer.id}`} onClick={this.handleClick({beerId: beer.id})} to={`/beers/${beer.id}`}>
+          <SearchbarIndexItem key={`${beer.beer_name}-${beer.id}`} list="beer" beer={beer} />
         </Link>
       )
     })
     const searchBreweries = Object.values(this.props.searchBreweries).map( brewery => {
       return(
-        <Link to={`/breweries/${brewery.id}`}>
-          <SearchbarIndexItem list="brewery" brewery={brewery} />
+        <Link key={`${brewery.brewery_name}-${brewery.id}`} onClick={this.handleClick({breweryId: brewery.id})} to={`/breweries/${brewery.id}`}>
+          <SearchbarIndexItem key={`${brewery.brewery_name}-${brewery.id}`} list="brewery" brewery={brewery} />
         </Link>
       )
     })
