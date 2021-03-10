@@ -49,7 +49,7 @@ class Home extends React.Component {
             <div className="user-info-row-1">
               <Link to={`/profiles/${sessionId}`}><img src={window.defAvatar}/></Link>
               <div id="user-fullname-icon">
-                <h3>{user.first_name} {user.last_name}</h3>
+                <Link className="username" to={`/profiles/${sessionId}`}><h3>{user.first_name} {user.last_name}</h3></Link>
                 <img src={window.proIcon}/>
                 <p>{user.username}</p>
               </div>
