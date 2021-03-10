@@ -5,6 +5,7 @@ json.checkins do
       json.partial! '/api/checkins/checkin', checkin: checkin
       json.beer do
         json.partial! '/api/beers/beer', beer: checkin.beer
+        json.beerPhotoURL url_for(checkin.beer.photo) if checkin.beer.photo.attached?
       end
       json.brewery checkin.beer.brewery.brewery_name
       json.breweryPhotoURL url_for(checkin.beer.brewery.photo) if checkin.beer.brewery.photo.attached?

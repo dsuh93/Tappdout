@@ -55,7 +55,7 @@ class BeerShow extends React.Component {
         })
       }
       const unique = Object.keys(userCount).length;
-      const avgRating = totalRatings > 0 ? totalRatings / total : 0;
+      const avgRating = totalRatings > 0 ? (totalRatings / total).toFixed(2) : 0;
       const displayPhotos = Object.values(photos).slice(0, 5).map(photoURL => {
         return (
           <img key={photoURL} className="profile-photoURL" src={photoURL}/>
