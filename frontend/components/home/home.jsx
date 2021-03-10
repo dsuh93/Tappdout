@@ -24,7 +24,8 @@ class Home extends React.Component {
   uniqueBeerCounter() {
     const uniqueBeers = {};
     Object.values(this.props.checkins).map( checkin => {
-      if (!uniqueBeers[checkin.beer_id] && checkin.user.id === this.props.sessionId) {
+      debugger
+      if (!uniqueBeers[checkin.beer_id] && checkin.user_id === this.props.sessionId) {
         uniqueBeers[checkin.beer_id] = 0
       } else {
         uniqueBeers[checkin.beer_id]++;

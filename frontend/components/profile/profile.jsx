@@ -21,7 +21,7 @@ class Profile extends React.Component {
       )
     } else {
       const { checkins, first_name, id, last_name, username } = this.props.profile;
-      const { sessionId, fetchCheckins, fetchCheckin, deleteCheckin } = this.props;
+      const { sessionId, profileId, fetchUser, fetchCheckins, fetchCheckin, deleteCheckin } = this.props;
       const total = Object.keys(checkins).length;
       const uniqueHash = {};
       const photos = {};
@@ -81,6 +81,8 @@ class Profile extends React.Component {
               <div className="profile-checkins-container">
                 <CheckinIndex
                   checkins={checkins}
+                  fetchUser={fetchUser}
+                  profileId={profileId}
                   fetchCheckins={fetchCheckins}
                   fetchCheckin={fetchCheckin}
                   sessionId={sessionId}

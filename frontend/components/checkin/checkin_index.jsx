@@ -20,7 +20,9 @@ class CheckinIndex extends React.Component {
             checkinId={checkin.id}
             sessionId={this.props.sessionId}
             deleteCheckin={this.props.deleteCheckin}
-            root={this.props.root ? this.props.root : "home"} 
+            root={this.props.root ? this.props.root : "home"}
+            fetchUser={this.props.fetchUser ? this.props.fetchUser : ""}
+            profileId={this.props.profileId ? this.props.profileId : ""}
           />
         </li>
       )
