@@ -40,14 +40,14 @@ class SearchbarIndex extends React.Component {
   
 
   render() {
-    const searchBeers = Object.values(this.props.searchBeers).map( beer => {
+    const searchBeers = Object.values(this.props.searchBeers).slice(0,3).map( beer => {
       return(
         <Link key={`${beer.beer_name}-${beer.id}`} onClick={this.handleClick({beerId: beer.id})} to={`/beers/${beer.id}`}>
           <SearchbarIndexItem key={`${beer.beer_name}-${beer.id}`} list="beer" beer={beer} />
         </Link>
       )
     })
-    const searchBreweries = Object.values(this.props.searchBreweries).map( brewery => {
+    const searchBreweries = Object.values(this.props.searchBreweries).slice(0,3).map( brewery => {
       return(
         <Link key={`${brewery.brewery_name}-${brewery.id}`} onClick={this.handleClick({breweryId: brewery.id})} to={`/breweries/${brewery.id}`}>
           <SearchbarIndexItem key={`${brewery.brewery_name}-${brewery.id}`} list="brewery" brewery={brewery} />
@@ -63,14 +63,32 @@ class SearchbarIndex extends React.Component {
           <p className="li-header">BEERS</p>
           {searchBeers}
           <div className="see-more-div">
-            <Link className="see-more" to="/beers">See More Beers</Link>
+            <Link
+              className="see-more"
+              to={{
+                pathname:"/search",
+                state: {
+                  keyword: this.props.keyword,
+                  list: "beers"
+                }
+              }}
+            >See More Beers</Link>
           </div>
         </ul>
         <ul className={`searchbar-brewery-list ${displayBreweries}`}>
           <p className="li-header">BREWERIES</p>
           {searchBreweries}
           <div className="see-more-div">
-            <Link className="see-more" to="/breweries">See More Breweries</Link>
+            <Link
+              className="see-more"
+              to={{
+                pathname:"/search",
+                state: {
+                  keyword: this.props.keyword,
+                  list: "breweries"
+                }
+              }}
+            >See More Breweries</Link>
           </div>
         </ul>
       </div>

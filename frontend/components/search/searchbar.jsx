@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
     document.addEventListener("click", e => {
       if (e.target != searchBar) {
         searchIndex.classList.add("hide");
-      } else if (e.target == searchBar && this.state.length > 0) {
+      } else if (e.target == searchBar) {
         searchIndex.classList.remove("hide");
       }
     })

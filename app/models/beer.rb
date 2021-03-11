@@ -14,6 +14,5 @@ class Beer < ApplicationRecord
   
   def self.search_beers(search_term)
     self.where('beer_name ILIKE ?', "%#{search_term}%")
-      .limit(3)
   end
 end
