@@ -9,7 +9,6 @@ import BeerShow from './beer_show';
 
 const msp = (state, ownProps) => {
   const beerId = ownProps.match.params.beerId;
-  debugger
   return ({
     beer: state.entities.beers[beerId],
     beerId: beerId,

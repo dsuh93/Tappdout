@@ -14,14 +14,6 @@ class BeerShow extends React.Component {
     this.props.fetchBeer(this.props.beerId)
   }
 
-  componentDidUpdate(prevProps) {
-    debugger
-    if (prevProps.beerId != this.props.beerId) {
-      debugger
-      this.props.fetchBeer(this.props.beerId)
-    }
-  }
-
   handleClick(e) {
     e.preventDefault();
     this.props.deleteBeer(this.props.beerId)
