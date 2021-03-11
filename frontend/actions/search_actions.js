@@ -8,10 +8,9 @@ export const resetSearchIndex = () => ({
   type: RESET_SEARCH_INDEX
 })
 
-const receiveSearchResults = ({beers, breweries}) => ({
+const receiveSearchResults = (results) => ({
   type: RECEIVE_SEARCH_RESULTS,
-  beers,
-  breweries
+  results
 })
 
 export const fetchSearchList = ({list, keyword}) => dispatch => {
