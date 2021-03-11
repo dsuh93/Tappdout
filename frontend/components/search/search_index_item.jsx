@@ -6,12 +6,11 @@ class SearchIndexItem extends React.Component {
   }
 
   render() {
-    const beer = this.props.beer ? this.props.beer : "";
-    const brewery = this.props.brewery ? this.props.brewery : "";
+    const item = this.props.item ? this.props.item : ""
 
     return (
       <div className="search-index-item">
-        <p>Search Beer item {beer.id || brewery.id}</p>
+        <p>Search Beer item {item.id}</p>
       </div>
     )
   }

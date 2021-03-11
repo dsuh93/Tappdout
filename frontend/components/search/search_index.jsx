@@ -8,19 +8,14 @@ class SearchIndex extends React.Component {
 
   render() {
     // map through props searchitems and render search index items
-    const searchBeerIndexItems = this.props.searchBeerIndex.map(beer => {
+    const searchIndexItems = Object.values(this.props.searchIndex).map(item => {
       return (
-        <SearchIndexItem beer={beer} />
-      )
-    })
-    const searchBreweryIndexItems = this.props.searchBreweryIndex.map(brewery => {
-      return (
-        <SearchIndexItem brewery={brewery} />
+        <SearchIndexItem item={item} />
       )
     })
     return (
       <div className="search-index">
-        {searchBeerIndexItems || searchBreweryIndexItems}
+        {searchIndexItems}
       </div>
     )
   }
