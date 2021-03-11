@@ -1,6 +1,8 @@
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SearchbarIndex from './searchbar-index';
+import { fetchBeer } from '../../actions/beer_actions';
+import { fetchBrewery } from '../../actions/brewery_actions';
 import { fetchSearchBeers } from '../../actions/beer_actions';
 import { fetchSearchBreweries } from '../../actions/brewery_actions';
 import { resetSearchIndex } from '../../actions/search_actions';
@@ -13,6 +15,8 @@ const msp = (state, ownProps) => ({
 })
 
 const mdp = dispatch => ({
+  fetchBeer: (beerId) => dispatch(fetchBeer(beerId)), 
+  fetchBrewery: (breweryId) => dispatch(fetchBrewery(breweryId)),
   fetchSearchBeers: (search) => dispatch(fetchSearchBeers(search)),
   fetchSearchBreweries: (search) => dispatch(fetchSearchBreweries(search)),
   resetSearchIndex: () => dispatch(resetSearchIndex())

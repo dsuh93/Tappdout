@@ -14,8 +14,10 @@ class SearchbarIndex extends React.Component {
       // searchInput.value = "";
       if(beerId) {
         this.props.history.push(`/beers/${beerId}`)
+        this.props.fetchBeer(beerId)
       } else if (breweryId) {
         this.props.history.push(`/breweries/${breweryId}`)
+        this.props.fetchBrewery(breweryId)
       }
       this.props.resetState();
     }

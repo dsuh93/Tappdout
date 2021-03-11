@@ -11,8 +11,15 @@ class BeerShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchBeer(this.props.beerId)
+  }
+
+  componentDidUpdate(prevProps) {
+    debugger
+    if (prevProps.beerId != this.props.beerId) {
+      debugger
+      this.props.fetchBeer(this.props.beerId)
+    }
   }
 
   handleClick(e) {
@@ -25,7 +32,7 @@ class BeerShow extends React.Component {
     if(!this.props.beer) {
       return (
         <div>
-          Fetching Beer...
+          <img src={window.loading} alt=""/>
         </div>
       )
     } else {
