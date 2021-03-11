@@ -1,0 +1,21 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin-top: 52px;
+  .search-top {
+    border: 1px solid red;
+  }
+  .search-tabs {
+    border: 1px solid pink;
+    display: flex;
+  }
+  .search-index {
+    border: 1px solid green;
+    .search-index-item {
+      border: 1px solid lightblue;
+    }
+  }
+}
