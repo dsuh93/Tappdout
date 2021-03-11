@@ -43,8 +43,7 @@ class Search extends React.Component {
           </div>
         </div>
         <SearchIndex
-          searchBeerIndex={this.props.searchBeerIndex}
-          searchBreweryIndex={this.props.searchBreweryIndex}
+          searchIndex={this.props.searchIndex}
         />
       </div>
     )
