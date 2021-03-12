@@ -65,6 +65,8 @@ class Search extends React.Component {
   render() {
     const revealSearch = Object.values(this.props.searchIndex).length < 1 ? "hidden" : ""
     const revealNoSearch = revealSearch === "hidden" ? "" : "hidden";
+    const beersTab = this.state.list === "beers" ? "selected" : "";
+    const breweriesTab = this.state.list === "breweries" ? "selected" : "";
     return (
       <div className="search-container">
         <div className="search-top">
@@ -81,18 +83,18 @@ class Search extends React.Component {
             <button className="search-button">Search</button>
           </form>
         </div>
-        <div className={`search-bottom ${revealSearch}`}>
+        <div className={`search-bottom index ${revealSearch}`}>
           <div className="search-tabs">
-            <div onClick={this.handleTab("beers")} className="tab"><p>Beer</p></div>
-            <div onClick={this.handleTab("breweries")} className="tab"><p>Brewery</p></div>
+            <div onClick={this.handleTab("beers")} className={`tab beer ${beersTab}`}><p>Beer</p></div>
+            <div onClick={this.handleTab("breweries")} className={`tab brewery ${breweriesTab}`}><p>Brewery</p></div>
           </div>
           <SearchIndex
             searchIndex={this.props.searchIndex}
             list={this.state.list}
           />
         </div>
-        <div className={`search-bottom ${revealNoSearch}`}>
-          <p>Use the Search Box above to search for a Beer</p>
+        <div className={`search-bottom no-index ${revealNoSearch}`}>
+          <p className="empty-search">Use the Search Box above to search for a Beer</p>
           {/* <p>{this.state.error}</p> */}
         </div>
       </div>
