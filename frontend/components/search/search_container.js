@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchSearchBeers } from '../../actions/beer_actions';
 import { fetchSearchBreweries } from '../../actions/brewery_actions';
-import { fetchSearchList } from '../../actions/search_actions';
+import { fetchSearchList, resetSearchList } from '../../actions/search_actions';
 import Search from './search';
 
 const msp = (state, ownProps) => {
@@ -18,7 +18,8 @@ const msp = (state, ownProps) => {
 
 
 const mdp = dispatch => ({
-  fetchSearchList: (listAndKey) => dispatch(fetchSearchList(listAndKey))
+  fetchSearchList: (listAndKey) => dispatch(fetchSearchList(listAndKey)),
+  resetSearchList: () => dispatch(resetSearchList())
 });
 
 export default withRouter(connect(msp, mdp)(Search))

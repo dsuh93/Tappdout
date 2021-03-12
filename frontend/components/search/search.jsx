@@ -6,10 +6,11 @@ class Search extends React.Component {
     super(props);
     this.state = {
       keyword: this.props.keyword ? this.props.keyword : "",
-      list: this.props.list ? this.props.list : "beers"
+      list: this.props.list ? this.props.list : "beers",
+      error: ""
     }
-    this.handleClick = this.handleClick.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTab = this.handleTab.bind(this)
     this.update = this.update.bind(this)
   }
 
@@ -22,16 +23,20 @@ class Search extends React.Component {
     }
   }
 
-  handleClick(e) {
-    e.preventDefault();
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchSearchList({
-      list: this.state.list,
-      keyword: this.state.keyword
-    })
+    if (this.state.keyword.length > 0) {
+      this.props.fetchSearchList({
+        list: this.state.list,
+        keyword: this.state.keyword
+      })
+      if (this.state.error.length > 0) {
+        this.setState({error: ""})
+      }
+    } else {
+      
+      this.setState({error: "Search is empty. Please type something before submitting."})
+    }
   }
 
   handleTab(tab) {
@@ -42,6 +47,13 @@ class Search extends React.Component {
           list: "beers",
           keyword: this.props.keyword
         })
+        this.setState({list: "beers"})
+      } else if (tab === "breweries") {
+        this.props.fetchSearchList({
+          list: "breweries",
+          keyword: this.props.keyword
+        })
+        this.setState({list: "breweries"})
       }
     }
   }
@@ -52,7 +64,7 @@ class Search extends React.Component {
 
   render() {
     const revealSearch = Object.values(this.props.searchIndex).length < 1 ? "hidden" : ""
-
+    const revealNoSearch = revealSearch === "hidden" ? "" : "hidden";
     return (
       <div className="search-container">
         <div className="search-top">
@@ -74,6 +86,10 @@ class Search extends React.Component {
           <SearchIndex
             searchIndex={this.props.searchIndex}
           />
+        </div>
+        <div className={`search-bottom ${revealNoSearch}`}>
+          <p>Use the Search Box above to search for a Beer</p>
+          {/* <p>{this.state.error}</p> */}
         </div>
       </div>
     )
