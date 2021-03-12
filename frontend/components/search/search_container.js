@@ -6,7 +6,6 @@ import { fetchSearchList, resetSearchIndex } from '../../actions/search_actions'
 import Search from './search';
 
 const msp = (state, ownProps) => {
-  debugger
   const searchState = ownProps.location.state ? ownProps.location.state : {};
   const list = searchState.list ? searchState.list : "beers";
   const keyword = searchState.keyword ? searchState.keyword : "";
