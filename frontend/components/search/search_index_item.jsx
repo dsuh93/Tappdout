@@ -1,5 +1,6 @@
 import React from 'react';
 import Rating from '../rating/rating';
+import { Link } from 'react-router-dom';
 
 class SearchIndexItem extends React.Component {
   constructor(props) {
@@ -23,11 +24,15 @@ class SearchIndexItem extends React.Component {
       return (
         <div className="search-index-item beers">
           <div className="left">
-            <img src={item.beerPhotoURL}/>
+            <Link to={`/beers/${item.id}`}><img src={item.beerPhotoURL}/></Link>
           </div>
           <div className="middle">
-            <p className="name">{item.beer_name}</p>
-            <p className="brewery">{item.brewery ? item.brewery.brewery_name : item.brewery_name}</p>
+            <Link to={`/beers/${item.id}`}>
+              <p className="name">{item.beer_name}</p>
+            </Link>
+            <Link to={`/breweries/${item.brewery_id}`}>
+              <p className="brewery">{item.brewery ? item.brewery.brewery_name : item.brewery_name}</p>
+            </Link>
             <p className="style">{item.style}</p>
           </div>
           <div className="right">
@@ -46,10 +51,12 @@ class SearchIndexItem extends React.Component {
       return (
         <div className="search-index-item brewery">
           <div className="left">
-            <img src={item.breweryPhotoURL}/>
+            <Link to={`/breweries/${item.id}`}><img src={item.breweryPhotoURL}/></Link>
           </div>
           <div className="middle">
-            <p className="name">{item.brewery_name}</p>
+            <Link to={`/breweries/${item.id}`}>
+              <p className="name">{item.brewery_name}</p>
+            </Link>
             <p className="location">{item.location}</p>
             <p className="type">{item.brewery_type}</p>
           </div>

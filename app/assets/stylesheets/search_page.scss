@@ -88,8 +88,42 @@
       margin-top: 30px;
       .search-index-item {
         border-top: 1px solid lightgray;
+        display: flex;
+        align-items: center;
         .left {
-          
+          a {
+            img {
+              width: 60px;
+              height: 60px;
+              object-fit: cover;
+              margin-right: 10px;
+            }
+          }
+          a:hover {
+            cursor: pointer;
+          }
+        }
+        .middle {
+          width: 50%;
+          a {
+            text-decoration: none;
+            color: rgb(207, 114, 0);
+            .name {
+              font-size: 20px;
+            }
+            .brewery {
+              margin-top: 5px;
+              font-size: 15px;
+            }
+          }
+          a:hover {
+            cursor: pointer;
+            color: orange;
+          }
+          .style, .location, .type {
+            margin-top: 5px;
+            font-size: 15px;
+          }
         }
       }
     }
