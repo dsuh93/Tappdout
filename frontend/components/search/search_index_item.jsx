@@ -6,13 +6,21 @@ class SearchIndexItem extends React.Component {
   }
 
   render() {
-    const item = this.props.item ? this.props.item : ""
-
-    return (
-      <div className="search-index-item">
-        <p>Search Beer item {item.id}</p>
-      </div>
-    )
+    const item = this.props.item ? this.props.item : "";
+    const list = this.props.list;
+    if (list === "beers") {
+      return (
+        <div className="search-index-item">
+          Search Beer item {item.id}
+        </div>
+      )
+    } else if (list === "breweries") {
+      return (
+        <div className="search-index-item">
+          <p>Search Brewery item {item.id}</p>
+        </div>
+      )
+    }
   }
 }
 

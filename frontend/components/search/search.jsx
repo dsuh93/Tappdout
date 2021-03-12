@@ -5,7 +5,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      keyword: this.props.keyword ? this.props.keyword : "",
+      keyword: this.props.keyword.length > 0 ? this.props.keyword : "",
       list: this.props.list ? this.props.list : "beers",
       error: ""
     }
@@ -19,6 +19,14 @@ class Search extends React.Component {
       this.props.fetchSearchList({
         list: this.props.list,
         keyword: this.props.keyword
+      })
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.searchbarKeyword !== this.props.searchbarKeyword) {
+      this.setState({
+        keyword: this.props.searchbarKeyword
       })
     }
   }

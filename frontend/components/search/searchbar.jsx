@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import SearchbarIndexContainer from './searchbar-index-container';
 
 class SearchBar extends React.Component {
@@ -9,6 +10,7 @@ class SearchBar extends React.Component {
     };
     this.update = this.update.bind(this)
     this.resetState = this.resetState.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -21,6 +23,23 @@ class SearchBar extends React.Component {
         searchIndex.classList.remove("hide");
       }
     })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.history.push({
+      pathname: '/search',
+      search: `?q=${this.state.keyword}`,
+      state: {
+        list: "beers",
+        keyword: this.state.keyword
+      }
+    })
+    this.props.fetchSearchList({
+      list: "beers",
+      keyword: this.state.keyword
+    })
+    this.resetState();
   }
 
   resetState() {
@@ -37,25 +56,30 @@ class SearchBar extends React.Component {
     return (
       <div className="search-bar">
         <div id="search-bar-container">
-          <input
-            id="search-bar"
-            className="search-bar-input"
-            placeholder="Find a beer or brewery..."
-            type="text"
-            value={this.state.keyword}
-            onChange={this.update}
-          />
+          <form onSubmit={this.handleSubmit}>
+            <input
+              id="search-bar"
+              className="search-bar-input"
+              placeholder="Find a beer or brewery..."
+              type="text"
+              value={this.state.keyword}
+              onChange={this.update}
+            />
           <img id="search-icon" src={window.searchIcon}/>
+          </form>
         </div>
         <div id="search-index-container" className={`searchbar-index-container ${showSearchIndex}`}>
-          <SearchbarIndexContainer resetState={this.resetState} keyword={this.state.keyword}/>
+          <SearchbarIndexContainer
+            resetState={this.resetState}
+            keyword={this.state.keyword}
+          />
         </div>
       </div>
     )
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
 
 // probably will need to add another component to handle the dropdown
 // from the search bar as you type

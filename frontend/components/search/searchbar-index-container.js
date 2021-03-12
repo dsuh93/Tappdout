@@ -5,7 +5,7 @@ import { fetchBeer } from '../../actions/beer_actions';
 import { fetchBrewery } from '../../actions/brewery_actions';
 import { fetchSearchBeers } from '../../actions/beer_actions';
 import { fetchSearchBreweries } from '../../actions/brewery_actions';
-import { resetSearchIndex } from '../../actions/search_actions';
+import { fetchSearchList, resetSearchIndex } from '../../actions/search_actions';
 
 const msp = (state, ownProps) => ({
   searchBeers: state.entities.searches.beers,
@@ -19,6 +19,7 @@ const mdp = dispatch => ({
   fetchBrewery: (breweryId) => dispatch(fetchBrewery(breweryId)),
   fetchSearchBeers: (search) => dispatch(fetchSearchBeers(search)),
   fetchSearchBreweries: (search) => dispatch(fetchSearchBreweries(search)),
+  fetchSearchList: (listAndKey) => dispatch(fetchSearchList(listAndKey)),
   resetSearchIndex: () => dispatch(resetSearchIndex())
 })
 

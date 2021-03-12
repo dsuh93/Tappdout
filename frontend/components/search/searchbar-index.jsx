@@ -33,6 +33,10 @@ class SearchbarIndex extends React.Component {
           list: list
         }
       })
+      this.props.fetchSearchList({
+        list: list,
+        keyword: this.props.keyword
+      })
       this.props.resetState();
     }
   }

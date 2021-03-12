@@ -41,7 +41,7 @@ class NavBar extends React.Component {
               {display}
             </div>
             <div className="navbar-search-bar">
-              <SearchBar/>
+              <SearchBar fetchSearchList={this.props.fetchSearchList}/>
             </div>
           </div>
         </div>
