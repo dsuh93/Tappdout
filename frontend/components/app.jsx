@@ -31,6 +31,7 @@ const App = () => (
       <AuthRoute path='/login' component={LoginFormContainer}/>
       <AuthRoute path='/signup' component={SignupFormContainer}/>
       <ProtectedRoute path='/home' component={HomeContainer}/>
+      <ProtectedRoute exact path='/search' component={SearchContainer}/>
       <ProtectedRoute exact path='/beers' component={BeerIndexContainer}/>
       <ProtectedRoute exact path='/beers/:beerId' component={BeerShowContainer}/>
       <ProtectedRoute exact path='/beers/:beerId/edit' component={BeerEditFormContainer}/>
@@ -39,7 +40,6 @@ const App = () => (
       <ProtectedRoute exact path='/breweries/:breweryId/new_beer' component={BeerFormContainer}/>
       <ProtectedRoute exact path='/checkins/:checkinId' component={CheckinShowContainer}/>
       <ProtectedRoute exact path='/profiles/:profileId' component={ProfileContainer}/>
-      <ProtectedRoute exact path='/search' component={SearchContainer}/>
     </Switch>
     <footer>
       <Footer/>

@@ -15,6 +15,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    
     if (this.props.list && this.props.keyword) {
       this.props.fetchSearchList({
         list: this.props.list,
@@ -34,7 +35,7 @@ class Search extends React.Component {
         this.setState({error: ""})
       }
     } else {
-      
+      this.props.resetSearchIndex();
       this.setState({error: "Search is empty. Please type something before submitting."})
     }
   }
@@ -45,13 +46,13 @@ class Search extends React.Component {
       if (tab === "beers") {
         this.props.fetchSearchList({
           list: "beers",
-          keyword: this.props.keyword
+          keyword: this.state.keyword
         })
         this.setState({list: "beers"})
       } else if (tab === "breweries") {
         this.props.fetchSearchList({
           list: "breweries",
-          keyword: this.props.keyword
+          keyword: this.state.keyword
         })
         this.setState({list: "breweries"})
       }
@@ -85,6 +86,7 @@ class Search extends React.Component {
           </div>
           <SearchIndex
             searchIndex={this.props.searchIndex}
+            list={this.state.list}
           />
         </div>
         <div className={`search-bottom ${revealNoSearch}`}>

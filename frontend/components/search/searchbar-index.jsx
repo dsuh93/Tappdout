@@ -23,6 +23,20 @@ class SearchbarIndex extends React.Component {
     }
   }
 
+  handleRedirect(list) {
+    return e => {
+      e.preventDefault();
+      this.props.history.push({
+        pathname: '/search',
+        state: {
+          keyword: this.props.keyword,
+          list: list
+        }
+      })
+      this.props.resetState();
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.keyword !== this.props.keyword) {
       if (this.props.keyword.length >= 1) {
@@ -63,32 +77,34 @@ class SearchbarIndex extends React.Component {
           <p className="li-header">BEERS</p>
           {searchBeers}
           <div className="see-more-div">
-            <Link
+            <a
+              onClick={this.handleRedirect("beers")}
               className="see-more"
-              to={{
-                pathname:"/search",
-                state: {
-                  keyword: this.props.keyword,
-                  list: "beers"
-                }
-              }}
-            >See More Beers</Link>
+              // to={{
+              //   pathname:"/search",
+              //   state: {
+              //     keyword: this.props.keyword,
+              //     list: "beers",
+              //   }
+              // }}
+            >See More Beers</a>
           </div>
         </ul>
         <ul className={`searchbar-brewery-list ${displayBreweries}`}>
           <p className="li-header">BREWERIES</p>
           {searchBreweries}
           <div className="see-more-div">
-            <Link
+            <a
+              onClick={this.handleRedirect("breweries")}
               className="see-more"
-              to={{
-                pathname:"/search",
-                state: {
-                  keyword: this.props.keyword,
-                  list: "breweries"
-                }
-              }}
-            >See More Breweries</Link>
+              // to={{
+              //   pathname:"/search",
+              //   state: {
+              //     keyword: this.props.keyword,
+              //     list: "breweries",
+              //   }
+              // }}
+            >See More Breweries</a>
           </div>
         </ul>
       </div>

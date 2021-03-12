@@ -12,12 +12,12 @@ const msp = (state, ownProps) => {
   return {
     searchIndex: state.entities.searches.searchIndex,
     list: list,
-    keyword: keyword
+    keyword: keyword,
   }
 };
 
 
-const mdp = dispatch => ({
+const mdp = (dispatch) => ({
   fetchSearchList: (listAndKey) => dispatch(fetchSearchList(listAndKey)),
   resetSearchIndex: () => dispatch(resetSearchIndex())
 });
