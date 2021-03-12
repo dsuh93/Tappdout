@@ -7,7 +7,7 @@ import Search from './search';
 
 const msp = (state, ownProps) => {
   const searchState = ownProps.location.state ? ownProps.location.state : {};
-  const list = searchState.list ? searchState.list : "";
+  const list = searchState.list ? searchState.list : "beers";
   const keyword = searchState.keyword ? searchState.keyword : "";
   return {
     searchIndex: state.entities.searches.searchIndex,
