@@ -2,15 +2,10 @@ import * as BeerAPIUtil from '../util/beer_api_util';
 import * as BreweryAPIUtil from '../util/brewery_api_util';
 
 export const RESET_SEARCH_INDEX = "RESET_SEARCH_INDEX";
-export const RESET_SEARCH_LIST = "RESET_SEARCH_LIST";
 export const RECEIVE_SEARCH_RESULTS = "RECEIVE_SEARCH_RESULTS";
 
 export const resetSearchIndex = () => ({
   type: RESET_SEARCH_INDEX
-})
-
-export const resetSearchList = () => ({
-  type: RESET_SEARCH_LIST
 })
 
 const receiveSearchResults = (results) => ({
