@@ -15,7 +15,6 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    
     if (this.props.list && this.props.keyword) {
       this.props.fetchSearchList({
         list: this.props.list,
@@ -70,13 +69,16 @@ class Search extends React.Component {
       <div className="search-container">
         <div className="search-top">
           <form className="search-form" onSubmit={this.handleSubmit}>
-            <img src={window.searchIcon} alt=""/>
-            <input
-              type="text"
-              onChange={this.update}
-              value={this.state.keyword}
-            />
-            <button>Search</button>
+            <div className="search-input-container">
+              <img src={window.searchLargeIcon} alt=""/>
+              <input
+                className="search-input"
+                type="text"
+                onChange={this.update}
+                value={this.state.keyword}
+              />
+            </div>
+            <button className="search-button">Search</button>
           </form>
         </div>
         <div className={`search-bottom ${revealSearch}`}>
