@@ -19,7 +19,7 @@ class SearchIndexItem extends React.Component {
         ratingsCount++;
       }
     })
-    const avgRating = (totalRatingValue / ratingsCount).toFixed(2);
+    const avgRating = totalRatingValue < 1 ? 0 : (totalRatingValue / ratingsCount).toFixed(2);
     if (list === "beers") {
       return (
         <div className="search-index-item beers">
@@ -41,7 +41,8 @@ class SearchIndexItem extends React.Component {
               <div className="ibu">{item.ibu ? item.ibu : "N/A"} IBU</div>
             </div>
             <div className="bottom">
-              <Rating rating={avgRating}/> ({`${avgRating === avgRating ? avgRating : 0}`})
+              <Rating rating={avgRating}/>
+              <p>({avgRating})</p>
             </div>
           </div>
         </div>
@@ -66,7 +67,8 @@ class SearchIndexItem extends React.Component {
               <div className="ratings-count">{ratingsCount} Ratings</div>
             </div>
             <div className="bottom">
-              <Rating rating={avgRating}/> ({`${!avgRating === avgRating ? avgRating : 0}`})
+              <Rating rating={avgRating}/>
+              <p>({avgRating})</p>
             </div>
           </div>
         </div>

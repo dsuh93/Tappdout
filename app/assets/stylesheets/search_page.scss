@@ -125,6 +125,40 @@
             font-size: 15px;
           }
         }
+        .right {
+          width: 30%;
+          margin: 15px 0;
+          margin-left: auto;
+          border-left: 1px solid lightgray;
+          .top, .bottom {
+            display: flex;
+            align-items: center;
+            .abv, .ibu, .num-beers, .ratings-count {
+              width: 50%;
+              text-align: center;
+              padding: 10px 0;
+            }
+            .abv, .num-beers {
+              border-right: 1px solid lightgray;
+            }
+          }
+          .bottom {
+            border-top: 1px solid lightgray;
+            justify-content: center;
+            padding: 10px;
+            #rating-view {
+              #cap {
+                height: 20px;
+                width: 20px;
+                margin: 2px;
+              }
+            }
+            p {
+              margin-left: 5px;
+            }
+          }
+          
+        }
       }
     }
   }
