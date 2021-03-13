@@ -104,7 +104,7 @@ class BreweryShow extends React.Component {
               <div className="brew-info-row-2">
                 <div className="ratings-bar"><Rating rating={avgRating}/><p id="ratings-bar">({avgRating})</p></div>
                 <div className="total-ratings"><p id="total-ratings">{ratingsCount} Ratings</p></div>
-                <div className="total-beers"><a id="total-beers">{numBeers} Beers</a></div>
+                <div className="total-beers"><p id="total-beers">{numBeers} Beers</p></div>
                 <div className="star"><img id="star" src={window.star}/></div>
               </div>
               <div className="brew-info-row-3">

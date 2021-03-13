@@ -66,7 +66,7 @@ class BeerShow extends React.Component {
           <div className="beer-show">
             <div className="beer-info">
               <div className="beer-info-row-1">
-                <img id="br-row-1-img"src={beer.beerPhotoURL}/>
+                <img id="br-row-1-img"src={beer.beerPhotoURL ? beer.beerPhotoURL : window.defBeer}/>
                 <div id="br-row-1-details">
                   <h3 id="br-name">{beer.beer_name}</h3>
                   <Link to={`/breweries/${beer.brewery.id}`} id="br-bw-name">{beer.brewery.brewery_name}</Link>

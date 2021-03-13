@@ -24,7 +24,7 @@ class SearchIndexItem extends React.Component {
       return (
         <div className="search-index-item beers">
           <div className="left">
-            <Link to={`/beers/${item.id}`}><img src={item.beerPhotoURL}/></Link>
+            <Link to={`/beers/${item.id}`}><img src={item.beerPhotoURL ? item.beerPhotoURL : window.defBeer}/></Link>
           </div>
           <div className="middle">
             <Link to={`/beers/${item.id}`}>

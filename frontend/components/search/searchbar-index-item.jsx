@@ -10,7 +10,7 @@ class SearchbarIndexItem extends React.Component {
       const beer = this.props.beer;
       return (
         <div className="searchbar-index-item">
-          <img src={window.beerPic}/>
+          <img src={beer.beerPhotoURL ? beer.beerPhotoURL : window.defBeer}/>
           <div>
             <p id="search-beer-name">{beer.beer_name}</p>
             <p id="search-beer-brewery">{beer.brewery.brewery_name}</p>
@@ -21,7 +21,7 @@ class SearchbarIndexItem extends React.Component {
       const brewery = this.props.brewery;
       return (
         <div className="searchbar-index-item">
-          <img src={window.breweryPic} alt=""/>
+          <img src={brewery.breweryPhotoURL} alt=""/>
           <div>
             <p id="search-brewery-name">{brewery.brewery_name}</p>
             <p id="search-brewery-location">{brewery.location}</p>

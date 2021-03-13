@@ -51,7 +51,7 @@ class Profile extends React.Component {
         const shorterBeerName = beerName.length > 20 ? (beerName.slice(0, 20) + "...") : beerName;
         return (
           <div className="top-beers-item">
-            <img src={topRatedBeers[rating].beer.beerPhotoURL} alt=""/>
+            <img src={topRatedBeers[rating].beer.beerPhotoURL ? topRatedBeers[rating].beer.beerPhotoURL : window.defBeer} alt=""/>
             <div className="top-beers-names">
               <p><Link to={`/beers/${topRatedBeers[rating].beerId}`}>{shorterBeerName}</Link></p>
               <p className="top-beer-brewery">{topRatedBeers[rating].brewery}</p>
