@@ -10,20 +10,20 @@
   align-items: center;
   margin-top: 42px;
   .beer-form-container {
-    margin-top: 25px;
+    margin-top: 37px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: fit-content;
+    width: 50%;
     height: fit-content;
     background-color: white;
     box-shadow: 0 1px 2px 0.01px rgb(231, 231, 231),
           0 0 0 0 rgb(231, 231, 231);
     .beer-form-instructions, .beer-form {
       background-color: white;
-      padding: 25px;
-      width: 350px;
+      padding: 25px 25px 0 25px;
+      width: 90%;
       
     }
     .beer-form-instructions {
@@ -33,9 +33,10 @@
       }
       h1, p {
         font-weight: bold;
+        font-size: 20px;
       }
       p {
-        font-size: 13px;
+        font-size: 16px;
       }
       #ul-title {
         text-decoration: underline;
@@ -45,7 +46,7 @@
       }
       ul > li {
         list-style-type: disc;
-        font-size: 11px;
+        font-size: 14px;
       }
     }
 
@@ -53,26 +54,30 @@
       text-align: center;
       color: white;
       background-color: #e25858;
-      font-size: 12px;
+      font-size: 15px;
       width: 87%;
-      margin: 10px 0px;
       padding: 15px 0;
     }
 
     .beer-form {
       display: flex;
       flex-direction: column;
+      padding-bottom: 20px;
       .beer-form-3 {
+        margin-top: 15px;
         display: flex;
         padding: 3px;
         div {
           width: 50px;
           margin-right: 25px;
           label {
+            font-size: 12px;
             margin: 5px 0;
           }
           input {
             width: 50px;
+            padding: 5px;
+            font-size: 16px;
           }
         }
         .beer-form-style-div {
@@ -84,15 +89,17 @@
             appearance: none;
             width: 100%;
             height: 58%;
+            padding: 5px;
             border: 1px solid lightgray;
             border-radius: 3px;
+            font-size: 16px;
           }
           .select-arrow-down {
             background: none !important;
             pointer-events: none;
             position: relative;
-            bottom: 14px;
-            left: 175px;
+            bottom: 16px;
+            left: 245px;
             width: 0;
             height: 0;
             border-top: 6px solid gold;
@@ -102,12 +109,15 @@
         }
       }
       label {
-        font-size: 10px;
-        margin: 5px 0;
+        font-size: 12px;
+        margin-top: 15px;
+        margin-bottom: 5px;
         color: gray;
       }
       input {
         border: 1px solid lightgray;
+        font-size: 16px;
+        padding: 5px;
         border-radius: 3px;
       }
       textarea {
@@ -116,13 +126,18 @@
       }
   
       .beer-form-btn {
-        padding: 5px 0;
+        padding: 10px 0;
         margin-top: 10px;
         color: white;
         background-color: gold;
         border: none;
         border-radius: 3px;
+        font-size: 18px;
         font-weight: 700;
+      }
+      .beer-form-btn:hover {
+        cursor: pointer;
+        background-color: rgb(255, 187, 0);
       }
     }
   
