@@ -68,6 +68,7 @@ class CheckinShow extends React.Component {
       )
     } else {
       const checkin = this.props.checkin;
+      const revealShowImg = checkin.photoURL ? "" : "hidden";
       const toasts = checkin.toasts ? Object.values(checkin.toasts).length : 0;
       const toastAvatars = checkin.toasts ? Object.values(checkin.toasts).map((toast, i) => {
         return(
@@ -129,6 +130,9 @@ class CheckinShow extends React.Component {
               <CommentContainer comments={checkin.comments ? checkin.comments : {}}/>
               <CommentFormContainer checkinId={checkin.id}/>
             </div>
+          </div>
+          <div className={`checkin-show-img-container ${revealShowImg}`}>
+            <img src={checkin.photoURL ? checkin.photoURL : ""} alt=""/>
           </div>
         </div>
       )

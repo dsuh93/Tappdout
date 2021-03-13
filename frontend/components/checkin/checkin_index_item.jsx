@@ -68,7 +68,7 @@ class CheckinIndexItem extends React.Component {
             </div>
           </div>
           <div className={showImage}>
-            <img src={photoURL} id="checkin-img"/>
+            <Link to={`/checkins/${checkin.id}`}><img src={photoURL} id="checkin-img"/></Link>
           </div>
         </div>
         <div className="checkin-item-row-3">
