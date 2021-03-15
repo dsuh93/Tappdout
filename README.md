@@ -49,11 +49,11 @@ Tappdout was build on a stack using Ruby on Rails and PostgreSQL for backend fra
 
 # Another Round!
 Look forward to these new features to be added soon to your Tappdout experience:
-- Comment on a check-in
+- Create a checkin, add a photo, description, and rating
+- Comment on any check-in
 - Toast other users check-ins
 - Search for beers and breweries from any page using the search function in the navigation bar
 - A profile page for you to view your past and present check-ins
-- Add friends and build your beer-loving community
 
 # Issues
 Feel free to open an issue on this repo if you come into contact with any bugs or if you have suggestions to enhance the Tappdout experience
