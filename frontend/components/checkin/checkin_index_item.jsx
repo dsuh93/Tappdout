@@ -24,9 +24,9 @@ class CheckinIndexItem extends React.Component {
   deleteCheckin(e) {
     e.preventDefault();
     this.props.deleteCheckin(this.props.checkinId)
-    if (this.props.root === "profile") {
-      this.props.fetchUser(this.props.profileId)
-    }
+    // if (this.props.root === "profile") {
+    //   this.props.fetchUser(this.props.profileId)
+    // }
   }
 
   render() {
