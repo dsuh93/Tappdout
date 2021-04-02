@@ -1,5 +1,5 @@
 # Tappdout Social Networking Site for Beer
-![tappdout logo](https://scontent-lga3-2.xx.fbcdn.net/v/t1.15752-9/142710740_171244464756626_3543394188550254900_n.png?_nc_cat=100&ccb=2&_nc_sid=ae9488&_nc_ohc=K_opR1bJDuEAX8RX_Xm&_nc_ht=scontent-lga3-2.xx&oh=4827405eab574884243182d3daf95384&oe=6038B4E6)
+![tappdout logo](https://github.com/dsuh93/Tappdout/blob/main/app/assets/images/tappdout.jpg)
 ---
 Tappdout is a platform for beer afficionados and beer novices alike, here to satisfy the critics and curious inner-child inside all of us when it comes to whether or not we want to try that new beer from the brewery that's around the corner. 
 
@@ -49,11 +49,11 @@ Tappdout was build on a stack using Ruby on Rails and PostgreSQL for backend fra
 
 # Another Round!
 Look forward to these new features to be added soon to your Tappdout experience:
-- Comment on a check-in
+- Create a checkin, add a photo, description, and rating
+- Comment on any check-in
 - Toast other users check-ins
 - Search for beers and breweries from any page using the search function in the navigation bar
 - A profile page for you to view your past and present check-ins
-- Add friends and build your beer-loving community
 
 # Issues
 Feel free to open an issue on this repo if you come into contact with any bugs or if you have suggestions to enhance the Tappdout experience
