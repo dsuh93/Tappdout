@@ -7,18 +7,18 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.checkinCounter = this.checkinCounter.bind(this);
+    this.checkinCounter = this.currentUserCheckinCounter.bind(this);
     this.uniqueBeerCounter = this.uniqueBeerCounter.bind(this);
   }
 
-  checkinCounter() {
-    let count = 0;
+  currentUserCheckinCounter() {
+    let checkinCount = 0;
     Object.values(this.props.checkins).map( checkin => {
       if (checkin.user.id === this.props.sessionId) {
-        count += 1
+        checkinCount += 1
       }
     })
-    return count;
+    return checkinCount;
   }
 
   uniqueBeerCounter() {
@@ -55,7 +55,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="user-info-row-2">
-              <div className="total-checkins"><p id="num">{this.checkinCounter()}</p><p>TOTAL</p></div>
+              <div className="total-checkins"><p id="num">{this.currentUserCheckinCounter()}</p><p>TOTAL</p></div>
               <div className="unique-checkins"><p id="num">{this.uniqueBeerCounter()}</p><p>UNIQUE</p></div>
             </div>
           </div>
