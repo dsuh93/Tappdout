@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_003923) do
+ActiveRecord::Schema.define(version: 2021_10_28_173633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,12 +102,19 @@ ActiveRecord::Schema.define(version: 2021_03_10_003923) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["first_name"], name: "index_users_on_first_name"
     t.index ["last_name"], name: "index_users_on_last_name"
-    t.index ["session_token"], name: "index_users_on_session_token"
-    t.index ["username"], name: "index_users_on_username"
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "beers", "breweries"
+  add_foreign_key "checkins", "beers"
+  add_foreign_key "checkins", "users"
+  add_foreign_key "comments", "checkins"
+  add_foreign_key "comments", "users", column: "author_id"
+  add_foreign_key "toasts", "checkins"
+  add_foreign_key "toasts", "users", column: "toaster_id"
 end
