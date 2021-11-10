@@ -1,3 +1,5 @@
+// CRUD API calls for beers
+
 export const fetchBeers = (search) => (
   $.ajax({
     method: "GET",
