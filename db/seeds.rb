@@ -9,12 +9,15 @@
 
 
 require 'open-uri'
+# https://github.com/ruby/open-uri
+# wrapper for Net::HTTP, NET::HTTPS
+# opens an http, https or ftp URL as though it were a file
 
 
-User.destroy_all
-Brewery.destroy_all
-Beer.destroy_all
 Checkin.destroy_all
+Beer.destroy_all
+Brewery.destroy_all
+User.destroy_all
 
 demo_user = User.create!(
   username: "guest",
